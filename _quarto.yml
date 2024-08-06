@@ -11,6 +11,11 @@ book:
     - age-struct-pop-model.qmd
     - summary.qmd
     - references.qmd
+  appendices:
+    - example1-inpfile.qmd
+    - example2-inpfile.qmd
+    - example3-inpfile.qmd
+
 
 bibliography: references.bib
 

@@ -1,0 +1,9 @@
+
+# Example 3 Input File {.unnumbered}
+
+```{r}
+#| echo: false
+#| column: screen-inset-right
+writeLines(readLines("example-inpfiles/Example3.INP"))
+```
+
