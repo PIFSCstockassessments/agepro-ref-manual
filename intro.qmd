@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {.unnumbered}
 
 The AGEPRO model was initially developed in 1994 to determine optimal strategies to rebuild a depleted fish stock. The model was reviewed at the May 1994 meeting of the Northeast Fisheries Science Center Methods Working Group [@BrodziakRago1994 ; @BrodziakEtAl1998]. Subsequently, the model was applied to groundfish stocks at the 18th SARC [@NEFSC1994] to evaluate Amendment 5 harvest scenarios [@NEFMC1994] and was applied again in 1995 to assist with Amendment 7 [@NEFMC1996]. The reference manual was prepared in 1997 to provide documentation and has been updated since then to describe modifications to the model and software. The current program is written in the C language to allow for dynamic array allocation and to achieve rapid processing speeds.
 
@@ -10,14 +10,14 @@ Initial population size is the second potential element of uncertainty for popul
 
 The third element of uncertainty is process error in population and fishery processes. The user can choose to simulate the following population and fishery processes at age through time with a multiplicative lognormal process error with mean value equal to unity and a constant coefficient of variation:
 
-  1. Natural mortality at age
-  2. Maturation fraction at age
-  3. Stock weight on January 1^st^ at age
-  4. Spawning stock weight at age
-  5. Mean population weight at age
-  6. Fishery selectivity at age
-  7. Discard fraction at age
-  8. Catch weight at age
-  9. Discard weight at age
-  
+1.  Natural mortality at age
+2.  Maturation fraction at age
+3.  Stock weight on January 1^st^ at age
+4.  Spawning stock weight at age
+5.  Mean population weight at age
+6.  Fishery selectivity at age
+7.  Discard fraction at age
+8.  Catch weight at age
+9.  Discard weight at age
+
 The simulated values of each of these processes can be stored in auxiliary data files for the purpose of documenting projection results.
