@@ -9,6 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - age-struct-pop-model.qmd
+    - catch-landings-discards.qmd
     - summary.qmd
     - references.qmd
   appendices:

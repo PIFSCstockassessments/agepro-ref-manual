@@ -1,0 +1,15 @@
+# Catch, Landings, and Discards {.unnumbered}
+
+The fishery catch depends on the fraction of the population that is vulnerable to harvest or the exploitable stock size. Catch at age by fleet (fleets are indexed by $v$) is determined by the Baranov catch equation [e.g., @quinnii1999]. The catch of age-$a$ fish in year $t$ by fleet $v$ is $C_{V,a}(t)$ .
+
+$$ 
+C_{V,a}(t)= \frac{F_{v,a}(t)}{M_a(t)+F_{v,a}(t)}{\Bigl[ 1-e^{-M_a(t)-F_{v,a}(t)}\Bigr]} \cdot N_a(t)
+$$ {#eq-6}
+
+To account for age-specific discarding of fish, let $P_{v,D,a}(t)$ be the proportion of age-$a$ fish that are discarded by fleet $v$ in year $t$, and let $W_{v,L,a}(t)$ and $W_{v,D,a}$ be the average weight at age-$a$ in year $t$ for landed and discarded fish, respectively. Then, if discarding is included in the projections, the total landed weight of fish caught by fleet $v$ in year $t$, denoted by $L_v(t)$, is
+
+
+$$
+L_V(t)=\sum_{a=1}^{A} \cdot {\Bigl[ 1 - P_{v,D,a}(t) \Bigr]} \cdot W_{v,L,a(t)}
+$$ 
+
