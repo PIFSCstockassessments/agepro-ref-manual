@@ -1,20 +1,10 @@
-# Age Structured Population Model
+# Age Structured Population Model {.unnumbered}
 
 A pooled-sex, age-structured population model is the basis for the AGEPRO model and software. This model represents an iteroparous fish population whose abundance changes due to fluctuations in recruitment and natural mortality as well as fishing mortality from one or more fishing fleets. Population size at age changes continuously throughout the year due to the concurrent forces of natural and fishing mortality. Recruitment ($R$, number of age-$r$ fish) to the population occurs at the beginning of each year (January 1^st^) and is the first element in the population size at age vector (Table 1).
 
 ## Population Abundance, Survival, and Spawning Biomass
 
-The AGEPRO model calculates the number of fish alive within each age class of the population through time. Let $Y$ denote the number of years in a projection where $t$ indexes time for $t = 1,2,...Y$.
-
-The maximum number of years in the projection is a dynamic variable specified by the user and constrained by the amount of computer memory.
-
-The minimum or youngest age class comprises the recruits and the age of recruitment is set as age-1.
-
-The oldest age class is a plus-group, which consists of all fish that are at least as old as the plus group age ($A$). The maximum number of age classes is 100, including the plus group.
-
-For each age class, the number of fish alive at the beginning of each calendar year (January 1^st^) is $N_j(t)$ where $j$ indexes age class and $t$ indexes year. The number of fish in the plus group is $N_A(t)$ which accounts for the number of fish that are age-$A$ or older at the beginning of year $t$.
-
-Given this, the population abundance at the beginning of year $t$ is the vector $\underline{N}(t)$ with $R(t)$ used as an alternate notation to emphasize that a recruitment submodel is needed to stochastically generate recruitment through time horizon.
+The AGEPRO model calculates the number of fish alive within each age class of the population through time. Let $Y$ denote the number of years in a projection where $t$ indexes time for $t = 1,2,...Y$. The maximum number of years in the projection is a dynamic variable specified by the user and constrained by the amount of computer memory. The minimum or youngest age class comprises the recruits and the age of recruitment is set as age-1. The oldest age class is a plus-group, which consists of all fish that are at least as old as the plus group age ($A$). The maximum number of age classes is 100, including the plus group. For each age class, the number of fish alive at the beginning of each calendar year (January 1^st^) is $N_j(t)$ where $j$ indexes age class and $t$ indexes year. The number of fish in the plus group is $N_A(t)$ which accounts for the number of fish that are age-$A$ or older at the beginning of year $t$. Given this, the population abundance at the beginning of year $t$ is the vector $\underline{N}(t)$ with $R(t)$ used as an alternate notation to emphasize that a recruitment submodel is needed to stochastically generate recruitment through time horizon.
 
 $$ 
 \underline{N}(t) = \begin{bmatrix}
@@ -26,27 +16,21 @@ $$
                    \end{bmatrix} 
 $$ {#eq-1}
 
-Population survival at age from year $t−1$ to year $t$ is calculated using instantaneous fishing and mortality rates at age.
-
-To describe annual survival through mortality, let $M_a(t)$ denote the instantaneous natural mortality rate on age group $a$ and let $F_a(t)$ denote the instantaneous fishing mortality rate for age-$a$ fish in year $t$ where $F_a(t)$ is the sum of fleet-specific fishing mortalities at age $a$. Population size at age in year $t$ for age classes indexed by $a = 1\ to\ A-1$ is given by
+Population survival at age from year $t−1$ to year $t$ is calculated using instantaneous fishing and mortality rates at age. To describe annual survival through mortality, let $M_a(t)$ denote the instantaneous natural mortality rate on age group $a$ and let $F_a(t)$ denote the instantaneous fishing mortality rate for age-$a$ fish in year $t$ where $F_a(t)$ is the sum of fleet-specific fishing mortalities at age $a$. Population size at age in year $t$ for age classes indexed by $a = 1\ to\ A-1$ is given by
 
 $$
 N_a(t) = N_{a-1}(t-1)\cdot{e^{-M_{a-1}(t-1)-F_{a-1}(t-1)}}
-$$
+$$ {#eq-2}
 
 Similarly, population size at age in year $t$ for the plus group of fish age-$A$ and older is given by
 
 $$
 N_a(t) = N_{a}(t-1)\cdot{e^{-M_{a}(t-1)-F_{a}(t-1)}} + N_{a-1}(t-1)\cdot{e^{-M_{a-1}(t-1)-F_{a-1}(t-1)}}
-$$
+$$ {#eq-3}
 
-where survival for the plus-group involves an age-$A$ and an age-($A-1$) component. Incoming recruitment is determined through a stochastic process that is either dependent or independent of spawning biomass in year $t$ (see **Stock-Recruitment Relationship** in chapter 7).
+where survival for the plus-group involves an age-$A$ and an age-($A-1$) component. Incoming recruitment is determined through a stochastic process that is either dependent or independent of spawning biomass in year $t$ (see **Stock-Recruitment Relationship**).
 
-Annual spawning biomass $B_s(t)$ is calculated from the population size vector $\underline{N}(t)$ and total mortality rates as well as information on sexual maturity and weight at age. The age-specific natural mortality rate is $M_a(t)$.
-
-To describe annual survival, let $F_a(t)$ be the instantaneous fishing mortality rate for age-$a$ fish in year $t$ where $F_a(t)$ is the sum of fleet-specific fishing mortalities at age $F_a(t) = \sum\limits_{v}F_{v,a}(t)$. Further, let $P_{mature,a}(t)$ denote the average fraction of age-$a$ fish that are sexually mature in year $t$ and let $W_{S,a}$ denote the average spawning weight of an age-$a$ fish in year $t$. Last, let $Z_{Frac}(t)$ denote the proportion of total mortality that occurs from January 1^st^ to the mid-point of the spawning season in year $t$.
-
-Given this, population size at the midpoint of the spawning season in year $t$, $\underline{N}_s(t)$ is obtained by applying instantaneous natural and fishing mortality rates that occur prior to the spawning season to the population vector at the beginning of the year, $\underline{N}(t)$.
+Annual spawning biomass $B_s(t)$ is calculated from the population size vector $\underline{N}(t)$ and total mortality rates as well as information on sexual maturity and weight at age. The age-specific natural mortality rate is $M_a(t)$. To describe annual survival, let $F_a(t)$ be the instantaneous fishing mortality rate for age-$a$ fish in year $t$ where $F_a(t)$ is the sum of fleet-specific fishing mortalities at age $F_a(t) = \sum\limits_{v}F_{v,a}(t)$. Further, let $P_{mature,a}(t)$ denote the average fraction of age-$a$ fish that are sexually mature in year $t$ and let $W_{S,a}$ denote the average spawning weight of an age-$a$ fish in year $t$. Last, let $Z_{Frac}(t)$ denote the proportion of total mortality that occurs from January 1^st^ to the mid-point of the spawning season in year $t$. Given this, population size at the midpoint of the spawning season in year $t$, $\underline{N}_s(t)$ is obtained by applying instantaneous natural and fishing mortality rates that occur prior to the spawning season to the population vector at the beginning of the year, $\underline{N}(t)$.
 
 $$
 \underline{N}_S(t) = \begin{bmatrix}
@@ -56,8 +40,10 @@ $$
                       \vdots \\
                       N_A(t)\cdot e^{-Z_{Frac}(t)[M_A(t) + F_A(t)]}
                       \end{bmatrix}
-$$ As a result, the amount of spawning biomass in year $t$ is the sum of the weight of the mature fish alive at the midpoint of the spawning season
+$$ {#eq-4}
+
+As a result, the amount of spawning biomass in year $t$ is the sum of the weight of the mature fish alive at the midpoint of the spawning season
 
 $$
 B_S(t) = \sum_{a=1}^{A}W_{S,a}(t) \cdot P_{mature,a}(t) \cdot N_a(t) \cdot e^{-Z_{Frac}(t)[M_a(t) + F_a(t)]}
-$$
+$$ {#eq-5}
