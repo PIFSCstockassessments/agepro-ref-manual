@@ -8,8 +8,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - age-struct-pop-model.qmd
-    - catch-landings-discards.qmd
+    - 01_age-struct-pop-model.qmd
+    - 02_catch-landings-discards.qmd
     - summary.qmd
     - references.qmd
   appendices:
