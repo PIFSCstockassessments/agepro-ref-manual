@@ -11,5 +11,10 @@ To account for age-specific discarding of fish, let $P_{v,D,a}(t)$ be the propor
 
 $$
 L_V(t)=\sum_{a=1}^{A} \cdot {\Bigl[ 1 - P_{v,D,a}(t) \Bigr]} \cdot W_{v,L,a(t)}
-$$ 
+$$ {#eq-7}
 
+Similarly, the total weight of discarded fish in year $t$, denoted by $D_y(t)$, is
+
+$$
+  D_v(t) = \sum_{a=1}^{A}C_{v,a}(t) \cdot P_{v,D,a}(t) \cdot W_{v,D,a}(t)
+$$ {#eq-8}
