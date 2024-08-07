@@ -1,8 +1,41 @@
 
 # Example 1 Input File {.unnumbered}
 
+```{r wrap-hook}
+#| echo: false
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = xfun::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+```
+
+
 ```{r}
 #| echo: false
 #| column: screen-inset-right
-writeLines(readLines("example-inpfiles/Example1.INP"))
+#| linewidth: 120
+
+process_file = function(path) {
+  con = file(path, "r")
+  while(TRUE){
+    line = readLines(con, n = 1)
+    if( length(line) == 0 ) {
+      break
+    }
+    cat(line, "\n")
+  }
+  close(con)
+}
+process_file("example-inpfiles/Example1.INP")
 ```
+
+
+

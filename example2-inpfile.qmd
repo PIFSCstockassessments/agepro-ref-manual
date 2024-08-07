@@ -5,5 +5,17 @@
 ```{r}
 #| echo: false
 #| column: screen-inset-right
-writeLines(readLines("example-inpfiles/Example2.INP"))
+ 
+process_file = function(path) {
+  con = file(path, "r")
+  while(TRUE){
+    line = readLines(con, n = 1)
+    if( length(line) == 0 ) {
+      break
+    }
+    cat(line, fill = 90)
+  }
+  close(con)
+}
+process_file("example-inpfiles/Example2.INP")
 ```
