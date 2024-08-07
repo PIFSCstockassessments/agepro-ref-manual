@@ -1,0 +1,28 @@
+# Population Harvest {.unnumbered}
+
+
+Population harvest is set in each year in the projection time horizon by setting the harvest index $I(t)$. There are two options for determining the level of population harvest in each year of the time horizon: these are the fishing mortality and the quota options. Note that catch quotas are input in units of metric tons of annual catch biomass. Under the fishing mortality option, the user-input fishing mortality rate determines the harvest level (i.e., effort-based management). Under the quota option, the user-input landings quota sets the harvest level (i.e., catch-based management). These two harvest options can be combined in any order within a given projection time horizon where, for example, effort-based management is applied in some years and quota-based management in the other years. This mixed harvest option allows the projection to start with one or more years of known catch followed by annual harvests set by fishing mortality rates. In this case, the user sets a binary harvest index $I(t)$ to determine the harvest option for each year in the projection time horizon. If $I(t)=1$, or the quota indicator is set to be true, then quota-based harvest control is applied in year t; else if $I(t)=0$, then the quota indicator is set to be false and fishing mortality-based harvest control is applied. A mixture of quotas and effort-based harvest can be useful when projecting forward from a previous assessment to the present when only catch is available for the intervening years.
+
+When effort-based management is applied, catch at age is determined by setting $F_{v,a(t)}$ by fleet for each age class. In this case, the fishing mortality rate on age-$a$ fish in year $t$ is the product of the fully-selected fishing mortality rate by fleet, denoted by $F_v(t)$, and the fleet- and age-specific fishery selectivity of age-$a$ fish, denoted by $S_{v,a}(t)$ as
+
+$$
+F_{v,a}(t) = F_v(t) \cdot S_{v,a}(t) 
+$$ {#eq-9}
+
+Landings and discards, if applicable, are then determined from $F_{v,a}(t)$. When quota-based management is applied, however, the $F_v(t)$ that would yield the landings quota must be determined numerically.
+
+Under quota-based management, the landings quota by fleet in year $t$, denoted by $Q_y(t)$, will translate into a variety of effective fishing mortality rates depending on population size, fishery selectivity, and discarding, if applicable.
+
+Ignoring the fleet index and time dimension for simplicity, a landings quota $Q$ can be expressed as a function of $F, Q=L(F)$, where $F$ is the fully-selected fishing mortality and $L$ is the landings expressed as a function of $F$. To see this result, observe that the catch of age-$a$ fish can be expressed as a function of $F$
+
+$$
+C_a(F) = \frac{F \cdot S_a(t)}{M_a(t)+F \cdot S_a(t)}{\Bigl[ 1 - e^{-M_a(t)-F \cdot S_a(t)}\Bigr]} \cdot N_a(t)
+$$ {#eq-10}
+
+As a result, landings can also be expressed as a function of $F$
+$$
+L(F) = \sum_{a=1}^{A}C_a(F) \cdot {\Bigl[ 1-P_{D,a}(t) \Bigr]} \cdot W_{L,a}(t)
+$$ {#eq-11}
+
+The fully-selected fishing mortality, which satisfies the equation, $Q=L(F)$ can be found
+using a robust root-finding algorithm and we apply the bisection method, that previous versions applied Newton’s method. Quotas which exceed the exploitable biomass of the population are defined as being infeasible and simulations with infeasible quotas are also infeasible.
