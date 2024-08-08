@@ -12,6 +12,7 @@ book:
       chapters:
         - 02_catch-landings-discards.qmd
         - 03_pop-harvest.qmd
+        - 04_initial-pop-abundance.qmd
     - summary.qmd
     - references.qmd
   appendices:
