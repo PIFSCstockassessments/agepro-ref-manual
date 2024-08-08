@@ -14,6 +14,7 @@ book:
         - 03_pop-harvest.qmd
         - 04_initial-pop-abundance.qmd
         - 05_retroadjust.qmd
+    - part: 05_stock-recruit-relationship.qmd
     - summary.qmd
     - references.qmd
   appendices:

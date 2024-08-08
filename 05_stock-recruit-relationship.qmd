@@ -1,0 +1,27 @@
+# Stock Recruitment Relationship {.unnumbered}
+
+In general, the relationship between spawning stock $B_S$ and recruitment $R$ is highly variable owing to intrinsic variability in factors governing early life history survival and to measurement error in the estimates of recruitment and the spawning biomass that generated it. The stock-recruitment relationship ultimately defines the sustainable yield 8 curve and its expected variability assuming that the stochastic processes of growth, maturation, and natural mortality are density-independent and stationary throughout the time horizon. Quinn and Deriso [-@quinnii1999] provide a useful discussion of stock-recruitment models, renewal processes, and sustainable yield. Note that the assumed stock-recruitment relationship does not affect the initial population abundance at the beginning of the time horizon (see **Initial Population Abundance**).
+
+A total of twenty one stochastic recruitment models are available for population projection in the AGEPRO software. Thirteen of the recruitment models are functionally dependent on $B_S$ while eight do not depend on spawning biomass. Five of the recruitment models have time-dependent parameters, twelve are time-invariant, and four may include time as a predictor, or not. The user is responsible for the choice and parameterization of the recruitment models. A description of each of the recruitment models follows. _Important: note that the absolute units for recruitment $R$ are numbers of age-1 fish, while for spawning biomass $B_S$, the absolute units are kilograms of spawning biomass in each of the recruitment models below._
+
+ 1. Markov Matrix
+ 2. Empirical Recruits Per Spawning Biomass Distribution
+ 3. Empirical Recruitment Distribution 
+ 4. Two-Stage Empirical Recruits Per Spawning Biomass Distribution
+ 5. Beverton-Holt Curve with Lognormal Error
+ 6. Ricker Curve with Lognormal Error
+ 7. Shepherd Curve with Lognormal Error
+ 8. Lognormal Distribution
+ 9.
+ 10. Beverton-Holt Curve with Autocorrelated Lognormal Error
+ 11. Ricker Curve with Autocorrelated Lognormal Error
+ 12. Shepherd Curve with Autocorrelated Lognormal Error
+ 13. Autocorrelated Lognormal Distribution
+ 14. Empirical Cumulative Distribution Function of Recruitment
+ 15. Two-Stage Empirical Cumulative Distribution Function of Recruitment
+ 16. Linear Recruits Per Spawning Biomass Predictor with Normal Error
+ 17. Loglinear Recruits Per Spawning Biomass Predictor with Lognormal Error
+ 18. Linear Recruitment Predictor with Normal Error
+ 19. Loglinear Recruitment Predictor with Lognormal Error
+ 20. Fixed Recruitment
+ 21. Empirical Cumulative Distribution Function of Recruitment with Linear Decline to Zero
