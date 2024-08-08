@@ -1,0 +1,15 @@
+# Retrospective Adjustment {.unnumbered}
+
+One can adjust the initial population numbers at age vector $\underline{N}(1)$ to reflect a retrospective pattern in calculating these estimates. In this case, the user must determine an appropriate vector of retrospective bias-correction coefficients, denoted by $\underline{C}$, to apply to the vector $\underline{N}(1)$. These multiplicative bias-correction coefficients may be age-specific or constant across age classes. The bias-corrected initial population vector $\underline{N}^*(1)$ is calculated from the element-wise product of $\underline{N}(1)$ and $\underline{C}$ as
+
+$$
+\underline{N}^*(1) = {\bigl( C_1 \cdot N_1(1), \ \dots,\  C_a \cdot N_a(1),\ \dots,\ C_A \cdot N_A(1) \bigr)^T}
+$$
+
+Note that the bias-correction coefficients are applied to all initial population vectors. If the bias-correction coefficients are determined to be constant across age classes then $\underline{C} = (C, C, ..., C)^T$ and the bias-corrected initial population vector is
+
+$$
+\underline{N}^*(1) = {\bigl( C \cdot N_1(1), \ \dots,\  C \cdot N_a(1),\ \dots,\ C \cdot N_A(1) \bigr)^T}\ =\ C \cdot\underline{N}(1)
+$$
+
+The bias-correction coefficients are only applied in the first time period of the projection time horizon to reflect uncertainty in the estimated population size at age. Mohn [-@mohn1999] provides an informative presentation of the retrospective problem in sequential population analysis.
