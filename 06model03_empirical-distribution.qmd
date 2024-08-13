@@ -6,7 +6,7 @@ Another simple model for generating recruitment is to draw randomly from the obs
 In this model, realized recruitment $\hat{R}$ is simulated from the empirical recruitment distribution as
 
 $$
-Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} 
+Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}\label{eq:22}
 $$
 The empirical recruitment distribution approach is nonparametric and assumes that future recruitment is totally independent of spawning stock biomass. When current levels of $B_S$ are near the midrange of historical values this assumption seems reasonable. However, if contemporary $S_B$ values are near the bottom of the range, then this approach could be overly optimistic, for it assumes that all historicallyobserved recruitment levels are possible, regardless of $B_S$. The AGEPRO program can generate stochastic recruitments under model 3 based on thousands of input recruitment data points. Note that the empirical recruitment distribution model can be used to make deterministic projections by specifying a single observed recruitment.
 
