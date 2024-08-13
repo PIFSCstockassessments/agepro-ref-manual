@@ -1,0 +1,34 @@
+
+## Model 5. Beverton-Holt Curve with Lognormal Error {.unnumbered}
+
+The Beverton-Holt curve [@bevertonHolt1957] with lognormal errors is a parametric model of recruitment generation where survival to recruitment age is density dependent and subject to stochastic variation. *The Beverton-Holt curve with lognormal error model depends on spawning biomass and is time-invariant.*
+
+The Beverton-Holt curve with lognormal error generates recruitment as
+
+$$
+\begin{split}
+\hat{r}(t) &= \frac{\alpha \cdot b_s (t-1)}{\beta + b_s (t-1)} \cdot e^w\ \\
+  & where\ w ~ \sim N \bigl(0, \sigma_{w}^2\bigr), \widehat{R}(t)= c_R \cdot \widehat{r}(t), and\ B_S(t) = c_{B}\cdot b_S(t) \\ 
+\end{split}
+\tag{23}\label{eq:23}
+$$
+
+The stock-recruitment parameters $\alpha$, $\beta$, and $\sigma_w^2$ and the conversion coefficients for recruitment $c_R$ and spawning stock biomass $c_B$ are specified by the user. Here it is assumed that the parameter estimates for the Beverton-Holt curve have been estimated in relative units of recruitment $r(t)$ and spawning biomass $b_s(t)$, which are converted to absolute values using the conversion coefficients. Note that the absolute value of recruitment is expressed as numbers of fish, while for spawning biomass, the absolute value is expressed as kilograms of $B_S$. For example, if the stock-recruitment curve was estimated with stock-recruitment data that were measured in millions of fish and thousands of metric tons of $B_S$, then $c_R=10^6$ and $c_R=10^6$. It may be important to estimate the parameters of the stock-recruitment curve in relative units to reduce the potential effects of roundoff error on parameter estimates. It is important to note that the expected value of the lognormal error term is not unity but is $exp\left(\dfrac{1}{2}\sigma_w^2\right)$. Therefore, in order to generate a recruitment model that has a lognormal error term that is equal to 1, one needs to multiply the parameter $\alpha$ by $exp\left(-\dfrac{1}{2}\sigma_w^2\right)$. This bias correction applies when the lognormal error used to fit the Beverton-Holt curve has a log-scale error term $w$ with zero mean.
+
+The Beverton-Holt curve is often reparameterized in a modified form with parameters for steepness $h$ , unfished recruitment $R_0$, and unfished spawning biomass $B_0$. The modified Beverton-Holt curve produces $h=R_0$ recruits when $B_S = 0.2B_0$ and has the form 
+
+$$
+\hat{R} = \frac{4hR_0B_S}{B_0(1-h)+B_S(5h-1)} \tag{24}\label{eq:24}
+$$
+
+The parameters $\alpha$ and $\beta$ can be expressed as functions of the parameters of the modified Beverton-Holt curve as
+
+$$
+\alpha = \frac{4hR_0}{5h-1} = 4B_0\frac{h}{\left(\dfrac{B_0}{R_0}\right)(5h-1)} \tag{25}\label{eq:25}
+$$
+and
+$$
+\beta = \frac{B_0(1-h)}{(5h-1)} - \frac{\alpha \left(\dfrac{B_0}{R_0}\right)(h^{-1}-1)}{4} \tag{26}\label{eq:26}
+$$
+Thus, parameter estimates for the modified curve can be used to determine the Beverton-Holt parameters for the AGEPRO program.
+
