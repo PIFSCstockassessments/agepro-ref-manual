@@ -8,3 +8,7 @@ A total of twenty one stochastic recruitment models are available for population
 {{< include 06model01_markov-matrix.qmd >}}
 
 {{< include 06model02_empirical-rbs.qmd >}}
+
+{{< include 06model03_empirical-distribution.qmd >}}
+
+{{< include 06model04_2stage-empirical-bsd.qmd >}}
