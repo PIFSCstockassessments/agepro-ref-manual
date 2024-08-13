@@ -5,6 +5,7 @@
 
 /.quarto/
 _book/
-*,pdf
+*.pdf
 *.log
 *.tex
+*.html
