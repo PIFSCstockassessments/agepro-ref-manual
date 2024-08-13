@@ -14,3 +14,5 @@ A total of twenty one stochastic recruitment models are available for population
 {{< include 06model04_2stage-empirical-bsd.qmd >}}
 
 {{< include 06model05_beverton-holt.qmd >}}
+
+{{< include 06model06_ricker.qmd >}}
