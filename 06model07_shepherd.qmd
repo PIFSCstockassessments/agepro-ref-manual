@@ -1,0 +1,16 @@
+## Model 7. Shepherd Curve with Lognormal Error {.unnumbered}
+
+The Shepherd curve [@shepherd1982] with lognormal error is a parametric model of recruitment generation where survival to recruitment age is density dependent and subject to stochastic variation. *The Shepherd curve with lognormal error model depends on spawning biomass and is time-invariant.*
+
+The Shepherd curve with lognormal error generates recruitment as
+
+$$
+\begin{split}
+&\hat{r}(t) = \dfrac{\alpha \cdot b_S(t-1)}{ 1 + \left( \dfrac{b_s(t-1)}{k} \right)^{\beta} } \cdot e^w \\
+&\\
+& where\ w \sim N(0,\sigma_w^2), \hat{R}(t) =  c_R \cdot \hat{r}(t),\ and\ B_S(t) = c_B \cdot b_S (t)
+\end{split}
+\tag{28}\label{eq:28}
+$$
+
+The stock-recruitment parameters $\alpha$, $\beta$, $k$, and $\sigma^2_w$ and the conversion coefficients for recruitment $c_R$ and spawning stock biomass $c_B$ are specified by the user. Here it is assumed that the parameter estimates for the Beverton-Holt curve have been estimated in relative units of recruitment $r(t)$ and spawning biomass $b_S(t)$ which are converted to absolute values using the conversion coefficients. It is important to note that the expected value of the lognormal error term is not unity but is $exp\left(\dfrac{1}{2}\sigma^2_w\right)$. To generate a recruitment model that has a lognormal error term that is equal to 1, premultiply the parameter $\alpha$ by $exp\left(-\dfrac{1}{2}\sigma^2_w\right)$; this mean correction applies when the lognormal error used to fit the Ricker curve has a log-scale error term w with zero mean.
