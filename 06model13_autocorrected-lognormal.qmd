@@ -1,0 +1,18 @@
+
+## Model 13. Autocorrelated Lognormal Distribution {.unnumbered}
+
+The autocorrelated lognormal distribution provides a parametric model for stochastic recruitment generation with serial correlation. *The autocorrelated lognormal distribution model does not depend on spawning biomass and is time-dependent.*
+
+The autocorrelated lognormal distribution is
+
+$$
+\begin{split}
+& n_r(t) = e^{s_t}\\
+& \\
+& where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ with \ w_t \sim N \left(\mu_{log(r)} \cdot \sigma^2_{log(r)}\right) \\
+& and\ R(t) = c_R \cdot n_r(t)
+\end{split}
+\tag{33}\label{eq:33}
+$$
+
+The lognormal distribution parameters $\mu_{log(r)} \cdot \sigma^2_{log(r)}$,$\phi$, $\varepsilon_0$ as well as the conversion coefficient for recruitment $C_R$ are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units $r(t)$ and then converted to absolute values with the conversion coefficient.
