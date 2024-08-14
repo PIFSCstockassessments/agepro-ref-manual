@@ -7,17 +7,18 @@ An empirical approach to estimate a Markov matrix uses stock-recruitment data to
 
 $$
 I_1 = {\bigl[0,B_{s,1}\bigr)}\ and\ for\ j=1, ..., J-2\ \ I_j = {\bigl[B_{S,j-1},B_{S,J}\bigr)}\ and\ I_j = {\bigl[B_{S,J-1}, \infty\bigr)}    
+\tag{14}\label{eq:14}
 $$
 
 where the spawning biomass values $B_{S,j}$ are the input endpoints of the disjoint intervals of categories of spawning biomass (e.g., high, medium, low). Note that the spawning biomass intervals are defined by the cut points $B_{S,j}$. The conditional probability of realizing the k^th recruitment value given that observed spawning biomass $B_{S,Observed}$ is in the j^th interval is $P{j,k}$. Here $P_{j,k}$ is the element in the j^th row and k^th column of the Markov matrix $\underline{P}={\bigl[ P_{j,k}\bigr]} $ of conditional recruitment probabilities with elements
 
 $$
-P_{j,k} = Pr{\bigl(R_k | B_{S,Observed} \in I_j\bigr)}
+P_{j,k} = Pr{\bigl(R_k | B_{S,Observed} \in I_j\bigr)} \tag{15}\label{eq:15}
 $$
 These individual conditional probabilities can be estimated by the computing the number of points in the stock recruitment data set that fall within a selected recruitment $[O_{k-1},O_k]$ range conditioned on the spawning biomass interval $I_j$. If $x_{j,k}$ represents the number of stock-recruitment observations in cell $I_j \times O_k$ and there is at least one observation in spawning state $j$, then the empirical maximum likelihood estimate of $P_{j,k}$ is
 
 $$
-Pr(r=O_k\ |\ B_S \in I_j)= \frac{x_{j,k}}{ \sum_\limits{k}x_{j,k} } 
+Pr(r=O_k\ |\ B_S \in I_j)= \frac{x_{j,k}}{ \sum_\limits{k}x_{j,k} } \tag{16}\label{eq:16}
 $$
 Here $P_{j,k} \ge 0$ and $\sum\limits_{k=1}P_{j,k}=1$
 
