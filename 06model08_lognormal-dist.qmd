@@ -1,0 +1,17 @@
+
+## Model 8. Lognormal Distribution {.unnumbered}
+
+The lognormal distribution provides a parametric model for stochastic recruitment generation. *The lognormal distribution model does not depend on spawning biomass and is time-invariant.*
+
+The lognormal distribution generates recruitment as
+
+$$
+\begin{split}
+& \hat{r}(t) = e^w \\
+& \\
+& where\ w \sim N (\mu_{log(r)},\sigma^2_{log(r)})\ and \ \hat{R}(t) = c_R \cdot \hat{r}(t)
+\end{split}
+\tag{29}\label{eq:29}
+$$
+
+The lognormal distribution parameters $\mu_{log(r)}$ and $\sigma^2_{log(r)}$ as well as the conversion coefficient for recruitment $C_R$ are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units $r(t)$ and then converted to absolute values with the conversion coefficients.

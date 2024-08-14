@@ -1,0 +1,5 @@
+
+## Model 9. [DEPRECATED] Time-Varying Empirical Recruitment Distribution {.unnumbered}
+
+**This recruitment model has been deprecated. The model for a time-varying empirical
+recruitment distribution can be fully implemented using [model 3](#model-3.-empirical-recruitment-distribution).**
