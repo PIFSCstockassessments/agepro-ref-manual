@@ -1,0 +1,10 @@
+
+## Model 16. Linear Recruits Per Spawning Biomass Predictor with Normal Error {.unnumbered}
+
+The linear recruits per spawning biomass predictor with normal error is a parametric model to simulate random values of recruits per spawning biomass $\dfrac{R}{B_S}$ and realized recruitment values. The predictors in the linear model $X_p(t)$ can be any continuous variable and may typically be survey indices of cohort abundance or environmental covariates that are correlated with recruitment strength. Input values of each predictor are required for each time period. If a value of a predictor is missing or not known for one or more periods, the missing values can be imputed using appropriate measures of central tendency, e.g., mean or median values. Similarly, if this model has zero probability in a given time period (e.g., is not a member of the set of probable models), then dummy values can be input for each predictor. For each time period and simulation, a random value of $\dfrac{R}{B_S}$ is generated using the linear model
+
+$$
+\dfrac{R}{B_S} = \beta_0 + \sum^{N_P}_{p=1}\beta_p\ \cdot X_p(t) + s \tag{38}\label{eq:38}
+$$
+
+where $N_p$ is the number of predictors, $\beta_0$ is the intercept, $\beta_p$ is the linear coefficient of the $p^{th}$ predictor and $\varepsilon$ is a normal distribution with zero mean and constant variance $\sigma^2$. It is possible negative values of $\dfrac{R}{B_S}$ to be generated using this formulation; such values are excluded from the set of simulated values of $\dfrac{R}{B_S}$ from equation (\ref{eq:35}) by testing if $\dfrac{R}{B_S} < 0$ repeating the random sampling until an feasible positive value of $\dfrac{R}{B_S}$ is obtained. This model randomly generates $\dfrac{R}{B_S}$ values under the assumption that the linear predictor of the $\dfrac{R}{B_S}$ ratio is stationary and independent of stock size. Random values of $\dfrac{R}{B_S}$ are multiplied by realized spawning biomass to generate recruitment in each time period. *The linear recruits per spawning biomass predictor with normal error depends on spawning biomass and is time-invariant unless time is used as a predictor.*
