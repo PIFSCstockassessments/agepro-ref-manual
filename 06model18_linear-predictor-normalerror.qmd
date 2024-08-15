@@ -1,0 +1,14 @@
+
+## Model 18. Linear Recruitment Predictor with Normal Error {.unnumbered}
+
+The linear recruitment predictor with normal error is a parametric model to simulate representative random values of recruitment. The predictors in the linear model $X_p(t)$ can be any continuous variable and could represent survey indices of cohort abundance or environmental covariates correlated with recruitment strength. Input values of each predictor are required for each time period. If a value of a predictor is missing or not known for one or more periods, the missing values can be imputed using appropriate measures of central tendency, e.g., mean or median values. Similarly, if this model has zero probability in a given time period (e.g., is not a member of the set of probable models), then dummy values can be input for each predictor. For each time period and simulation, a random value of R is generated using the linear model
+
+$$
+\begin{split}
+& n_r(t) = \beta_0+\sum\limits_{p=1}^{N_p}\beta_p\ \cdot X_p(t) + \varepsilon\\
+& with \ R(t) = c_r \cdot n_r(t)\\
+\end{split}
+\tag{40}\label{eq:40}
+$$
+
+here $N_p$ is the number of predictors, $\beta_0$ is the intercept, $\beta_p$ is the linear coefficient of the $p^{th}$ predictor and $\varepsilon$ is a normal distribution with zero mean and constant variance $\sigma^2$ and the conversion coefficients for recruitment is $c_R$. It is possible that negative values of $R$ can be generated using this formulation; such values are excluded from the set of simulated values of $R$ from equation (\ref{eq:37}) by testing if $R$ repeating the random sampling until an feasible positive value of $R$ is obtained. This model randomly generates $R$ values under the assumption that the linear predictor of $R$ is stationary and independent of stock size. *The linear recruitment predictor with normal error does not depend on spawning biomass and is time-invariant unless time is used as a predictor.*
