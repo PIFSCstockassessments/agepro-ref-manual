@@ -15,6 +15,7 @@ book:
         - 04_initial-pop-abundance.qmd
         - 05_retroadjust.qmd
         - 06_stock-recruit-relationship.qmd
+        - 07_recruit-probabilities.qmd
     - summary.qmd
     - references.qmd
   appendices:

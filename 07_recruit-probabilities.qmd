@@ -1,0 +1,14 @@
+
+# Recruitment Model Probabilities {.unnumbered}
+
+Model uncertainty about the appropriate stock-recruitment model can be directly incorporated into AGEPRO projections. Using a set of recruitment models may be appropriate when each model provides a similar statistical fit to a set of stock-recruitment data, where similarity can be measured using Akaike information criterion, deviance information criterion, widely applicable information criterion, or other goodness-of-fit measures. Given a measure of a stock-recruitment model’s relative likelihood compared to a set of alternative models, one can use information criteria to calculate an individual model’s probability of best representing the true state of nature. Alternatively, one can assign model probabilities based on judgment of other measures of goodness of fit or use the principle of indifference to assign equal probabilities in the absence of compelling information.
+
+Regardless of the approach used to estimate them, the recruitment model probabilities are used to generate stochastic recruitment dynamics in a straightforward manner. Suppose there are a total of $N_M$ probable recruitment models, as determined by the user. The probability that recruitment model m is realized in year $t$ is denoted by $P_{R,m}(t) > 0$. Conservation of total probability implies that the sum of model probabilities over the set of probable models in each year is unity
+
+$$
+\sum\limits^{N_M}_{m=1} P_{R,m}(t) = 1 \tag{45}\label{eq:45}
+$$
+
+This gives a conditional probability distribution for randomly sampling recruitment submodels in each year of the projection time horizon. As in previous versions of AGEPRO, a single recruitment model can be used for the entire projection time horizon by setting $N_M - 1$.
+
+One advantage of including multiple recruitment models with time-varying probabilities is that one can use auxiliary information on recruitment strength, such as environmental covariates, to make short-term recruitment predictions (1-2 years) and then change to a less informative set of medium-term recruitment models for medium-term recruitment predictions (3-5 years). Another advantage of including multiple recruitment models is to account for model selection uncertainty, which can be a substantial source of uncertainty for some fishery systems.
