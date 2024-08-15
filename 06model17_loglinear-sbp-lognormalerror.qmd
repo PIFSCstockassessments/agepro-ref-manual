@@ -1,0 +1,10 @@
+
+## Model 17. Loglinear Recruits Per Spawning Biomass Predictor with Lognormal Error {.unnumbered}
+
+The loglinear recruits per spawning biomass predictor with lognormal error is a parametric model to simulate random values of recruits per spawning biomass $\dfrac{R}{B_S}$ and associated random recruitments. Predictors for the loglinear model $X_p(t)$ can be any continuous variable and could include survey indices of cohort abundance or environmental covariates that are correlated with recruitment strength. Input values of each predictor are required for each time period. If a value of a predictor is missing or not known for one or more periods, the missing values can be imputed using appropriate measures of central tendency, e.g., mean or median values. If this model has zero probability in a given time period (e.g., is not a member of the set of probable models), then dummy values can be input for each predictor. For each time period and simulation, a random value of the natural logarithm of $\dfrac{R}{B_S}$ is generated using the loglinear model
+
+$$
+\log \left(\dfrac{R}{B_s}\right) = \beta_0 + \sum\limits_{p=1}^{N_p} \beta_p\ \cdot X_p(t) + \varepsilon \tag{39}\label{eq:39}
+$$
+
+where $N_P$ is the number of predictors, $\beta_0$ is the intercept, $\beta_p$ is the linear coefficient of the $p^{th}$ predictor and $\varepsilon$ is a normal distribution with constant variance $\sigma^2$ and mean equal to $-0.5\sigma^2$. In this case, the mean of $\varepsilon$ implies that the expected value of the lognormal error term is unity. This model generates positive random values of $\dfrac{R}{B_S}$ under the assumption that the linear predictor of the $\dfrac{R}{B_S}$ ratio is stationary and independent of stock size. Simulated values of $\dfrac{R}{B_S}$ are multiplied by realized spawning biomass to generate recruitment in each time period. *The loglinear recruits per spawning biomass predictor with lognormal error depends on spawning biomass and is time-invariant unless time is used as a predictor.*

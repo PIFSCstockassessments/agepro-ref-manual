@@ -37,3 +37,5 @@ A total of twenty one stochastic recruitment models are available for population
 
 {{< include 06model16_linearsbp-normalerror.qmd >}}
 
+{{< include 06model17_loglinear-sbp-lognormalerror.qmd >}}
+
