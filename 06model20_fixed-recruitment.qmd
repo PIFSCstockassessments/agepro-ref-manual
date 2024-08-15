@@ -1,0 +1,9 @@
+## Model 20. Fixed Recruitment {.unnumbered}
+
+The fixed recruitment predictor applies a specified value of recruitment for each year of the time horizon. The vector of input recruitment values in relative units is $\underline{n}_r = \Big[ n_r(1), n_r(2, ..., n_r(Y)\Big]$ for projections years $1$ through $Y$. The fixed recruitment model predicts recruitment as
+
+$$
+R(t) = c_r \cdot n_r(t) \tag{42}\label{eq:42}
+$$
+
+where the conversion coefficient for input recruitment to absolute numbers is $c_R$. *The fixed recruitment model does not depend on spawning biomass and is time-invariant.*
