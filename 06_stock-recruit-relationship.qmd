@@ -1,9 +1,15 @@
+---
+format: 
+  html: 
+    grid: 
+      margin-width: 300px
+---
+
 # Stock Recruitment Relationship {.unnumbered}
 
 In general, the relationship between spawning stock $B_S$ and recruitment $R$ is highly variable owing to intrinsic variability in factors governing early life history survival and to measurement error in the estimates of recruitment and the spawning biomass that generated it. The stock-recruitment relationship ultimately defines the sustainable yield 8 curve and its expected variability assuming that the stochastic processes of growth, maturation, and natural mortality are density-independent and stationary throughout the time horizon. Quinn and Deriso [-@quinnii1999] provide a useful discussion of stock-recruitment models, renewal processes, and sustainable yield. Note that the assumed stock-recruitment relationship does not affect the initial population abundance at the beginning of the time horizon (see **Initial Population Abundance**).
 
 A total of twenty one stochastic recruitment models are available for population projection in the AGEPRO software. Thirteen of the recruitment models are functionally dependent on $B_S$ while eight do not depend on spawning biomass. Five of the recruitment models have time-dependent parameters, twelve are time-invariant, and four may include time as a predictor, or not. The user is responsible for the choice and parameterization of the recruitment models. A description of each of the recruitment models follows. *Important: note that the absolute units for recruitment* $R$ are numbers of age-1 fish, while for spawning biomass $B_S$, the absolute units are kilograms of spawning biomass in each of the recruitment models below.
-
 
 {{< include 06model01_markov-matrix.qmd >}}
 
