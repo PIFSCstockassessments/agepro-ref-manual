@@ -50,3 +50,6 @@ A total of twenty one stochastic recruitment models are available for population
 {{< include 06model19_loglinear-predictor-lognormalerror.qmd >}}
 
 {{< include 06model20_fixed-recruitment.qmd >}}
+
+{{< include 06model21_empirical-cdf-lineardeclineto0.qmd >}}
+

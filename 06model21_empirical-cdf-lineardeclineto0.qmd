@@ -1,0 +1,17 @@
+## Model 21. Empirical Cumulative Distribution Function of Recruitment with Linear Decline to Zero {.unnumbered}
+
+The empirical cumulative distribution function of recruitment with linear decline to zero model is an extension of the empirical cumulative distribution function of recruitment ([Model 14](#model-14.-empirical-cumulative-distribution-function-of-recruitment)) in which recruitment strength declines when the spawning stock biomass falls below a threshold $B^*_S$. The decline in recruitment randomly generated from the empirical cdf of the observed recruitment is proportional to the ratio of current spawning stock biomass to the threshold $\dfrac{B_S}{B^*_S}$ when $B_S < B^*_S$. In particular, predicted recruitment values are randomly generated using equation (\ref{eq:37}) given the input time series of observed recruitment. That is, if the current spawning biomass is at or above the threshold with $B_S \ge B^*_S$ then the predicted recruitment is
+
+$$
+R = c_R \cdot \left[ (T-1)(R_{S+1} - R_S)\left( U-\dfrac{s-1}{T-1}\right)+R_S\ \right] \tag{43}\label{eq:43}
+$$
+
+where the conversion coefficient for input recruitment to absolute numbers is $c_R$.
+
+Otherwise, if the current spawning biomass falls below the threshold with $B_S < B^*_S$ then the predicted recruitment is reduced to be
+
+$$
+R = c_R \cdot \frac{B_S}{B^*_S} \left[\ (T-1)(R_{S+1} - R_S)\left( U-\dfrac{s-1}{T-1}\right)+R_S\ \right] \tag{44}\label{eq:44}
+$$
+
+where the conversion coefficient for input recruitment to absolute numbers is $c_R$. *The empirical cumulative distribution function of recruitment with linear decline to zero model depends on spawning biomass and is time-invariant.*
