@@ -1,0 +1,36 @@
+
+# Process Errors for Population and Fishery Processes {.unnumbered}
+
+Process errors to generate time-varying dynamics of population and fishery processes can be included in stock projections using AGEPRO. These process errors are defined as independent multiplicative lognormal error distributions for each life history and fishery process.
+
+The general form for a lognormal multiplicative process error term in year $t$, denoted by $\varepsilon_i$, is
+
+$$
+\begin{split}
+& \varepsilon_i \sim \exp(w) \\
+& where\  w \sim N(-0.5\sigma^2, \sigma^2)\\
+\end{split}
+\tag{46}\label{eq:46}
+$$
+
+And where the user specifies the coefficient of variation of the lognormal process error as $CV = \sqrt{\exp(\sigma^2) - 1}$ which sets the value of $\sigma$ as $\sigma = \sqrt{\log(CV^2 + 1)}$.
+
+The five population processes and four fishery processes that can include process error along with the input file keyword to specify the process are (keyword):
+
+ - Natural mortality at age (`NATMORT`) $M_a(t)$
+ - Maturation fraction at age (`MATURITY`) $P_{mature,a}(t)$
+ - Stock weight on January 1st at age (`STOCK_WEIGHT`) $W_{P,a}(t)$
+ - Spawning stock weight at age (`SSB_WEIGHT`) $W_{S,a}(t)$
+ - Midyear mean population weight at age (`MEAN_WEIGHT`) $W_{midyear,a}(t)$
+ - Fishery selectivity at age by fleet (`FISHERY`) $S_{v,a}(t)$
+ - Discard fraction at age by fleet (`DISCARD`) $P_{y,D,a}(t)$
+ - Landed catch weight at age by fleet (`CATCH_WEIGHT`) $W_{y,L,a}(t)$
+ - Discard weight at age by fleet (`DISC_WEIGHT`) $W_{v,D,a}(t)$
+ 
+For detailed documentation of projection results, the user can choose to store individual simulated values of these processes through time in auxiliary data files by setting the value of the DataFlag=1 under the keyword `OPTIONS` (Table 3). The auxiliary file names are constructed from the AGEPRO input filename with file extensions ranging from `.xxx1` to `.xxx9` for the nine processes in the bullet list above, noting that not all processes may be used in a given projection, e.g., discarding. For processes that are used, the auxiliary file names are assigned in the order in which the process parameters are set in the AGEPRO input file. For example, if the spawning stock weight at age process parameters appeared fifth in the ordering of keywords to specify these nine processes in the AGEPRO input file, then the time series of simulated spawning stock weights at age would be store in the auxiliary output file name `input_filename.xxx5`. Each row in this file would be the spawning weights at age for one year, in sequence, for each bootstrap replicate and simulation.
+
+{{< include 08-1_total-stock-biomass.qmd >}}
+
+{{< include 08-2_mean-biomass.qmd >}}
+
+{{< include 08-3_meanbio-weighted-fmort.qmd >}}

@@ -1,0 +1,10 @@
+## Mean Biomass {.unnumbered}
+
+Mean stock biomass $\overline{B}$ is the average biomass of the stock over a given year. In particular, mean stock biomass depends on the total mortality rate experienced by the stock in each year. In the AGEPRO model, the user selects the range of ages to be used for calculating mean  biomass. One can choose the full range of ages in the model (age-$r$ through age-$A$) or alternatively select a smaller age range if desired. In this case, the upper age $A_U$ for mean biomass calculations must be less than or equal to the plus group age $A.$ Similarly, the lower age $A_L$ must be greater than or equal to the recruitment age $r$. If $W_{midyear,a}(t)$ denotes the mean weight of age-$a$ fish at the mid-point of year $t$ then the computational formula for $\overline{B}$ in year $t$ is
+
+$$
+\overline{B}(t) = \sum\limits_{a=A_L}^{A_U}W_{midyear,a}(t) \cdot N_a(t) \cdot \dfrac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}
+\tag{48}\label{eq:48}
+$$
+
+where $F_a(t)$ is the total fishing mortality on age-$a$ fish calculated across all fleets.

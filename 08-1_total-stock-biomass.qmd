@@ -1,0 +1,8 @@
+## Total Stock Biomass {.unnumbered}
+
+Total stock biomass $B_T$ is the sum over the recruitment age ($r$) to the plus-group age ($A$) of stock biomass at age on January 1^st^. The computational formula for $B_T$ in year $t$ is
+
+$$
+B_T(t) = \sum\limits_{a=r}^{A}W_{P,a}(t) \cdot N_a(t) \tag{47}\label{eq:47}
+$$
+where $W_{P,a}(t)$ is the population mean weight of age-a fish on January 1^st^ in year $t$.

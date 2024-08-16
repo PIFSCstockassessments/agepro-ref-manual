@@ -16,6 +16,7 @@ book:
         - 05_retroadjust.qmd
         - 06_stock-recruit-relationship.qmd
         - 07_recruit-probabilities.qmd
+        - 08_process-errors.qmd
     - summary.qmd
     - references.qmd
   appendices:

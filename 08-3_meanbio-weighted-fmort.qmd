@@ -1,0 +1,14 @@
+## Fishing Mortality Weighted by Mean Biomass {.unnumbered}
+
+Fishing mortality weighted by mean biomass $F_{\overline{B}}(t)$ in year $t$ is the mean-biomass weighted sum of fishing mortality at age over the age range of $A_L$ to $A_U$ (see [Mean Biomass](#mean-biomass) above). This quantity may be useful for equilibrium comparisons with fishing mortality reference points developed from surplus production models. The computational formula for fishing mortality weighted by mean biomass is
+
+$$
+\begin{split}
+& F_{\overline{B}}(t) = \frac{\sum\limits_{a=A_L}^{A_u} \overline{B}_a(t) \cdot F_a(t) }{\overline{B}(t)}\\
+& \\
+& where\ \overline{B}_a(t) = W_{midyear,a}(t)\cdot N_a(t) \cdot  \frac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}\\
+\end{split}
+\tag{49}\label{eq:49}
+$$
+
+where $F_a(t)$ is the total fishing mortality on age-$a$ fish calculated across all fleets.
