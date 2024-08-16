@@ -1,4 +1,3 @@
-
-# Feasible Simulations {.unnumbered}
+## Feasible Simulations {.unnumbered}
 
 A feasible simulation is defined as one where the all landings quotas by fleet can be harvested in each year of the projection time horizon. An infeasible simulation is one where the exploitable biomass is insufficient to harvest at least one landings quota in one or more years of the time horizon. All simulations are feasible for projections where population harvest is based solely on fishing mortality values. For projections that specify landings quotas by fleet in one or more years, the feasibility of harvesting the landings quota is evaluated using an upper bound on $F$ that defines infeasible quotas relative to the exploitable biomass (Appendix). For purposes of summarizing projection results, the total number of simulations is denoted as $K_{TOTAL}$ and the total number of feasible simulations is denoted as $K_{FEASIBLE}$.
