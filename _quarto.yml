@@ -17,6 +17,7 @@ book:
         - 06_stock-recruit-relationship.qmd
         - 07_recruit-probabilities.qmd
         - 08_process-errors.qmd
+        - 09_feasible-simulations.qmd
     - summary.qmd
     - references.qmd
   appendices:
