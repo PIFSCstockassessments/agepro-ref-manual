@@ -3,3 +3,5 @@
 {{< include 09-1_feasible-simulations.qmd >}}
 
 {{< include 09-2_biomass-thresholds.qmd >}}
+
+{{< include 09-3_fmort-thresholds.qmd >}}

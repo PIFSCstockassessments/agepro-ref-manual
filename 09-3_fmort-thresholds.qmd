@@ -1,0 +1,13 @@
+
+## Fishing Mortality Thresholds {.unnumbered}
+
+The user can specify the fishing mortality rate threshold for annual total fishing mortality $(F_{THRESHOLD})$ calculated across all fleets using the keyword REFPOINT. In this case, projected total $F$ values are compared to the $F_{THRESHOLD}$ through time. Probabilities that fishing mortalities exceed threshold values are computed for each year in the same manner as for biomass thresholds (see [Biomass Thresholds](#biomass-thresholds)). In particular, if $K_F(t)$ is the number of times that fishing mortality $F(t)$ exceeds the threshold fishing mortality $F_{THRESHOLD}$ in year $t$, then the annual probability that the fishing mortality threshold is exceeded is
+
+$$
+\Pr(F(t) > F_{THRESHOLD}) = \frac{K_F(t)}{K_{TOTAL}} \tag{54}\label{eq:54}
+$$
+and the complementary probability that the fishing mortality threshold is not exceeded is
+
+$$
+\Pr(F(t) \le F_{THRESHOLD}) = 1 - \frac{K_F(t)}{K_{TOTAL}} \tag{55}\label{eq:55}  
+$$
