@@ -1,0 +1,16 @@
+
+# Types of Projection Analyses {.unnumbered}
+
+The AGEPRO module can perform three types of projection analyses. These are: standard, rebuilding and PStar projection analyses.
+
+## Standard Projection
+
+The standard projection analysis is the most flexible and can be used to apply mixtures of quota and fishing mortality based harvest by multiple fleets to the age-structured population. For a standard projection, alternative models can be setup and evaluated using any of the keyword options (Tables 2 and 3) except the REBUILD keyword.
+
+## Rebuilding Projection
+
+The rebuilding type of projection analysis is focused on the calculation of the constant total fishing mortality calculated across all fleets that will rebuild the population, denoted as $F_{REBUILD}$. In this case, the user needs to specify the target year (TargetYear, see keyword REBUILD in Table 3) in which the population is to be rebuilt, the target biomass value (TargetType), the type of biomass being rebuilt (TargetType, e.g., spawning stock biomass), and the target percentage for achieving the rebuilding target expressed in terms of the fraction of simulations that achieve the rebuilding target (TargetPercent). Note that in cases where the rebuilding target is not achievable, the summary output of the rebuilding analysis will report that the combined catch, total fishing mortality and landings distributions are zero throughout the projection time horizon. For a rebuilding projection, the user needs to specify an initial harvest scenario of total fishing mortality values by year using the keyword HARVEST. The value of $F_{REBUILD}$ will then be iteratively calculated and the model results will be reported for the projection using the calculated value of $F_{REBUILD}$. For a rebuilding projection, the model can be setup and evaluated using any of the keyword options (Tables 2 and 3) except the PSTAR keyword.
+
+## PStar Projection
+
+The acronym PStar stands for the probability of exceeding the overfishing threshold in a target year. The PStar type of projection analysis is focused on the calculation of the total allowable catch $TAC_{PStar}$ that will achieve the specified probability of overfishing in the target year. In this case, the user needs to specify the target year (**TargetYear**, see keyword PSTAR in Table 3) in which the total annual catch to achieve PStar is calculated, the number of PStar values to be evaluated (**KPStar**), the vector of probabilities of overfishing or PStar values to be used (**PStar**), and the fishing mortality rate that defines the overfishing level (**PStarF**. For a PSTAR projection, the model can be setup and evaluated using any of the keyword options (Tables 2 and 3) except the REBUILD keyword.

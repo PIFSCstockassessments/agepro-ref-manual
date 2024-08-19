@@ -18,6 +18,7 @@ book:
         - 07_recruit-probabilities.qmd
         - 08_process-errors.qmd
         - 09_thresholds.qmd
+        - 10_harvest-projections.qmd
     - summary.qmd
     - references.qmd
   appendices:
