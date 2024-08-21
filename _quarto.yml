@@ -24,6 +24,7 @@ book:
       chapters:
         - 11-1_input-data.qmd
         - table2_AGEPRO-keywords.qmd
+        - table3_keyword-struct.qmd
     - summary.qmd
     - references.qmd
   appendices:
