@@ -19,6 +19,10 @@ book:
         - 08_process-errors.qmd
         - 09_thresholds.qmd
         - 10_harvest-projections.qmd
+    - part: 11_AGEPRO-software.qmd
+      chapters:
+        - 11-1_input-data.qmd
+        - table2_AGEPRO-keywords.qmd
     - summary.qmd
     - references.qmd
   appendices:

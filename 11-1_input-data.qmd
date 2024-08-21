@@ -1,0 +1,33 @@
+
+### Input Data {.unnumbered}
+
+There are four categories of input data for an AGEPRO projection run: system, simulation, biological, and fishery (Figure 2). The system data consists of the input filename and this information is read from standard input (e.g., from the command line or via the AGEPRO GUI). The simulation, biological and fishery data are read from the text input file and the associated text bootstrap file containing the initial population numbers at age data.
+
+The AGEPRO input file is structured by keywords. Each keyword identifies a set of related inputs for the projection run in a single section of the input file (@tbl-2). The table of AGEPRO input keywords below lists the 23 possible keywords in the sequential order that the information is read into the program.
+
+Each keyword specifies a projection model attribute and the associated set of inputs that are required to implement it (Table 3). This includes a detailed listing of the AGEPRO input file structure showing the sequence of inputs by keyword. Here the input data type is shown in parentheses, where the types are: **I=integer**, **S=string**, **F=floating point** (Table 3). For data that are input as an array, the array dimensions are listed in order as [0: Dimension1] [0: Dimension2] and so on (Table 3).
+
+The system data consists of the input file name for the projection run (Figure 2). The input file name can be any text string with the file extension `inp`. For example, a valid input file name is `GB cod 2017 FMSY projection.inp`.
+
+Within the input file, the simulation data are specified (Tables 2 and 3) within the keyword sections named: GENERAL, CASEID, BOOTSTRAP, RETROADJUST, BOUNDS, OPTIONS, SCALE, PERC, REFPOINT, REBUILD, and PSTAR.
+
+The biological data are specified (Tables 2 and 3) within the keyword sections of the input file named: NATMORT, BIOLOGICAL, MATURITY, STOCK_WEIGHT, SSB_WEIGHT, MEAN_WEIGHT, and RECRUIT. The recruitment models are specified in the RECRUIT keyword section and the specific inputs needed for each recruitment model are listed in Table 4.
+
+The fishery data are specified (Tables 2 and 3) within the keyword sections of the input file named: HARVEST, FISHERY, DISCARD, CATCH_WEIGHT, and DISC_WEIGHT.
+
+To run the AGEPRO program using the AGEPRO GUI, do the following:
+
+- Start the AGEPRO program (double left click on the program icon)
+- Under the File menu tab, select either “Create a New Case” or “Select Existing AGEPRO Input Data File” to set the input data file For the selected input file, click on the Run menu tab and select “Launch AGEPRO model …”.
+- When the projection run is completed, the AGEPRO output files are written to a new folder. The new folder is created in the folder `~/Username/Documents/AGEPRO/New_Folder_Name` where the New_Folder_Name is the input data file name with the time stamp of the run appended to it.
+
+To run the AGEPRO program from the command line, enter `agepro.exe inputfilename`. The software first checks whether the input file exists and will stop if the input file does not exist. If the input file exists and is successfully read, you will see the following output in the command line screen:
+
+```
+>agepro.exe inputfilename
+> Bootstrap Iteration: 1
+> Bootstrap Iteration: 2
+...
+> Bootstrap Iteration: NBootstrap
+> Summary Reports …
+```
