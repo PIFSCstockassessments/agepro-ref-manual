@@ -10,6 +10,7 @@ book:
     - intro.qmd
     - part: 01_age-struct-pop-model.qmd
       chapters:
+        - table1_AGEPRO-variables.qmd
         - 02_catch-landings-discards.qmd
         - 03_pop-harvest.qmd
         - 04_initial-pop-abundance.qmd

@@ -1,8 +1,11 @@
 ---
 editor: 
   mode: source
+crossref: 
+  tbl-labels: alpha 1
 ---
 
+## Table 1: Glossary of AGEPRO variables {.unnumbered}
 
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Variable            | Description                                                                                     |

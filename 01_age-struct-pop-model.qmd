@@ -1,6 +1,6 @@
 # Age Structured Population Model {.unnumbered}
 
-A pooled-sex, age-structured population model is the basis for the AGEPRO model and software. This model represents an iteroparous fish population whose abundance changes due to fluctuations in recruitment and natural mortality as well as fishing mortality from one or more fishing fleets. Population size at age changes continuously throughout the year due to the concurrent forces of natural and fishing mortality. Recruitment ($R$, number of age-$r$ fish) to the population occurs at the beginning of each year (January 1^st^) and is the first element in the population size at age vector ([Table 1](#tbl-1)).
+A pooled-sex, age-structured population model is the basis for the AGEPRO model and software. This model represents an iteroparous fish population whose abundance changes due to fluctuations in recruitment and natural mortality as well as fishing mortality from one or more fishing fleets. Population size at age changes continuously throughout the year due to the concurrent forces of natural and fishing mortality. Recruitment ($R$, number of age-$r$ fish) to the population occurs at the beginning of each year (January 1^st^) and is the first element in the population size at age vector (@tbl-1).
 
 ## Population Abundance, Survival, and Spawning Biomass
 
@@ -48,8 +48,3 @@ $$
 B_S(t) = \sum_{a=1}^{A}W_{S,a}(t) \cdot P_{mature,a}(t) \cdot N_a(t) \cdot e^{-Z_{Frac}(t)[M_a(t) + F_a(t)]}
 $$ {#eq-5}
 
-
-
-
-
-{{< include table1_AGEPRO-variables.qmd >}}
