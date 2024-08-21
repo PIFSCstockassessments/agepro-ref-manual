@@ -52,10 +52,11 @@ inpfile_version <- "AGEPRO VERSION 4.25"
 |                   | 2. **NatMortTimeFlag** (I) – this is the logical flag that indicates if the average natural       |
 |                   |    mortality rate at age vector is a time-varying array (input =1) ordered by year (row) and age  |
 |                   |    (column); otherwise the average natural mortality rate at age vector does not vary by year     |
-|                   | 3. If (**NatMortFlag** = 1) then read **DataFiles**\[*\] (S)                                      |
-|                   |      Else if (**NatMortTimeFlag** = 1) then Read **AvgNatMort**\[0:NAges-1\]\[0:NYears-1\] (F)    |
-|                   |      Else Read **AvgNatMort**\[0:NAges-1\]\[0\] (F)                                               |
-|                   |    This is the logic for the average natural mortality rate at age vector inputs                  |
+|                   | 3. - If (**NatMortFlag** = 1) then read **DataFiles**\[*\] (S)                                    |
+|                   |    - Else if (**NatMortTimeFlag** = 1) then Read **AvgNatMort**\[0:NAges-1\]\[0:NYears-1\] (F)    |
+|                   |    - Else Read **AvgNatMort**\[0:NAges-1\]\[0\] (F)                                               |
+|                   |                                                                                                   |
+|                   |    \- This is the logic for the average natural mortality rate at age vector inputs               |
 |                   | 4. **NatMortErr**\[0:NAges-1\] (F) This is the vector of age-specific CVs for sampling the natural|
 |                   |    mortality rate at age vector with lognormal process error                                      |
 +-------------------+---------------------------------------------------------------------------------------------------+
@@ -64,18 +65,20 @@ inpfile_version <- "AGEPRO VERSION 4.25"
 |                   |    spawning season are a time-varying array (input =1) or constant values (input≠1) where         |
 |                   |    0≤**TF**≤1 and 0≤**TM**≤1. For example, if the spawning season begins in July and input=0 then |
 |                   |    **TF**=**TM**=½                                                                                |
-|                   | 2. If (**ZFracTimeFlag** = 1) then read **TF**\[0:NYears-1\] (F) and read **TM**\[0:NYears-1\] (F)|
-|                   |      Else read **TF** (F) and read **TM** (F)                                                     |
+|                   | 2. - If (**ZFracTimeFlag** = 1) then read **TF**\[0:NYears-1\] (F) and read                       |
+|                   |      **TM**\[0:NYears-1\] (F)                                                                     |
+|                   |    - Else read **TF** (F) and read **TM** (F)                                                     |
 +-------------------+---------------------------------------------------------------------------------------------------+
 | `MATURITY`        | 1. **MaturityFlag** (I) – this is the logical flag that indicates if the average fraction mature  |
 |                   |    at age vector is to be read from an existing data file (input =1) or not (input≠1)             |
 |                   | 2. **MaturityTimeFlag** (I) – this is the logical flag that indicates if the average fraction     |
 |                   |    mature at age vector is a time-varying array (input =1) ordered by year (row) and age (column);|
 |                   |    otherwise the average fraction mature at age vector does not vary by year.                     |
-|                   | 3. If (**MaturityFlag** = 1) then read **DataFiles**\[*\] (S)                                     |
-|                   |      Else if (**MaturityTimeFlag** = 1) then read **AvgMaturity** \[0:NAges-1\]\[0:NYears-1\] (F) |
-|                   |      Else read **AvgMaturity**\[0:NAges-1\]\[0\] (F) )                                            |
-|                   |    - this is the logic for the average fraction mature at age vector inputs                       |
+|                   | 3. - If (**MaturityFlag** = 1) then read **DataFiles**\[*\] (S)                                   |
+|                   |    - Else if (**MaturityTimeFlag** = 1) then read **AvgMaturity** \[0:NAges-1\]\[0:NYears-1\] (F) |
+|                   |    - Else read **AvgMaturity**\[0:NAges-1\]\[0\] (F) )                                            |
+|                   |                                                                                                   |
+|                   |    \- this is the logic for the average fraction mature at age vector inputs                      |
 |                   | 4. **MaturityErr**\[0:NAges-1\] (F) – this is the vector of age-specific CVs for sampling the     |
 |                   |    fraction mature at age vector with lognormal process error                                     |
 +-------------------+---------------------------------------------------------------------------------------------------+
@@ -84,11 +87,60 @@ inpfile_version <- "AGEPRO VERSION 4.25"
 |                   | 2. **StockWtTimeFlag** (I) – this is the logical flag that indicates if the average stock weight  |
 |                   |    at age vector is a time-varying array (input =1) ordered by year (row) and age (column);       |
 |                   |    otherwise the average stock weight at age vector does not vary by year                         |
-|                   | 3. If (**StockWtFlag** = 1) then read **DataFiles**\[\*\] (S) Else if (**StockWtTimeFlag** = 1)   |
-|                   |     then read **AvgStockWeight** \[0:NAges-1\]\[0:NYears-1\] (F) Else read **AvgStockWeight**     |
-|                   |     \[0:NAges-1\]\[0\] (F) ) - this is the logic for the average stock weight at age vector inputs|        
+|                   | 3. - If (**StockWtFlag** = 1) then read **DataFiles**\[\*\] (S)                                   |
+|                   |    - Else if (**StockWtTimeFlag** = 1) then read **AvgStockWeight**                               |
+|                   |      \[0:NAges-1\]\[0:NYears-1\] (F)                                                              |
+|                   |    - Else read **AvgStockWeight** \[0:NAges-1\]\[0\] (F) )                                        |
+|                   |                                                                                                   |       |                   |    \- this is the logic for the average stock weight at age vector inputs|                        |
 |                   | 4. **StockWtErr**\[0:NAges-1\] (F) – this is the vector of age-specific CVs for sampling the      |
 |                   |    stock weight at age vector with lognormal process error                                        |
++-------------------+---------------------------------------------------------------------------------------------------+
+| `SSB_WEIGHT`      | 1. **SpawnWtFlag** (I) – this is the logical flag that indicates if the average spawning weight at|
+|                   |    age vector is to be read from an existing data file (input>0) or to be read from the input file|
+|                   |    (input=0) or to be set equal to the average stock weight at age vector (input=-1)              |
+|                   | 2. **SpawnWtTimeFlag** (I) – this is the logical flag that indicates if the average spawning      |
+|                   |    weight at age vector is a time-varying array (input =1) ordered by year (row) and age (column);|
+|                   |    otherwise the average spawning weight at age vector does not vary by year                      |
+|                   | 3. - If (**SpawnWtFlag** >0) then read **DataFiles**\[\*\] (S)                                    |
+|                   |    - Else if (**SpawnWtFlag** = -1) then set average spawning weight at age vector to equal the   |
+|                   |      average stock weight at age vector                                                           |
+|                   |    - Else if (**SpawnWtTimeFlag** = 1) then read **AvgSpawnWeight**                               |
+|                   |      \[0:NAges-1\]\[0:NYears-1\] (F)                                                              |
+|                   |    - Else read **AvgSpawnWeight** \[0:NAges-1\]\[0\] (F)                                          |
+|                   |                                                                                                   |
+|                   |    \– this is the logic for the average spawning weight at age vector inputs                      |
+|                   | 4. **SpawnWtErr**\[0:NAges-1\] (F) – this is the vector of age-specific CVs for sampling the      |
+|                   |    spawning weight at age vector with lognormal process error                                     |
++-------------------+---------------------------------------------------------------------------------------------------+
+| `MEAN_WEIGHT`     | 1. **MeanStockWtFlag** (I) – this is the logical flag that indicates if the average mean weight at|
+|                   |    age vector is to be read from an existing data file (input>0) or not (input=0)                 |
+|                   | 2. **MeanStockWtTimeFlag** (I) – this is the logical flag that indicates if the average mean      |
+|                   |    weight at age vector is a time-varying array (input=1) ordered by year (row) and age (column); |
+|                   |    otherwise the average mean weight at age vector does not vary by year                          |
+|                   | 3. - If (**MeanStockWtFlag** >0) then read **DataFiles**\[\*\] (S)                                |
+|                   |    - Else if (**MeanStockWtTimeFlag** = 0) then read **AvgMeanStockWeight**                       |
+|                   |      \[0:NAges-1\]\[0:NYears-1\] (F)                                                              |
+|                   |    - Else read **AvgMeanStockWeight** \[0:NAges-1\]\[0\] (F)                                      |
+|                   |                                                                                                   |
+|                   |    \– this is the logic for the average mean weight at age vector inputs                          |
+|                   | 4. **MeanStockWtErr**\[0:NAges-1\] (F) – this is the vector of age-specific CVs for sampling the  |
+|                   |    mean weight at age vector with lognormal process error                                         |
++-------------------+---------------------------------------------------------------------------------------------------+
+| `FISHERY`         | 1. **FSelecFlag** (I) – this is the logical flag that indicates if the average fishery selectivity|
+|                   |    at age vectors by fleet are to be read from an existing data file (input=1) or not (input≠1)   |
+|                   | 2. **FSelecTimeFlag** (I) – this is the logical flag that indicates if the average fishery        |
+|                   |    selectivity at age vectors by fleet are a time-varying array (input=1) ordered by fleet        |
+|                   |    (index 1), year (index 2), and age (index 3); otherwise the average fishery selectivity at     |
+|                   |    age vectors by fleet do not vary by year                                                       |
+|                   | 3. - If (**FSelecFlag** = 1) then read **DataFiles**\[\*\] (S)                                    |
+|                   |    - Else if (**FSelecTimeFlag** = 1) then read **AvgFSelec**                                     |
+|                   |      \[0:NAges-1\]\[0:NYears-1\]\[0:NFleets-1\] (F)                                               |
+|                   |    - Else read **AvgFSelec**\[0:NAges-1\]\[0\]\[0:NFleets-1\] (F)                                 |
+|                   |                                                                                                   |
+|                   |    \– this is the logic for the average fishery selectivity at age vectors by fleet inputs        |
+|                   | 4. **FSelecErr**\[0:NAges-1\]\[0:NFleets-1\] (F) – this is the array of age-specific and          |
+|                   |    fleet-specific CVs for sampling the fishery selectivity at age vectors by fleet with lognormal |
+|                   |    process error                                                                                  |
 +-------------------+---------------------------------------------------------------------------------------------------+
 
 
