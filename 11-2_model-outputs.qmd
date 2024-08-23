@@ -1,0 +1,53 @@
+---
+editor: 
+  mode: source
+---
+
+### Model Outputs {.unnumbered}
+
+An AGEPRO model run creates a standard output file that summarizes the projection analysis results (Figure 2). The model will also create a set of files containing the raw output results for key quantities of interest. The user also has the option of creating output files for the simulated process error data for documentation and the option of creating an R export file that stores the projections results in an R language dataframe.
+
+There are nine categories of output in the standard output file. The first output describes the setup of the AGEPRO model and lists the input and bootstrap file names and the recruitment models and associated model probabilities. The second output shows the input harvest scenario in terms of quotas or fishing mortality rates by year and fleet. The third output shows the realized distribution of recruitment through time. The fourth output shows the realized distribution of spawning stock biomass through time. The fifth output shows the realized distribution of total stock biomass on January 1^st^ through time. The sixth output shows the realized distribution of mean biomass through time. The seventh output shows the realized distribution of combined catch biomass across fleets through time. The eighth output shows the realized distribution of landings through time. The ninth output shows the realized distribution of total fishing mortality through time. In addition, if the user has setup REBUILD or PSTAR projection analyses, then the results of those analyses will also be listed in the standard output file.
+
+The user may also select to produce output file summaries of auxiliary projection results and of the distribution of population size at age by year. This is done by setting the value of the StockSummaryFlag under the keyword OPTIONS in the input file (Table 3). There are four output options for StockSummaryFlag:
+
+- StockSummaryFlag = 0. This is the terse output option which removes the auxiliary files and does not produce a population size at age file summary.
+- StockSummaryFlag = 1. This option removes the auxiliary files, produces a population size at age summary in the output file, but does produce a    population size at age file summary.
+- StockSummaryFlag = 2. This option retains the auxiliary files, produces a population size at age summary in the output file, but does not produce a population size at age file summary.
+- StockSummaryFlag = 0. This is the verbose output option which retains the auxiliary files and produces a population size at age file summary.
+
+The population size at age summary is output to a new file with the name inputfilename.xx1, where inputfilename is the name of the AGEPRO input file for the model. Note choosing to output the population size at age summary will typically produce a large file inputfilename.xx1 requiring on the order of 100Mb of storage. The auxiliary output files are needed for producing the summary of projection results in the projection output file. These files were automatically output in previous versions of AGEPRO but the user can now remove these files using the StockFlagSummary setting of “0” or “1” above.
+
+The user may also select to produce a percentile summary of the key results in the outputfile. This is done by using the keyword PERC in the input file (Tables 2 and 3). The user may also select to store age-specific population and fisheries process error simulation results in auxiliary output files. This is done by setting the DataFlag=1 under the keyword OPTIONS in the input file (Table 3). Setting the DataFlag makes it possible to replicate a a projection run with the same random draws for setting population and fishery processes. The simulated process error data can include the following age-specific information, depending on the projection model setup: natural mortality at age, maturity fraction at age, stock weight on January 1^st^ at age, spawning stock weight at age, mean population weight at age, fishery selectivity at age, discard fraction at age, catch weight at age and discard weight at age
+
+The AGEPRO model will create auxiliary output data files to store simulated trajectories of recruitment, spawning biomass, total stock biomass on January 1^st^, mean biomass, combined catch biomass, landings, discards, and fishing mortality as well as catch by fleet if there is more than one fleet in the projection. This auxiliary output data can be used to characterize the distribution of these key outputs through time. One auxiliary file is created for each the outputs used in the projection model. The auxiliary output data files with names set to the projection inputfilename with an extension “xx#” are:
+
+1. Stock numbers at age summary on January 1^st^: `inputfilename.xx1`[^1]
+2. Recruitment: `inputfilename.xx2`
+3. Spawning Stock Biomass: `inputfilename.xx3`
+4. Total Stock Biomass on January 1^st^: `inputfilename.xx4`
+5. Mean Biomass: `inputfilename.xx5`
+6. Combined Catch Biomass: `inputfilename.xx6`
+7. Landings: `inputfilename.xx7`
+8. Discards: `inputfilename.xx8`
+9. Fishing Mortality: `inputfilename.xx9`
+10. Catch by Fleet: `inputfilename.xx10`
+
+The auxiliary output data files have similar file structures. In the stock numbers at age summary file each row represent the numbers at age (from age-1 to age-$A$) by year for each bootstrap-simulation block of $Y$ rows. The auxiliary stock numbers at age output file will have a total number of rows equal to the number of bootstraps times the number of simulations per bootstrap.
+
+For auxiliary output files 2 through 9, each row represents a single bootstrap-simulation combination and stores the simulated time trajectory of the output quantity with $Y$ entries ordered from time $t=1$ to time $t=Y$. Within each file, the projection trajectories are blocked by the bootstrap population vector and then the set of simulations for that bootstrap vector. For example, if $B_S^{[b,k]}(t)$ denotes the spawning biomass in year $t$ simulated from the $b^{th}$ initial population vector and the $k^{th}$ simulation for that vector, then the output file for spawning biomass with $B$ initial bootstrap vectors and $K$ simulations would have $B \cdot K$ rows that were ordered as
+
+$$
+\begin{bmatrix}
+B_S^{[1,1]}(1) & B_S^{[1,1]}(2) & \dots & B_S^{[1,1]}(Y) \\
+B_S^{[1,2]}(1) & B_S^{[1,2]}(2) & \dots & B_S^{[1,2]}(Y) \\
+\vdots & \vdots & \vdots & \vdots \\
+B_S^{[B,K]}(1) & B_S^{[B,K]}(2) & \dots & B_s^{[B,K]}(Y)
+\end{bmatrix}
+\tag{56}\label{eq:56}
+$$
+For the catch by fleet summary file, each block of four consecutive tows represents the time series of fishing mortality, catch biomass, landed biomass and discard biomass by fleet. If there are $N$ fleets, then there are $4N$ rows per bootstrap-simulation combination. These $N$ blocks of four rows have the same ordering as the input fleet data, fleet 1, followed by fleet 2 and so on. Overall, the catch by fleet summary fleet has $4N \cdot B \cdot K$ rows.
+
+The units of the entries of the auxiliary output files are similar. The output units of the stock numbers at age and the recruitment files are numbers of fish. The output units of the spawning biomass, total stock biomass, mean biomass, combined catch biomass, landings, and discards files are metric tons. The units of the $F$ summary file are the total annual instantaneous fishing mortality rate calculated across all fleets. The output units of the catch by fleet file are the annual instantaneous fishing mortality rates by fleet, and the catch, landings and discard biomasses by fleet in metric tons.
+
+[^1]: Note that the stock numbers at age auxiliary file is created only if StockSummaryFlag=3.

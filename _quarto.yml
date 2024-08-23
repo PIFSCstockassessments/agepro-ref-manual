@@ -25,6 +25,7 @@ book:
         - 11-1_input-data.qmd
         - table2_AGEPRO-keywords.qmd
         - table3_keyword-struct.qmd
+        - 11-2_model-outputs.qmd
     - summary.qmd
     - references.qmd
   appendices:
