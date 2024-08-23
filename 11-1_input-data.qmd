@@ -3,7 +3,7 @@ editor:
   mode: source
 ---
 
-### Input Data {.unnumbered}
+## Input Data {.unnumbered}
 
 There are four categories of input data for an AGEPRO projection run: system, simulation, biological, and fishery (Figure 2). The system data consists of the input filename and this information is read from standard input (e.g., from the command line or via the AGEPRO GUI). The simulation, biological and fishery data are read from the text input file and the associated text bootstrap file containing the initial population numbers at age data.
 
