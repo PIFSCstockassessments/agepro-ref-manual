@@ -26,6 +26,7 @@ book:
         - table2_AGEPRO-keywords.qmd
         - table3_keyword-struct.qmd
         - 11-2_model-outputs.qmd
+        - 11-3_agepro-examples.qmd
     - summary.qmd
     - references.qmd
   appendices:

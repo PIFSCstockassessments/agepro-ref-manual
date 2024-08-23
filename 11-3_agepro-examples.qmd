@@ -1,0 +1,12 @@
+---
+editor: 
+  mode: source
+code-block-bg: true
+---
+
+## AGEPRO Projection Examples {.unnumbered}
+
+The following set of examples is provided to illustrate projection options and features of the software. These projections use actual fishery data but are for the purposes of illustration only.
+
+
+{{< include 11-3_example1.qmd >}}
