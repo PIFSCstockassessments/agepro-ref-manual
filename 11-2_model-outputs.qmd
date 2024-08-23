@@ -22,7 +22,7 @@ The user may also select to produce a percentile summary of the key results in t
 
 The AGEPRO model will create auxiliary output data files to store simulated trajectories of recruitment, spawning biomass, total stock biomass on January 1^st^, mean biomass, combined catch biomass, landings, discards, and fishing mortality as well as catch by fleet if there is more than one fleet in the projection. This auxiliary output data can be used to characterize the distribution of these key outputs through time. One auxiliary file is created for each the outputs used in the projection model. The auxiliary output data files with names set to the projection inputfilename with an extension “xx#” are:
 
-1. Stock numbers at age summary on January 1^st^: `inputfilename.xx1`[^1]
+1. Stock numbers at age summary on January 1^st^: `inputfilename.xx1` [see note 1](#note-1)
 2. Recruitment: `inputfilename.xx2`
 3. Spawning Stock Biomass: `inputfilename.xx3`
 4. Total Stock Biomass on January 1^st^: `inputfilename.xx4`
@@ -32,6 +32,11 @@ The AGEPRO model will create auxiliary output data files to store simulated traj
 8. Discards: `inputfilename.xx8`
 9. Fishing Mortality: `inputfilename.xx9`
 10. Catch by Fleet: `inputfilename.xx10`
+
+::: {#note-1 .callout-note }
+## Note 1{#note-1}
+Note that the stock numbers at age auxiliary file is created only if StockSummaryFlag=3.
+:::
 
 The auxiliary output data files have similar file structures. In the stock numbers at age summary file each row represent the numbers at age (from age-1 to age-$A$) by year for each bootstrap-simulation block of $Y$ rows. The auxiliary stock numbers at age output file will have a total number of rows equal to the number of bootstraps times the number of simulations per bootstrap.
 
@@ -50,4 +55,3 @@ For the catch by fleet summary file, each block of four consecutive tows represe
 
 The units of the entries of the auxiliary output files are similar. The output units of the stock numbers at age and the recruitment files are numbers of fish. The output units of the spawning biomass, total stock biomass, mean biomass, combined catch biomass, landings, and discards files are metric tons. The units of the $F$ summary file are the total annual instantaneous fishing mortality rate calculated across all fleets. The output units of the catch by fleet file are the annual instantaneous fishing mortality rates by fleet, and the catch, landings and discard biomasses by fleet in metric tons.
 
-[^1]: Note that the stock numbers at age auxiliary file is created only if StockSummaryFlag=3.
