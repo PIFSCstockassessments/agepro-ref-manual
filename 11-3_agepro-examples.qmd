@@ -10,3 +10,7 @@ The following set of examples is provided to illustrate projection options and f
 
 
 {{< include 11-3_example1.qmd >}}
+
+{{< include 11-3_example2.qmd >}}
+
+{{< include 11-3_example3.qmd >}}
