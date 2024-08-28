@@ -28,7 +28,7 @@ book:
         - table4_recruit-models.qmd
         - 11-2_model-outputs.qmd
         - 11-3_agepro-examples.qmd
-    - summary.qmd
+    - acknowledgments.qmd
     - references.qmd
   appendices:
     - example1-inpfile.qmd

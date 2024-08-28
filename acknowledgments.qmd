@@ -1,0 +1,4 @@
+
+# Acknowledgments {.unnumbered}
+
+Special thanks to Paul Rago and Chris Legault for their help in developing this modeling framework and software. Thanks also to Eric Fletcher for programming the graphical user interface, Alan Seaver for rewriting the AGEPRO module in the C language, and Laura Shulman for Fortran language support.
