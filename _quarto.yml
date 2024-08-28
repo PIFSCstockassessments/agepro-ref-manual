@@ -25,6 +25,7 @@ book:
         - 11-1_input-data.qmd
         - table2_AGEPRO-keywords.qmd
         - table3_keyword-struct.qmd
+        - table4_recruit-models.qmd
         - 11-2_model-outputs.qmd
         - 11-3_agepro-examples.qmd
     - summary.qmd

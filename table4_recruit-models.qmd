@@ -1,0 +1,128 @@
+---
+editor: 
+  mode: source
+crossref: 
+  tbl-labels: alpha 4
+---
+
+
+## Table 4: Input data structure for AGEPRO Recruitment Models {.unnumbered}
+ 
+ 
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| Model  | Recruitment                  | Recruitment Model                                                                                         |
+| Number | Model                        | Input Description                                                                                         |
++========+==============================+===========================================================================================================+
+| 1      | Markov Matrix                | - Input the number of Recruitment States: $K$                                                             |
+|        |                              | - On the next line, input the recruitment values: $R_1,R_2,...,R_K$                                       |
+|        |                              | - On the next line, input number of spawning biomass states: $J$                                          |
+|        |                              | - On the next line, input $J-1$ cut points : $B_{S,1},B_{S,2},...,B_{S,J-1}$                              |
+|        |                              | - On the next $J$ lines, input the conditional recruitment probabilities for the spawning biomass states: |  
+|        |                              |   - $P_{1,1}, P_{1,2}, \dots, P_{1,K}$  <br />                                                            |
+|        |                              |     $P_{2,1}, P_{2,2}, \dots, P_{2,k}$  <br />                                                            |
+|        |                              |     $\vdots$                            <br />                                                            |
+|        |                              |     $P_{J,1}, P_{J,2}, \dots, P_{J,K}$                                                                    | 
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 2      | Empirical Recruits Per       | - Input the number of stock recruitment data points: $T$                                                  |
+|        | Spawning Biomass             | - On the next line, input the recruitments: $R_1,R_2,...,R_T$                                             |
+|        | Distribution                 | - On the next line, input the spawning biomasses: $B_{S,1}, B_{S,2}, ..., B_{S,T}$                        |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 3      | Empirical Recruitment        | - Input the number of recruitment data points: $T$                                                        |
+|        | Distribution                 | - On the next line, input the recruitments: $R_1,R_2,...,R_T$                                             |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 4      | Two-Stage Empirical          | - Input the number of low and high recruits per spawning biomass data points: $T_{Low} \cdot T_{High}$    |
+|        | Recruits Per Spawning        | - On the next line, input the cutoff level of spawning biomass: $B^*_S$                                   |
+|        | Biomass Distribution         | - On the next line, input the low state recruitments: $R_1,R_2,...,R_{T_{Low}}$                           |
+|        |                              | - On the next line, input the low state spawning biomasses: $B_{S,1}, B_{S,2}, ..., B_{S,T_{Low}}$        |
+|        |                              | - On the next line, input the high state recruitments: $R_1,R_2,...,R_{T_{High}}$                         |
+|        |                              | - On the next line, input the high state spawning biomasses: $B_{S,1}, B_{S,2}, ..., B_{S,T_{High}}$      |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 5      | Beverton-Holt Curve with     | - Input the stock-recruitment parameters: $\alpha, \beta, \sigma^2_w$                                     |
+|        | Lognormal Error              |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 6      | Ricker Curve with            | - Input the stock-recruitment parameters: $\alpha, \beta, \sigma^2_w$                                     |
+|        | Lognormal Error              |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 7      | Shepherd Curve with          | - Input the stock-recruitment parameters: $\alpha, \beta, k, \sigma^2_w$                                  |
+|        | Lognormal Error              |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 8      | Lognormal Distribution       | - Input the log-scale mean and standard deviation: $\mu_{\log(r)},\sigma_{\log(r)}$                       |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 10     | Beverton-Holt Curve with     | - Input the stock-recruitment parameters: $\alpha, \beta, \sigma^2_w$                                     |
+|        | Autocorrected Lognornal      | - On the next line, input the autoregressive parameters: $\phi, \varepsilon_{0}$                          |
+|        | Error                        |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 11     | Ricker Curve with            | - Input the stock-recruitment parameters: $\alpha, \beta, \sigma^2_w$                                     |
+|        | Autocorrected Lognormal      | - On the next line, input the autoregressive parameters: $\phi, \varepsilon_{0}$                          |
+|        | Error                        |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 12     | Shepherd Curve with          | - Input the stock-recruitment parameters: $\alpha, \beta, k, \sigma^2_w$                                  |
+|        | Autocorrected Lognormal      | - On the next line, input the autoregressive parameters: $\phi, \varepsilon_{0}$                          |
+|        | Error                        |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 13     | Autocorrected Lognormal      | - Input the log-scale mean and standard deviation: $\mu_{\log(r)},\sigma_{\log(r)}$                       |
+|        | Distribution                 | - On the next line, input the autoregressive parameters: $\phi, \varepsilon_{0}$                          |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 14     | Empirical Cumulative         | - Input the number of recruitment data points: $T$                                                        |
+|        | Distribution Function of     | - On the next line, input the recruitments $R_1,R_2,...,R_T$                                              |
+|        | Recruitment                  |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 15     | Two-Stage Empirical          | - Input the number of low and high recruits per spawning biomass data points: $T_{Low} \cdot T_{High}$    |
+|        | Cumulative Distribution      | - On the next line, input cutoff level of spawning biomass: $B^*_S$                                       |
+|        | Function of Recruitment      | - On the next line, input the low state recruitments: $R_1,R_2,...,R_{T_{Low}}$                           |
+|        |                              | - On the next line, input the high state recruitments: $R_1,R_2,...,R_{T_{High}}$                         |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 16     | Linear Recruits Per          | - Input the predictors: $N_P$                                                                             |
+|        | Spawning Biomass Predictor   | - On the next line, input the intercept coefficient: $\beta_0$                                            |
+|        | with Normal Error            | - On the next line, input the slope coefficient for each predictor: $\beta_1, \beta_2, ..., \beta_{N_p}$  |
+|        |                              | - On the next line, input the error variance: $\sigma^2$                                                  |
+|        |                              | - On the next $N_P$ lines, input the expected value of the predictor through projection time horizon:     |
+|        |                              |   - $X_1(1), \dots, X_1(Y)$  <br />                                                                       |
+|        |                              |     $X_2(1), \dots, X_2(Y)$  <br />                                                                       |
+|        |                              |     $\vdots$                 <br />                                                                       |
+|        |                              |     $X_P(1), \dots, X_P(Y)$                                                                               |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 17     | Linear Recruits Per          | - Input the number of predictors: $N_P$                                                                   |
+|        | Spawning Biomass Predictor   | - On the next line, input the intercept: $\beta_0$                                                        |
+|        | with Lognormal Error         | - On the next line, input the linear coefficient for each predictor: $\beta_1, \beta_2, ..., \beta_{N_P}$ |
+|        |                              | - On the next line, input the log-scale error variance: $\sigma^2$                                        |
+|        |                              | - And on the next $N_P$ lines, input the expected predictor values over the forecast time horizon         |
+|        |                              |   $1, ..., Y$                                                                                             |
+|        |                              |   - $X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y)$  <br />                                                |
+|        |                              |     $X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y)$  <br />                                                |
+|        |                              |     $\quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots$  <br />                      |
+|        |                              |     $X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y)$                                                        |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 18     | Linear Recruitment           | - Input the number of predictors: $N_P$                                                                   |
+|        | Predictor with Normal Error  | - On the next line, input the intercept: $\beta_0$                                                        | 
+|        |                              | - On the next line, input the linear coefficient for each predictor: $\beta_1, \beta_2, ..., \beta_{N_P}$ |
+|        |                              | - On the next line, input the error variance: $\sigma^2$                                                  |
+|        |                              | - And on the next $N_P$ lines, input the expected predictor values over the forecast time horizon         |
+|        |                              |   $1, ..., Y$                                                                                             |
+|        |                              |   - $X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y)$  <br />                                                |
+|        |                              |     $X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y)$  <br />                                                |
+|        |                              |     $\quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots$  <br />                      |
+|        |                              |     $X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y)$                                                        |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 19     | Loglinear Recruitment        | - Input the number of predictors: $N_P$                                                                   |
+|        | Predictor with Lognormal     | - On the next line, input the intercept: $\beta_0$                                                        |
+|        | Error                        | - On the next line, input the linear coefficient for each predictor: $\beta_1, \beta_2, ..., \beta_{N_P}$ |
+|        |                              | - On the next line, input the log-scale error variance: $\sigma^2$                                        |
+|        |                              | - And on the next $N_P$ lines, input the expected predictor values over the forecast time horizon         |
+|        |                              |   $1, ..., Y$                                                                                             |
+|        |                              |   - $X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y)$  <br />                                                |
+|        |                              |     $X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y)$  <br />                                                |
+|        |                              |     $\quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots$  <br />                      |
+|        |                              |     $X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y)$                                                        |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 20     | Fixed Recruitment            | - Input the number of recruitment data points: $T$                                                        |
+|        |                              | - On the next line, input the Recruitments: $R_1,R_2,...,R_T$                                             |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+| 21     | Empirical Cumulative         | - Input the number of number of observed recruitment values: $T$                                          |
+|        | Distribution Function of     | - On the next line, input the recruitment values: $R_1, R_2, ..., R_T$                                    |
+|        | Recruitment with Linear      | - And on the next line, input spawning biomass threshold: $B^*_S$                                         |
+|        | Decline to Zero              |                                                                                                           |
++--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+: Required input data for AGEPRO recruitment models, where spawning biomass and recruitment inputs are measured in units of `RECRUIT` the
+conversion factors **SSBFac** and **RecFac** respectively, which typically have units of **SSBFac**=**RecFac**=1000. {#tbl-4} 
