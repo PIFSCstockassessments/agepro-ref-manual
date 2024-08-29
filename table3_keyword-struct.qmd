@@ -91,7 +91,8 @@ inpfile_version <- "AGEPRO VERSION 4.25"
 |                   |    - Else if (**StockWtTimeFlag** = 1) then read **AvgStockWeight**                               |
 |                   |      \[0:NAges-1\]\[0:NYears-1\] (F)                                                              |
 |                   |    - Else read **AvgStockWeight** \[0:NAges-1\]\[0\] (F) )                                        |
-|                   |                                                                                                   |       |                   |    \- this is the logic for the average stock weight at age vector inputs|                        |
+|                   |                                                                                                   |       
+|                   |    \- this is the logic for the average stock weight at age vector inputs|                        |
 |                   | 4. **StockWtErr**\[0:NAges-1\] (F) – this is the vector of age-specific CVs for sampling the      |
 |                   |    stock weight at age vector with lognormal process error                                        |
 +-------------------+---------------------------------------------------------------------------------------------------+
@@ -223,7 +224,7 @@ inpfile_version <- "AGEPRO VERSION 4.25"
 |                   |    projection                                                                                     |
 |                   | 5. **RecruitProb**\[0:NYears-1\]\[0:NRecModel-1\] (F) – this is the array of recruitment submodel |
 |                   |    probabilities ordered by year (row) and submodel (column) with row sums equal to unity         |
-|                   | 6. For J=0 to (NRecModel – 1) \n                                                                  |
+|                   | 6. For J=0 to (NRecModel – 1) <br />                                                              |
 |                   |    Call **ReadRecruitModelInput**(J,[RecruitType[J]) –  this is the set of function calls to read |
 |                   |    in the input data needed for each recruitment submodel in the order they are specified in      |
 |                   |    RecruitType where the required input data for each submodel are listed in Table 4.             |
