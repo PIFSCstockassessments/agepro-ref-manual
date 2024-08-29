@@ -5,6 +5,9 @@
 
 /.quarto/
 _book/
+_freeze/
+site_libs/
+*_files
 *.pdf
 *.log
 *.tex
