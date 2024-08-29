@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# AGEPRO Reference Manual Quatro Book Prototype
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+Source code repository for the [Quatro Book](https://quarto.org/docs/books/) prototype version of Jon Brodziak's *AGEPRO Reference Manual.*
+
+Note: This manual documents devevloping changes to Auxiliary Ouptut Files option to the future AGEPRO update.
+
+**If you using AGEPRO for production, please use:**
+
+-   [Jon Brodziak's original AGEPRO program (source code)](https://github.com/PIFSCstockassessments/AGEPRO)
+-   [GUI interface for AGEPRO (installer & source)](https://github.com/PIFSCstockassessments/AGEPRO-GUI)
+
+<!-- Do not edit below. This adds the Disclaimer and NMFS footer. -->
+
+------------------------------------------------------------------------
+
+```{r add-disclaimer, echo=FALSE, results='asis'}
+url <- "https://raw.githubusercontent.com/nmfs-fish-tools/Resources/master/Disclaimer.md"
+childtext <- readLines(url)
+cat(childtext, sep="\n")
+```
+
+------------------------------------------------------------------------
+
+```{r footer, echo=FALSE, results='asis'}
+url <- "https://raw.githubusercontent.com/nmfs-fish-tools/Resources/master/footer.md" 
+childtext <- readLines(url)
+cat(childtext, sep="\n")
+```
