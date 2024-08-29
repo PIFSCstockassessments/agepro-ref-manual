@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 2. Empirical Recruits Per Spawning Biomass Distribution {.unnumbered}
 
 For some stocks, the distribution of recruits per spawner may be independent of the number of spawners over the range of observed data. The recruitment per spawning biomass $(R/B_s)$ model randomly generates recruitment under the assumption that the distribution of the $R/B_s$ ratio is stationary and independent of stock size. *The empirical recruits per spawning biomass distribution model depends on spawning biomass and is time-invariant.*

@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 # Types of Projection Analyses {.unnumbered}
 

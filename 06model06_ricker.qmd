@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 6. Ricker Curve with Lognormal Error {.unnumbered}
 
 The Ricker curve [@ricker1954d] with lognormal error is a parametric model of recruitment generation where survival to recruitment age is density dependent and subject to stochastic variation. *The Ricker curve with lognormal error model depends on spawning biomass and is time invariant.*

@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 7. Shepherd Curve with Lognormal Error {.unnumbered}
 
 The Shepherd curve [@shepherd1982] with lognormal error is a parametric model of recruitment generation where survival to recruitment age is density dependent and subject to stochastic variation. *The Shepherd curve with lognormal error model depends on spawning biomass and is time-invariant.*

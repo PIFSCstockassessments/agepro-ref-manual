@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 # Initial Population Abundance {.unnumbered}
                                
 There are two ways to set the initial population abundance, defined as the vector of the absolute number of fish alive on January 1^st^ of the first year ($t=1$) of the projection time horizon $\underline{N}(1)$. The primary option is to use a set of samples from the distribution of the estimator of $\underline{N}(1)$. This approach explicitly incorporates uncertainty in the estimate of initial population abundance into the projections. Under this option, either frequentist methods such as bootstrapping or Bayesian methods such as Markov Chain Monte Carlo simulation can be applied to determine the sampling distribution of the estimator of $\underline{N}(1)$. The secondary option is to ignore uncertainty in the estimator of initial population abundance and use a single best estimate for the value of $\underline{N}(1)$. In this case, there is no uncertainty in the point estimate of $\underline{N}(1)$ used in the projections.

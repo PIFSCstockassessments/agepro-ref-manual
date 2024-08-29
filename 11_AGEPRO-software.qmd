@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 # Age‐Structured Projection Software {.unnumbered}
 
 This section covers operational details for using the AGEPRO software and is organized into three sections. First, input data requirements and projection options are covered and the structure of an input file is described. Second, projection model outputs are described in relation to keywords in the input file and the structure of the standard output file is described. Third, a set of examples are provided to illustrate projection options and features of the software.

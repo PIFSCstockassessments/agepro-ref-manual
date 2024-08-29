@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 20. Fixed Recruitment {.unnumbered}
 
 The fixed recruitment predictor applies a specified value of recruitment for each year of the time horizon. The vector of input recruitment values in relative units is $\underline{n}_r = \Big[ n_r(1), n_r(2, ..., n_r(Y)\Big]$ for projections years $1$ through $Y$. The fixed recruitment model predicts recruitment as

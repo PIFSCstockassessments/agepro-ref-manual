@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 19. Loglinear Recruitment Predictor with Lognormal Error {.unnumbered}
 

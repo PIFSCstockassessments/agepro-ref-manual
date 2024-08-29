@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 4. Two-Stage Empricial Recruits Per Spwaning Biomass {.unnumbered}
 
 The two-stage recruits per spawning biomass model is a direct generalization of the $R/B_S$ model where the spawning stock of the population is categorized into “low” and “high” states. *The two-stage empirical recruits per spawning biomass distribution model depends on spawning biomass and is time-invariant.*

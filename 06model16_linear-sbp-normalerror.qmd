@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 16. Linear Recruits Per Spawning Biomass Predictor with Normal Error {.unnumbered}
 

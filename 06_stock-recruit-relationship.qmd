@@ -3,6 +3,8 @@ format:
   html: 
     grid: 
       margin-width: 320px
+editor: 
+  mode: source
 ---
 
 # Stock Recruitment Relationship {.unnumbered}

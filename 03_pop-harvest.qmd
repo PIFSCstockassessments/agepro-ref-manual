@@ -1,5 +1,9 @@
-# Population Harvest {.unnumbered}
+---
+editor: 
+  mode: source
+---
 
+# Population Harvest {.unnumbered}
 
 Population harvest is set in each year in the projection time horizon by setting the harvest index $I(t)$. There are two options for determining the level of population harvest in each year of the time horizon: these are the fishing mortality and the quota options. Note that catch quotas are input in units of metric tons of annual catch biomass. Under the fishing mortality option, the user-input fishing mortality rate determines the harvest level (i.e., effort-based management). Under the quota option, the user-input landings quota sets the harvest level (i.e., catch-based management). These two harvest options can be combined in any order within a given projection time horizon where, for example, effort-based management is applied in some years and quota-based management in the other years. This mixed harvest option allows the projection to start with one or more years of known catch followed by annual harvests set by fishing mortality rates. In this case, the user sets a binary harvest index $I(t)$ to determine the harvest option for each year in the projection time horizon. If $I(t)=1$, or the quota indicator is set to be true, then quota-based harvest control is applied in year t; else if $I(t)=0$, then the quota indicator is set to be false and fishing mortality-based harvest control is applied. A mixture of quotas and effort-based harvest can be useful when projecting forward from a previous assessment to the present when only catch is available for the intervening years.
 

@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 15. Two Stage Empirical Cumulative Distribution Function of Recruitment {.unnumbered}
 
 The two-stage empirical cumulative distribution function of recruitment model is an extension of [Model 14](#model-14.-empirical-cumulative-distribution-function-of-recruitment) where the spawning stock of the population is categorized into low and high states. *The two-stage empirical cumulative distribution function of recruitment model depends on spawning biomass and is time-invariant.*

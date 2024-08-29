@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 21. Empirical Cumulative Distribution Function of Recruitment with Linear Decline to Zero {.unnumbered}
 
 The empirical cumulative distribution function of recruitment with linear decline to zero model is an extension of the empirical cumulative distribution function of recruitment ([Model 14](#model-14.-empirical-cumulative-distribution-function-of-recruitment)) in which recruitment strength declines when the spawning stock biomass falls below a threshold $B^*_S$. The decline in recruitment randomly generated from the empirical cdf of the observed recruitment is proportional to the ratio of current spawning stock biomass to the threshold $\dfrac{B_S}{B^*_S}$ when $B_S < B^*_S$. In particular, predicted recruitment values are randomly generated using equation (\ref{eq:37}) given the input time series of observed recruitment. That is, if the current spawning biomass is at or above the threshold with $B_S \ge B^*_S$ then the predicted recruitment is

@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 # Process Errors for Population and Fishery Processes {.unnumbered}
 

@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 # Introduction {.unnumbered}
 
 The AGEPRO model was initially developed in 1994 to determine optimal strategies to rebuild a depleted fish stock. The model was reviewed at the May 1994 meeting of the Northeast Fisheries Science Center Methods Working Group [@BrodziakRago1994 ; @BrodziakEtAl1998]. Subsequently, the model was applied to groundfish stocks at the 18th SARC [@NEFSC1994] to evaluate Amendment 5 harvest scenarios [@NEFMC1994] and was applied again in 1995 to assist with Amendment 7 [@NEFMC1996]. The reference manual was prepared in 1997 to provide documentation and has been updated since then to describe modifications to the model and software. The current program is written in the C language to allow for dynamic array allocation and to achieve rapid processing speeds.

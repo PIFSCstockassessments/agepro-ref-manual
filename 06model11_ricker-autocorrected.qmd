@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 11. Ricker Curve with Autocorrelated Lognormal Error {.unnumbered}
 

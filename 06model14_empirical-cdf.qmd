@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 14. Empirical Cumulative Distribution Function of Recruitment {.unnumbered}
 

@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Model 1. Markov Matrix {.unnumbered}
 
 A Markov matrix approach to modeling recruitment may be useful when there is uncertainty about the functional form of the stock-recruitment relationship. A Markov matrix contains transition probabilities that define the probability of obtaining a given level of recruitment given that $B_S$ was within a defined interval range. In particular, the distribution of recruitment is assumed to follow a multinomial distribution conditioned on the spawning biomass interval or spawning state of the stock. The Markov matrix model depends on spawning biomass and is time-invariant.

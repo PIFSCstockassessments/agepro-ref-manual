@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 13. Autocorrelated Lognormal Distribution {.unnumbered}
 

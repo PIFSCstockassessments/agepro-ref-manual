@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 5. Beverton-Holt Curve with Lognormal Error {.unnumbered}
 

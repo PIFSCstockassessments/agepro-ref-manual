@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 ## Biomass Thresholds {.unnumbered}
 
 The user can specify biomass thresholds for spawning biomass $\bigl(B_{S,THRESHOLD}\bigr)$, mean biomass $\bigl(\overline{B}_{THRESHOLD}\bigr)$, and total stock biomass $\bigl(B_{T,THRESHOLD}\bigr)$ for Sustainable Fisheries Act (SFA) policy evaluation. These biomass thresholds can be specified using the input keyword REFPOINT (Tables 2 and 3). If the REFPOINT keyword is used in an AGEPRO model, then projected biomass values are compared to the input thresholds through time. Probabilities that biomasses meet or exceed threshold values are computed for each year. In addition, the probability that biomass thresholds were exceeded in at least one year within a single simulated population trajectory is computed. If the user specifies fishing mortality-based harvesting with no landings quotas, then the SFA-threshold probabilities are computed over the entire set of simulations. Let $K_B(t)$ be the number of times that projected biomass $B(t)$ meets or exceeds a threshold biomass $B_{THRESHOLD}$ in year $t$. The counter $K_B(t)$ is evaluated for each year and biomass series (spawning, mean, or total stock). Given that $K_{TOTAL}$ is the total number of feasible simulation runs, the estimate of the annual probability that $B_{THRESHOLD}$ would be met or exceeded in year $t$ is

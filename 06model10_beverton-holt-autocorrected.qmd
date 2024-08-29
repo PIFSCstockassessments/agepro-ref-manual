@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 10. Beverton-Holt Curve with Autocorrelated Lognormal Error {.unnumbered}
 

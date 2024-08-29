@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 12. Shepherd Curve with Autocorrelated Lognormal Error {.unnumbered}
 

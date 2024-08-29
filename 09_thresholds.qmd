@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 # Reference Point Thresholds {.unnumbered}
 
 {{< include 09-1_feasible-simulations.qmd >}}

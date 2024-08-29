@@ -1,3 +1,7 @@
+---
+editor: 
+  mode: source
+---
 
 ## Model 18. Linear Recruitment Predictor with Normal Error {.unnumbered}
 

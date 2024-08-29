@@ -1,3 +1,8 @@
+---
+editor: 
+  mode: source
+---
+
 # Catch, Landings, and Discards {.unnumbered}
 
 The fishery catch depends on the fraction of the population that is vulnerable to harvest or the exploitable stock size. Catch at age by fleet (fleets are indexed by $v$) is determined by the Baranov catch equation [e.g., @quinnii1999]. The catch of age-$a$ fish in year $t$ by fleet $v$ is $C_{V,a}(t)$ .
