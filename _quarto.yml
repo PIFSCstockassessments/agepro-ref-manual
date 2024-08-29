@@ -42,7 +42,8 @@ format:
   html:
     theme: cosmo
   pdf:
-    documentclass: scrreprt
+    documentclass: report
+    papersize: letter
 
 editor: source
 
