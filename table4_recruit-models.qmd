@@ -18,10 +18,10 @@ crossref:
 |        |                              | - On the next line, input number of spawning biomass states: $J$                                          |
 |        |                              | - On the next line, input $J-1$ cut points : $B_{S,1},B_{S,2},...,B_{S,J-1}$                              |
 |        |                              | - On the next $J$ lines, input the conditional recruitment probabilities for the spawning biomass states: |  
-|        |                              |   - $P_{1,1}, P_{1,2}, \dots, P_{1,K}$  <br />                                                            |
-|        |                              |     $P_{2,1}, P_{2,2}, \dots, P_{2,k}$  <br />                                                            |
-|        |                              |     $\vdots$                            <br />                                                            |
-|        |                              |     $P_{J,1}, P_{J,2}, \dots, P_{J,K}$                                                                    | 
+|        |                              |   - $P_{1,1}, \quad P_{1,2}, \quad \dots, \quad P_{1,K}$  <br />                                          |
+|        |                              |     $P_{2,1}, \quad P_{2,2}, \quad \dots, \quad P_{2,k}$  <br />                                          |
+|        |                              |     $\quad \vdots \quad\quad \vdots \qquad\quad \vdots \qquad\quad \vdots$  <br />                        |
+|        |                              |     $P_{J,1}, \quad P_{J,2}, \quad \dots, \quad P_{J,K}$                                                  | 
 +--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
 | 2      | Empirical Recruits Per       | - Input the number of stock recruitment data points: $T$                                                  |
 |        | Spawning Biomass             | - On the next line, input the recruitments: $R_1,R_2,...,R_T$                                             |
@@ -77,10 +77,10 @@ crossref:
 |        | with Normal Error            | - On the next line, input the slope coefficient for each predictor: $\beta_1, \beta_2, ..., \beta_{N_p}$  |
 |        |                              | - On the next line, input the error variance: $\sigma^2$                                                  |
 |        |                              | - On the next $N_P$ lines, input the expected value of the predictor through projection time horizon:     |
-|        |                              |   - $X_1(1), \dots, X_1(Y)$  <br />                                                                       |
-|        |                              |     $X_2(1), \dots, X_2(Y)$  <br />                                                                       |
-|        |                              |     $\vdots$                 <br />                                                                       |
-|        |                              |     $X_P(1), \dots, X_P(Y)$                                                                               |
+|        |                              |   - $X_1(1), \quad\ \dots, \quad\ X_1(Y)$  <br />                                                         |
+|        |                              |     $X_2(1), \quad\ \dots, \quad\ X_2(Y)$  <br />                                                         |
+|        |                              |     $\ \vdots \qquad\qquad\ \ \vdots \qquad\quad\ \ \vdots$  <br />                                       |
+|        |                              |     $X_P(1), \quad\ \dots, \quad\ X_P(Y)$                                                                 |
 +--------+------------------------------+-----------------------------------------------------------------------------------------------------------+
 | 17     | Linear Recruits Per          | - Input the number of predictors: $N_P$                                                                   |
 |        | Spawning Biomass Predictor   | - On the next line, input the intercept: $\beta_0$                                                        |
