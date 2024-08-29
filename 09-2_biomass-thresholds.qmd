@@ -14,7 +14,7 @@ $$
 Note that this also provides an estimate of the probability of the complementary event that biomass does not exceed the threshold via
 
 $$
-\Pr(B(t)) \lt B_{THRESHOLD}) = 1 - \Pr(B(t)) \ge B_{THRESHOLD} = 1- \frac{K_B(t)}{K_{TOTAL}} \tag{51}\label{eq:51}
+\Pr(B(t) < B_{THRESHOLD}) = 1 - \Pr(B(t) \ge B_{THRESHOLD} ) = 1 - \frac{K_B(t)}{K_{TOTAL}} \tag{51}\label{eq:51}
 $$
 
 Next, if $K_{THRESHOLD}$ denotes the number of simulations where biomass exceeded its threshold at least once, then the probability that $K_{THRESHOLD}$ would be met or exceeded at least
