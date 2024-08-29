@@ -11,7 +11,7 @@ Book](https://quarto.org/docs/books/) prototype version of Jon
 Brodziak’s *AGEPRO Reference Manual.*
 
 Note: This manual documents devevloping changes to Auxiliary Ouptut
-Files option to the future AGEPRO update.
+Files option for a future AGEPRO update.
 
 **If you using AGEPRO for production, please use:**
 
