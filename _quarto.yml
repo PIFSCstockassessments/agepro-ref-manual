@@ -44,5 +44,5 @@ format:
   pdf:
     documentclass: scrreprt
 
-editor: visual
+editor: source
 
