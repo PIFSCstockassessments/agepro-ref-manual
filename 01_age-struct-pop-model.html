@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>AGEPRO Reference Manual - Age Structured Population Model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./table1_AGEPRO-variables.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./01_age-struct-pop-model.html">Age Structured Population Model</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AGEPRO Reference Manual</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_age-struct-pop-model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Age Structured Population Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table1_AGEPRO-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 1: Glossary of AGEPRO variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_catch-landings-discards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Catch, Landings, and Discards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_pop-harvest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Population Harvest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_initial-pop-abundance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial Population Abundance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_retroadjust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Retrospective Adjustment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_stock-recruit-relationship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stock Recruitment Relationship</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_recruit-probabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recruitment Model Probabilities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_process-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Process Errors for Population and Fishery Processes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_thresholds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference Point Thresholds</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_harvest-projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Types of Projection Analyses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./11_AGEPRO-software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Age‐Structured Projection Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-1_input-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Input Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table2_AGEPRO-keywords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 2: AGEPRO Keyword Parameters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table3_keyword-struct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 3: AGEPRO Keyword structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table4_recruit-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 4: Input data structure for AGEPRO Recruitment Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-2_model-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-3_agepro-examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AGEPRO Projection Examples</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example1-inpfile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 1 Input File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example2-inpfile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 2 Input File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example3-inpfile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 3 Input File</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#population-abundance-survival-and-spawning-biomass" id="toc-population-abundance-survival-and-spawning-biomass" class="nav-link active" data-scroll-target="#population-abundance-survival-and-spawning-biomass">Population Abundance, Survival, and Spawning Biomass</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Age Structured Population Model</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>A pooled-sex, age-structured population model is the basis for the AGEPRO model and software. This model represents an iteroparous fish population whose abundance changes due to fluctuations in recruitment and natural mortality as well as fishing mortality from one or more fishing fleets. Population size at age changes continuously throughout the year due to the concurrent forces of natural and fishing mortality. Recruitment (<span class="math inline">\(R\)</span>, number of age-<span class="math inline">\(r\)</span> fish) to the population occurs at the beginning of each year (January 1<sup>st</sup>) and is the first element in the population size at age vector (<a href="table1_AGEPRO-variables.html#tbl-1">Table&nbsp;<span>1</span></a>).</p>
+<section id="population-abundance-survival-and-spawning-biomass" class="level2">
+<h2 class="anchored" data-anchor-id="population-abundance-survival-and-spawning-biomass">Population Abundance, Survival, and Spawning Biomass</h2>
+<p>The AGEPRO model calculates the number of fish alive within each age class of the population through time. Let <span class="math inline">\(Y\)</span> denote the number of years in a projection where <span class="math inline">\(t\)</span> indexes time for <span class="math inline">\(t = 1,2,...Y\)</span>. The maximum number of years in the projection is a dynamic variable specified by the user and constrained by the amount of computer memory. The minimum or youngest age class comprises the recruits and the age of recruitment is set as age-1. The oldest age class is a plus-group, which consists of all fish that are at least as old as the plus group age (<span class="math inline">\(A\)</span>). The maximum number of age classes is 100, including the plus group. For each age class, the number of fish alive at the beginning of each calendar year (January 1<sup>st</sup>) is <span class="math inline">\(N_j(t)\)</span> where <span class="math inline">\(j\)</span> indexes age class and <span class="math inline">\(t\)</span> indexes year. The number of fish in the plus group is <span class="math inline">\(N_A(t)\)</span> which accounts for the number of fish that are age-<span class="math inline">\(A\)</span> or older at the beginning of year <span class="math inline">\(t\)</span>. Given this, the population abundance at the beginning of year <span class="math inline">\(t\)</span> is the vector <span class="math inline">\(\underline{N}(t)\)</span> with <span class="math inline">\(R(t)\)</span> used as an alternate notation to emphasize that a recruitment submodel is needed to stochastically generate recruitment through time horizon.</p>
+<p><span id="eq-1"><span class="math display">\[
+\underline{N}(t) = \begin{bmatrix}
+                   R(t) \\
+                   N_2(t) \\
+                   N_3(t) \\
+                   \vdots \\
+                   N_A(t)
+                   \end{bmatrix}
+\tag{1}\]</span></span></p>
+<p>Population survival at age from year <span class="math inline">\(t−1\)</span> to year <span class="math inline">\(t\)</span> is calculated using instantaneous fishing and mortality rates at age. To describe annual survival through mortality, let <span class="math inline">\(M_a(t)\)</span> denote the instantaneous natural mortality rate on age group <span class="math inline">\(a\)</span> and let <span class="math inline">\(F_a(t)\)</span> denote the instantaneous fishing mortality rate for age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span> where <span class="math inline">\(F_a(t)\)</span> is the sum of fleet-specific fishing mortalities at age <span class="math inline">\(a\)</span>. Population size at age in year <span class="math inline">\(t\)</span> for age classes indexed by <span class="math inline">\(a = 1\ to\ A-1\)</span> is given by</p>
+<p><span id="eq-2"><span class="math display">\[
+N_a(t) = N_{a-1}(t-1)\cdot{e^{-M_{a-1}(t-1)-F_{a-1}(t-1)}}
+\tag{2}\]</span></span></p>
+<p>Similarly, population size at age in year <span class="math inline">\(t\)</span> for the plus group of fish age-<span class="math inline">\(A\)</span> and older is given by</p>
+<p><span id="eq-3"><span class="math display">\[
+N_a(t) = N_{a}(t-1)\cdot{e^{-M_{a}(t-1)-F_{a}(t-1)}} + N_{a-1}(t-1)\cdot{e^{-M_{a-1}(t-1)-F_{a-1}(t-1)}}
+\tag{3}\]</span></span></p>
+<p>where survival for the plus-group involves an age-<span class="math inline">\(A\)</span> and an age-(<span class="math inline">\(A-1\)</span>) component. Incoming recruitment is determined through a stochastic process that is either dependent or independent of spawning biomass in year <span class="math inline">\(t\)</span> (see <a href="06_stock-recruit-relationship.html"><strong>Stock-Recruitment Relationship</strong></a>).</p>
+<p>Annual spawning biomass <span class="math inline">\(B_s(t)\)</span> is calculated from the population size vector <span class="math inline">\(\underline{N}(t)\)</span> and total mortality rates as well as information on sexual maturity and weight at age. The age-specific natural mortality rate is <span class="math inline">\(M_a(t)\)</span>. To describe annual survival, let <span class="math inline">\(F_a(t)\)</span> be the instantaneous fishing mortality rate for age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span> where <span class="math inline">\(F_a(t)\)</span> is the sum of fleet-specific fishing mortalities at age <span class="math inline">\(F_a(t) = \sum\limits_{v}F_{v,a}(t)\)</span>. Further, let <span class="math inline">\(P_{mature,a}(t)\)</span> denote the average fraction of age-<span class="math inline">\(a\)</span> fish that are sexually mature in year <span class="math inline">\(t\)</span> and let <span class="math inline">\(W_{S,a}\)</span> denote the average spawning weight of an age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span>. Last, let <span class="math inline">\(Z_{Frac}(t)\)</span> denote the proportion of total mortality that occurs from January 1<sup>st</sup> to the mid-point of the spawning season in year <span class="math inline">\(t\)</span>. Given this, population size at the midpoint of the spawning season in year <span class="math inline">\(t\)</span>, <span class="math inline">\(\underline{N}_s(t)\)</span> is obtained by applying instantaneous natural and fishing mortality rates that occur prior to the spawning season to the population vector at the beginning of the year, <span class="math inline">\(\underline{N}(t)\)</span>.</p>
+<p><span id="eq-4"><span class="math display">\[
+\underline{N}_S(t) = \begin{bmatrix}
+                      N_1(t)\cdot e^{-Z_{Frac}(t)[M_1(t) + F_r(t)]} \\
+                      N_2(t)\cdot e^{-Z_{Frac}(t)[M_2(t) + F_2(t)]} \\
+                      N_3(t)\cdot e^{-Z_{Frac}(t)[M_3(t) + F_3(t)]} \\
+                      \vdots \\
+                      N_A(t)\cdot e^{-Z_{Frac}(t)[M_A(t) + F_A(t)]}
+                      \end{bmatrix}
+\tag{4}\]</span></span></p>
+<p>As a result, the amount of spawning biomass in year <span class="math inline">\(t\)</span> is the sum of the weight of the mature fish alive at the midpoint of the spawning season</p>
+<p><span id="eq-5"><span class="math display">\[
+B_S(t) = \sum_{a=1}^{A}W_{S,a}(t) \cdot P_{mature,a}(t) \cdot N_a(t) \cdot e^{-Z_{Frac}(t)[M_a(t) + F_a(t)]}
+\tag{5}\]</span></span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./table1_AGEPRO-variables.html" class="pagination-link">
+        <span class="nav-page-text">Table 1: Glossary of AGEPRO variables</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
