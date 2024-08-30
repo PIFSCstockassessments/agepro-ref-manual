@@ -44,9 +44,9 @@ execute:
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: report
-    papersize: letter
+#  pdf:
+#    documentclass: report
+#    papersize: letter
 
 editor: source
 
