@@ -19,19 +19,23 @@ $$
                    \vdots \\
                    N_A(t)
                    \end{bmatrix} 
-$$ {#eq-1}
+                   \tag{1}
+                   \label{eq:1}
+$$ 
 
 Population survival at age from year $t−1$ to year $t$ is calculated using instantaneous fishing and mortality rates at age. To describe annual survival through mortality, let $M_a(t)$ denote the instantaneous natural mortality rate on age group $a$ and let $F_a(t)$ denote the instantaneous fishing mortality rate for age-$a$ fish in year $t$ where $F_a(t)$ is the sum of fleet-specific fishing mortalities at age $a$. Population size at age in year $t$ for age classes indexed by $a = 1\ to\ A-1$ is given by
 
 $$
 N_a(t) = N_{a-1}(t-1)\cdot{e^{-M_{a-1}(t-1)-F_{a-1}(t-1)}}
-$$ {#eq-2}
+\tag{2}\label{eq:2}
+$$
 
 Similarly, population size at age in year $t$ for the plus group of fish age-$A$ and older is given by
 
 $$
 N_a(t) = N_{a}(t-1)\cdot{e^{-M_{a}(t-1)-F_{a}(t-1)}} + N_{a-1}(t-1)\cdot{e^{-M_{a-1}(t-1)-F_{a-1}(t-1)}}
-$$ {#eq-3}
+\tag{3}\label{eq:3}
+$$ 
 
 where survival for the plus-group involves an age-$A$ and an age-($A-1$) component. Incoming recruitment is determined through a stochastic process that is either dependent or independent of spawning biomass in year $t$ (see [**Stock-Recruitment Relationship**](06_stock-recruit-relationship.html)).
 
@@ -45,11 +49,13 @@ $$
                       \vdots \\
                       N_A(t)\cdot e^{-Z_{Frac}(t)[M_A(t) + F_A(t)]}
                       \end{bmatrix}
-$$ {#eq-4}
+                      \tag{4}
+                      \label{eq:4}
+$$
 
 As a result, the amount of spawning biomass in year $t$ is the sum of the weight of the mature fish alive at the midpoint of the spawning season
 
 $$
-B_S(t) = \sum_{a=1}^{A}W_{S,a}(t) \cdot P_{mature,a}(t) \cdot N_a(t) \cdot e^{-Z_{Frac}(t)[M_a(t) + F_a(t)]}
-$$ {#eq-5}
+B_S(t) = \sum_{a=1}^{A}W_{S,a}(t) \cdot P_{mature,a}(t) \cdot N_a(t) \cdot e^{-Z_{Frac}(t)[M_a(t) + F_a(t)]} \tag{5}\label{eq:5}
+$$ 
 

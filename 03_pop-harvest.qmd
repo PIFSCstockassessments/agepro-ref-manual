@@ -10,8 +10,8 @@ Population harvest is set in each year in the projection time horizon by setting
 When effort-based management is applied, catch at age is determined by setting $F_{v,a(t)}$ by fleet for each age class. In this case, the fishing mortality rate on age-$a$ fish in year $t$ is the product of the fully-selected fishing mortality rate by fleet, denoted by $F_v(t)$, and the fleet- and age-specific fishery selectivity of age-$a$ fish, denoted by $S_{v,a}(t)$ as
 
 $$
-F_{v,a}(t) = F_v(t) \cdot S_{v,a}(t) 
-$$ {#eq-9}
+F_{v,a}(t) = F_v(t) \cdot S_{v,a}(t) \tag{9}\label{eq:9}
+$$ 
 
 Landings and discards, if applicable, are then determined from $F_{v,a}(t)$. When quota-based management is applied, however, the $F_v(t)$ that would yield the landings quota must be determined numerically.
 
@@ -20,13 +20,13 @@ Under quota-based management, the landings quota by fleet in year $t$, denoted b
 Ignoring the fleet index and time dimension for simplicity, a landings quota $Q$ can be expressed as a function of $F, Q=L(F)$, where $F$ is the fully-selected fishing mortality and $L$ is the landings expressed as a function of $F$. To see this result, observe that the catch of age-$a$ fish can be expressed as a function of $F$
 
 $$
-C_a(F) = \frac{F \cdot S_a(t)}{M_a(t)+F \cdot S_a(t)}{\Bigl[ 1 - e^{-M_a(t)-F \cdot S_a(t)}\Bigr]} \cdot N_a(t)
-$$ {#eq-10}
+C_a(F) = \frac{F \cdot S_a(t)}{M_a(t)+F \cdot S_a(t)}{\Bigl[ 1 - e^{-M_a(t)-F \cdot S_a(t)}\Bigr]} \cdot N_a(t) \tag{10}\label{eq:10}
+$$ 
 
 As a result, landings can also be expressed as a function of $F$
 $$
-L(F) = \sum_{a=1}^{A}C_a(F) \cdot {\Bigl[ 1-P_{D,a}(t) \Bigr]} \cdot W_{L,a}(t)
-$$ {#eq-11}
+L(F) = \sum_{a=1}^{A}C_a(F) \cdot {\Bigl[ 1-P_{D,a}(t) \Bigr]} \cdot W_{L,a}(t) \tag{11}\label{eq:11}
+$$ 
 
 The fully-selected fishing mortality, which satisfies the equation, $Q=L(F)$ can be found
 using a robust root-finding algorithm and we apply the bisection method, that previous versions applied Newton’s method. Quotas which exceed the exploitable biomass of the population are defined as being infeasible and simulations with infeasible quotas are also infeasible.
