@@ -25,7 +25,7 @@ book:
         - 11-1_input-data.qmd
         - table2_AGEPRO-keywords.qmd
         - table3_keyword-struct.qmd
-        - table4_recruit-models.qmd
+        - table4alt_recruit-models.qmd
         - 11-2_model-outputs.qmd
         - 11-3_agepro-examples.qmd
     - acknowledgments.qmd
@@ -42,11 +42,18 @@ execute:
   freeze: auto
 
 format:
-  html:
-    theme: cosmo
-#  pdf:
-#    documentclass: report
-#    papersize: letter
+  # html:
+  #   theme: cosmo
+  pdf:
+    documentclass: scrreprt
+    #report
+    papersize: letter
+    linestretch: 1.10
+    geometry:
+      - inner=3cm
+      - outer=4cm
+      - top=3cm
+      - bottom=4cm
 
 editor: source
 
