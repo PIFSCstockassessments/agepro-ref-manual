@@ -42,18 +42,18 @@ execute:
   freeze: auto
 
 format:
-  # html:
-  #   theme: cosmo
-  pdf:
-    documentclass: scrreprt
-    #report
-    papersize: letter
-    linestretch: 1.10
-    geometry:
-      - inner=3cm
-      - outer=4cm
-      - top=3cm
-      - bottom=4cm
+  html:
+    theme: cosmo
+  # pdf:
+  #   documentclass: scrreprt
+  #   #report
+  #   papersize: letter
+  #   linestretch: 1.10
+  #   geometry:
+  #     - inner=3cm
+  #     - outer=4cm
+  #     - top=3cm
+  #     - bottom=4cm
 
 editor: source
 
