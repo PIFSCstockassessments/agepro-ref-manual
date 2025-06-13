@@ -287,7 +287,8 @@ projection year (**NFyear**) to the last projection year (**NXyear**).
 |                   |      probabilities ordered by year (row) and submodel (column) with row sums equal to unity           |
 |                   | 4. **RecruitData**: For each recruitment submodel in **RecruitType** vector, j=0 to                   |
 |                   |    (NRecModel – 1), is a the set of function calls to read in the input data needed for each          |
-|                   |    recruitment submodel. See @tbl-4: _Input data structure for AGEPRO Recruitment Models_ for         |
+|                   |    recruitment submodel. See @tbl-4:                                                                  |
+|                   |    [_Input data structure for AGEPRO Recruitment Models_](table4alt_recruit-models.qmd) for           |
 |                   |    specific details where the required input data for each submodel **RecruitType** is read.          |
 +-------------------+-------------------------------------------------------------------------------------------------------+
 | `BOUNDS`          | 1. Single Line contaning 2 integers:                                                                  |
