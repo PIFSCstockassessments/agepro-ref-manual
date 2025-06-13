@@ -3,7 +3,9 @@ project:
 
 book:
   title: "AGEPRO Reference Manual"
-  author: "Jon Brodziak"
+  author:
+    - name: "Jon Brodziak"
+    - name: "Eric Fletcher"
   date: "8/29/2024"
   chapters:
     - index.qmd
