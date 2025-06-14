@@ -109,7 +109,7 @@ crossref:
 |         | Decline to Zero                                                 |                                                                                                                                                                                                                                                                       |
 +---------+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-: Required input data for AGEPRO recruitment models, where spawning biomass and recruitment inputs are measured in units of `RECRUIT` the
+: Required input data for AGEPRO recruitment models, <br /> where spawning biomass and recruitment inputs are measured in units of `RECRUIT` the
 conversion factors **SSBFac** and **RecFac** respectively, which typically have units of **SSBFac**=**RecFac**=1000. {#tbl-4} 
 
 
