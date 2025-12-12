@@ -5,24 +5,30 @@ editor:
 
 # Introduction {.unnumbered}
 
-The AGEPRO model was initially developed in 1994 to determine optimal strategies to rebuild a depleted fish stock. The model was reviewed at the May 1994 meeting of the Northeast Fisheries Science Center Methods Working Group [@BrodziakRago1994 ; @BrodziakEtAl1998]. Subsequently, the model was applied to groundfish stocks at the 18th SARC [@NEFSC1994] to evaluate Amendment 5 harvest scenarios [@NEFMC1994] and was applied again in 1995 to assist with Amendment 7 [@NEFMC1996]. The reference manual was prepared in 1997 to provide documentation and has been updated since then to describe modifications to the model and software. The current program is written in the C language to allow for dynamic array allocation and to achieve rapid processing speeds.
+The AGEPRO (Age-Structured Projection) model is a stochastic simulation framework developed to support fishery management by evaluating the uncertainty of future stock tracjectries under alternative harvest strategies. Initially created in 1994 to determine optimal rebuilding strategies for depleted fish stocks, AGEPRO has been applied in multiple New England groundfish assessments [e.g @NEFSC1994; @NEFMC1994; @NEFMC1996] and has undergone several updates since its original documentation [@BrodziakRago1994 ; @BrodziakEtAl1998]. Written in the C programming language, AGEPRO efficienyly peforms stochastic projections of age-structured populations, generating outputs such as landings, spawning stock biomass, and fishing mortality across userspecified time horizons. The model is available in the [NOAA Fisheries Intergrated Toolbox]
 
-The AGEPRO program can be used to perform stochastic projections of the abundance of an exploited age-structured population over a given time horizon. The primary purpose of the AGEPRO model is to produce management strategy projections that characterize the sampling distribution of key fishery system outputs such as landings, spawning stock biomass, population age structure, and fishing mortality from one or more fleets, accounting for uncertainty in initial population estimates, future recruitment, and natural mortality (Figure 1). The acronym “AGEPRO” derives from **age**-structured **pro**jections, in contrast to size- or biomass-based projections for size- or biomass-structured models. The user can evaluate alternative harvest scenarios by setting quotas or fishing mortality rates in each year of the time horizon.
+AGEPRO is designed to generate stochastic projections that inform fishery management decisions by quantifying the uncertainty in population and fishery outcomes over time. It simulates the dynamics of an exploited age-structured population, projecting variables such as landings, spawning stock biomass, fishing mortality, and population age composition [Figure 1](fig01_agepro-flowchart.html#fig-agepro-flowchart){.no-preview}. The acronym "AGEPRO" highlights its focus on age-structured projections, distinguishing it from biomass-based approaches. Users can evaluate alternative harvest strategies by specifying annual quotas or fishing mortality targets.
 
-Three elements of uncertainty can be included in an AGEPRO stock projection: **population recruitment**, **distribution of initial population size**, and **process error for population and fishery processes**. Recruitment is the primary stochastic element in the population model, where recruitment is typically defined as the number of age-0 or age-1 fish entering the modeled population at the beginning of each year in the time horizon. There are a total of fifteen stochastic recruitment models that can be used for population projection. It is also possible to simulate a deterministic recruitment trajectory (see recruitment model 3 below).
+AGEPRO incorporates three main sources of uncertainty in population projections: **(1) recruitment**, **(2) initial population size**, and **(3) process error in biological and fishery parameters**.
 
-Initial population size is the second potential element of uncertainty for population projection (Figure 1). To include this element, a distribution of initial population sizes must be calculated a priori. This is typically done using bootstrapping, Markov chain Monte Carlo simulation, or other techniques in most age-structured assessments. Alternatively, projections can be based on a single best point estimate with no uncertainty in the initial population size.
+### Recruitment 
 
-The third element of uncertainty is process error in population and fishery processes. The user can choose to simulate the following population and fishery processes at age through time with a multiplicative lognormal process error with mean value equal to unity and a constant coefficient of variation:
+Recruitment is the primary stochastic component of AGEPRO projections, typically representing the number of age-1 fish entering the population each year. The model includes fifteen recruitment options, ranging from empirical bootstrap sampling to parametric stochastic models. A deterministic recruitment trajectory can also be specified [see Recruitment Model 3](06_stock-recruit-relationship.html#model-3.-empirical-recruitment-distribution) 
 
-1.  Natural mortality at age
-2.  Maturation fraction at age
-3.  Stock weight on January 1^st^ at age
-4.  Spawning stock weight at age
-5.  Mean population weight at age
-6.  Fishery selectivity at age
-7.  Discard fraction at age
-8.  Catch weight at age
-9.  Discard weight at age
+### Initial population size
 
-The simulated values of each of these processes can be stored in auxiliary data files for the purpose of documenting projection results.
+The second source of uncertainty concerns the initial population size at the start of the projection period [Figure 1](fig01_agepro-flowchart.html#fig-agepro-flowchart){.no-preview}. This can be represented as a probability distribution estimated using methods such as bootstrapping or Markov chain Monte Carlo sampling, or as a fixed point estimate if uncertainty is not considered.
+
+### Process error 
+
+The third uncertainty source reflects random variation (process error) in population and fishery processes over time. AGEPRO models these as multiplicative lognormal deviations with a mean of one and a specified coefficient of variation. The
+user can choose to apply process errors to parameters such as:
+
+  1. Natural mortality at age
+  2. Maturation fraction at age
+  3. Stock and spawning stock weight at age
+  4. Mean population weight at age
+  5. Fishery selectivity, discard fractions, and weights at age.
+  
+These simulated time series can be saved in auxiliary files to document the stochastic
+realizations underlying each projection.  
