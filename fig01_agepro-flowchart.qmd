@@ -1,12 +1,11 @@
 ---
-title: "Figure 1. Flowchart for AGEPRO"
 format: html
 ---
 
-```{mermaid}
-%%| fig-cap: "Figure 1: Flowchart for AGEPRO"
-%%| label: agepro-flowchart
+# Figure 1: Flowchart for AGEPRO {.unnumbered}
 
+::: {#fig-agepro-flowchart .unnumbered fig-cap="Flowchart for AGEPRO"}
+```{mermaid}
 flowchart TD
     A(BEGIN) --> B{DONE WITH IC LOOP?}
     
@@ -33,3 +32,7 @@ flowchart TD
     H --> E
     
 ```
+
+:::
+
+
