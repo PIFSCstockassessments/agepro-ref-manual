@@ -1,0 +1,49 @@
+---
+format: html
+---
+
+# Figure 2: AGEPRO Input/Output {.unnumbered}
+
+::: {#fig-agepro-input-output .unnumbered fig-cap="AGEPRO Input/Output Diagram"}
+
+```{mermaid}
+%%| label: fig-agepro-io-clean
+%%| fig-cap: "Figure 2. AGEPRO input/output diagram"
+
+flowchart LR
+    %% Central Process
+    PROCESS(AGEPRO)
+
+    %% Inputs (Left Side)
+    SD[**SYSTEM DATA**<br>INPUT FILENAME]
+    IF[**INPUT FILE**<br>KEYWORDS FOR<br>SIMULATION DATA,<br>POPULATION DATA<br>AND FISHERY DATA]
+    BF[**BOOTSTRAP FILE**<br>INITIAL POPULATION<br>NUMBERS AT AGE<br>DATA]
+
+    %% Outputs (Right Side)
+    OF["**OUTPUT FILE**<br>PROJECTION<br>DESCRIPTION<br><br>SUMMARY OF PROJECTION<br>RESULTS<br><br>*FREBUILD ANALYSIS<br>RESULTS<br><br>*PSTAR ANALYSIS<br>RESULTS"]
+    AF[**AUXILIARY FILES**<br>RAW OUTPUT<br>RESULTS]
+    SDF[**SIMULATED DATA FILES***<br>POPULATION AND<br>FISHERY<br>PROCESS ERROR<br>RESULTS]
+    REF[**R EXPORT FILE***<br>R DATAFRAME WITH<br>PROJECTION RESULTS]
+
+    %% Note
+    NOTE("*IF APPLICABLE")
+
+    %% Connections
+    SD --> PROCESS
+    IF --> PROCESS
+    BF --> PROCESS
+    
+    PROCESS --> OF
+    PROCESS --> AF
+    PROCESS --> SDF
+    PROCESS --> REF
+
+    %% Styling to match the white/simple look
+    %% This sets the fill to white and stroke to black for all nodes
+    classDef plain fill:#fff,stroke:#000,stroke-width:1px;
+    class SD,IF,BF,OF,AF,SDF,REF,PROCESS plain;
+
+    %% Style the note to be invisible (no box)
+    classDef note_style fill:#fff,stroke:none;
+    class NOTE note_style;
+```
