@@ -4,11 +4,11 @@ format: html
 
 # Figure 2: AGEPRO Input/Output {.unnumbered}
 
-::: {#fig-agepro-input-output .unnumbered fig-cap="AGEPRO Input/Output Diagram"}
+<!-- ::: {#fig-agepro-input-output .unnumbered fig-cap="AGEPRO Input/Output Diagram"} -->
 
 ```{mermaid}
-%%| label: fig-agepro-io-clean
-%%| fig-cap: "Figure 2. AGEPRO input/output diagram"
+%%| label: fig02-agepro-input-output
+%%| fig-cap: "Figure 2: AGEPRO input/output diagram"
 
 flowchart LR
     %% Central Process
@@ -47,4 +47,5 @@ flowchart LR
     classDef note_style fill:#fff,stroke:none;
     class NOTE note_style;
 ```
-:::
+
+
