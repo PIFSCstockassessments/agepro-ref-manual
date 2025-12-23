@@ -12,11 +12,11 @@ The Beverton-Holt curve with autocorrelated lognormal error generates recruitmen
 $$
 \begin{split}
 \hat{r}(t) &= \frac{\alpha \cdot b_s (t-1)}{\beta + b_s (t-1)} \cdot e^{\varepsilon_t} \\
-& where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ w_t \sim  N(0,\sigma^2_w), \\ 
+\\
+& where\ \ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ \ w_t \sim  N(0,\sigma^2_w), \\ 
 & \hat{R}(t) = c_r \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
 \end{split}
 \tag{30}\label{eq:30}
 $$
 
-The stock-recruitment parameters $\alpha$, $\beta$, $\phi$, $\varepsilon_0$, and $\sigma^2_w$ and the conversion coefficients
-for recruitment $c_R$ and spawning stock biomass $c_B$ are specified by the user. The parameter $\varepsilon_0$ is the log-scale residual for the stock-recruitment fit in the time prior to the projection. If this value is not known, the default is to set $\varepsilon_0 = 0$.
+The stock-recruitment parameters $\alpha$, $\beta$, $\phi$, $\varepsilon_0$, and $\sigma^2_w$ and the conversion coefficients for recruitment $c_R$ and spawning stock biomass $c_B$ are specified by the user. The parameter $\varepsilon_0$ is the log-scale residual for the stock-recruitment fit in the time prior to the projection. If this value is not known, the default is to set $\varepsilon_0 = 0$.
