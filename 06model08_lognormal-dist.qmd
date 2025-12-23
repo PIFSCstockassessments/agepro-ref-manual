@@ -18,4 +18,4 @@ $$
 \tag{29}\label{eq:29}
 $$
 
-The lognormal distribution parameters $\mu_{log(r)}$ and $\sigma^2_{log(r)}$ as well as the conversion coefficient for recruitment $C_R$ are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units $r(t)$ and then converted to absolute values with the conversion coefficients.
+The lognormal distribution parameters $\mu_{log(r)}$ and $\sigma^2_{log(r)}$ as well as the conversion coefficient for recruitment $c_R$ are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units $r(t)$ and then converted to absolute values with the conversion coefficients.
