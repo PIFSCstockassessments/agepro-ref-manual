@@ -2,6 +2,8 @@
 format:
   html:
     crossrefs-hover: false
+    code-block-border-left: true
+    code-block-bg: true
 editor: 
   mode: source
 ---
@@ -29,13 +31,16 @@ To run the AGEPRO program using the AGEPRO GUI, do the following:
 - For the selected input file, click on the Run menu tab and select “Launch AGEPRO model …”.
 - When the projection run is completed, the AGEPRO output files are written to a new folder. The new folder is created in the folder `~/Username/Documents/AGEPRO/New_Folder_Name` where the New_Folder_Name is the input data file name with the time stamp of the run appended to it.
 
-To run the AGEPRO program from the command line, enter `agepro.exe inputfilename`. The software first checks whether the input file exists and will stop if the input file does not exist. If the input file exists and is successfully read, you will see the following output in the command line screen:
+To run the AGEPRO program from the command line, enter `agepro.exe inputfilename.inp`. The software first checks whether the input file exists and will stop if the input file does not exist. If the input file exists and is successfully read, you will see the following output in the command line screen:
 
 ```
->agepro.exe inputfilename
-> Bootstrap Iteration: 1
-> Bootstrap Iteration: 2
+> agepro.exe inputfilename.inp
+Bootstrap Iteration: 1
+Bootstrap Iteration: 2
 ...
-> Bootstrap Iteration: NBootstrap
-> Summary Reports …
+Bootstrap Iteration: <NBootstrap>
+Summary Reports …
 ```
+::: {.callout-note}
+`<NBootstrap>` represents a placeholder value for the number of bootstraps that `inputfilename.inp` has set.
+:::
