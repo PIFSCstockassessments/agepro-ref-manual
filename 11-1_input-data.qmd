@@ -42,5 +42,5 @@ Bootstrap Iteration: <NBootstrap>
 Summary Reports …
 ```
 ::: {.callout-note}
-`<NBootstrap>` represents a placeholder value for the number of bootstraps that `inputfilename.inp` has set.
+`<NBootstrap>` represents a placeholder value for the number of bootstraps that `inputfilename.inp` has set. 
 :::
