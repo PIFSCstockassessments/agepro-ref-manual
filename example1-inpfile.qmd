@@ -1,4 +1,8 @@
-
+---
+fromat: html
+editor: 
+  mode: source
+---
 # Example 1 Input File {.unnumbered}
 
 ```{r wrap-hook}
