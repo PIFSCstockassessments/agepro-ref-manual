@@ -11,7 +11,7 @@ $$
 \begin{split}
 & F_{\overline{B}}(t) = \frac{\sum\limits_{a=A_L}^{A_u} \overline{B}_a(t) \cdot F_a(t) }{\overline{B}(t)}\\
 & \\
-& where\ \overline{B}_a(t) = W_{midyear,a}(t)\cdot N_a(t) \cdot  \frac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}\\
+& where\ \overline{B}_a(t) = w_{MY,a}(t)\cdot N_a(t) \cdot  \frac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}\\
 \end{split}
 \tag{49}\label{eq:49}
 $$

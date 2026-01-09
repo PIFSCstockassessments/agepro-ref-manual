@@ -1,4 +1,8 @@
-
+---
+format: html
+editor: 
+  mode: source
+---
 # Example 3 Input File {.unnumbered}
 
 ```{r}

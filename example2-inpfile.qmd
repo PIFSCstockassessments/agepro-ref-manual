@@ -1,4 +1,8 @@
-
+---
+format: html
+editor: 
+  mode: source
+---
 
 # Example 2 Input File {.unnumbered}
 

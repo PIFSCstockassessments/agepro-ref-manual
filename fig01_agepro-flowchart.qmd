@@ -1,0 +1,38 @@
+---
+format: html
+---
+
+# Figure 1: Flowchart for AGEPRO {.unnumbered}
+
+::: {#fig-agepro-flowchart .unnumbered fig-cap="Flowchart for AGEPRO"}
+```{mermaid}
+flowchart TD
+    A(BEGIN) --> B{DONE WITH IC LOOP?}
+    
+    B -- YES --> J[OUTPUT RESULTS]
+    J --> K(END)
+    
+    B -- NO --> C{DONE WITH SIM LOOP?}
+    C -- YES --> B
+    
+    C -- NO --> D[SET INITIAL POPULATION VECTOR]
+    D --> E{DONE WITH TIME LOOP?}
+    
+    E -- YES --> C
+    E -- NO --> F[SET VARIABLES THAT VARY BY TIME PERIOD <br> COMPUTE CATCH AT AGE <br> CALCULATE TOTAL F]
+    
+    F --> G{IS QUOTA FEASIBLE?}
+    
+    G -- NO --> I[RECORD THAT SIMULATION IS INFEASIBLE]
+    I --> C
+    
+    G -- YES --> H[COMPUTE LANDINGS <br> <br> COMPUTE Bs <br> <br> GENERATE RANDOM RECRUITMENT <br> <br> COMPUTE FUTURE POPULATION VECTOR FOR NEXT TIME PERIOD <br> <br>  COPY CURRENT Bs TO PREVIOUS Bs <br> <br> COPY FUTURE POPULATION VECTOR TO CURRENT <br> <br> CALCULATE OUTPUTS]
+    
+    %% Return loop from H to E
+    H --> E
+    
+```
+
+:::
+
+

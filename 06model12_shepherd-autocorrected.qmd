@@ -15,7 +15,7 @@ $$
 & \hat{r}(t) = \dfrac{\alpha \cdot b_S(t-1)}{ 1 + \left( \dfrac{b_s(t-1)}{k} \right)^{\beta} } \cdot e^{\varepsilon_t} \\
 & \\
 & where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ w_t \sim  N(0,\sigma^2_w), \\ 
-& \hat{R}(t) = c_r \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
+& \hat{R}(t) = c_R \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
 \end{split}
 \tag{32}\label{eq:32}
 $$

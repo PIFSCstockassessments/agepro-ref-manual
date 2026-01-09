@@ -10,7 +10,7 @@ The loglinear recruitment predictor with lognormal error is a parametric model t
 $$
 \begin{split}
 & \log{(n_r(t))} = \beta_0+\sum\limits_{p=1}^{N_p}\beta_p\ \cdot X_p(t) + \varepsilon\\
-& with \ R(t) = c_r \cdot n_r(t)\\
+& with \ R(t) = c_R \cdot n_r(t)\\
 \end{split}
 \tag{41}\label{eq:41}
 $$

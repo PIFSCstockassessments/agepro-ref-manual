@@ -334,5 +334,17 @@ projection year (**NFyear**) to the last projection year (**NXyear**).
 |                   |      target year where the percent frequency is a value between 0 (indicating zero chance of          |
 |                   |      achieving target) and 100 (indicating 100 percent chance of achieving target).                   |
 +-------------------+-------------------------------------------------------------------------------------------------------+
+| `PSTAR`           | 1. Single Line containing a Interger value:                                                           |
+|                   |    - **KPStar** (I) – this is the user-selected number of PStar values to be evaluated in the         |
+|                   |      target year                                                                                      |
+|                   | 2. Single Line containing a Numerical Vector:                                                         |
+|                   |    - **KStar**\[0:KPStar-1\] (F) – these are the PStar values to evaluate where PStar is the          |
+|                   |      probability of exceeding the overfishing level                                                   |
+|                   | 3. Single Line containing a numerical value:                                                          |
+|                   |    - **PStarF** (F) – this is the fishing mortality rate that defines the overfishing level           |
+|                   | 4. Single Line containing a Integer value:                                                            |
+|                   |    - **TargetYear** (I) – this is user-selected target year for the total annual catch to produce the |
+|                   |      user-selected PStar values is calculated                                                         |
++-------------------+-------------------------------------------------------------------------------------------------------+
 
 : Structure of `r inpfile_version` input file by keyword. {#tbl-3}

@@ -5,12 +5,12 @@ editor:
 
 ## Model 3. Empirical Recruitment Distribution {.unnumbered}
 
-Another simple model for generating recruitment is to draw randomly from the observed set of recruitments $\underline{R}= \bigl\{ R(1), R(2), ..., R(T) \bigr\}$ .This may be a useful approach when the recruitment has randomly fluctuated about its mean and appears to beindependent of spawning biomass over the observed range of data. In this case, the recruitment distribution may be modeled as a multinomial random variable where the probability of randomly choosing a particular recruitment is $1 / T$ given $T$ observed recruitments. The empirical recruitment distribution model does not depend on spawning biomass and is time-invariant.
+Another simple model for generating recruitment is to draw randomly from the observed set of recruitments $\underline{R}= \bigl\{ R(1), R(2), ..., R(T) \bigr\}$ . This may be a useful approach when the recruitment has randomly fluctuated about its mean and appears to be independent of spawning biomass over the observed range of data. In this case, the recruitment distribution may be modeled as a multinomial random variable where the probability of randomly choosing a particular recruitment is $1 / T$ given $T$ observed recruitments. The empirical recruitment distribution model does not depend on spawning biomass and is time-invariant.
 
-In this model, realized recruitment $\hat{R}$ is simulated from the empirical recruitment distribution as
+In this model, realized recruitment $\widehat{R}$ is simulated from the empirical recruitment distribution as
 
 $$
 Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}\label{eq:22}
 $$
-The empirical recruitment distribution approach is nonparametric and assumes that future recruitment is totally independent of spawning stock biomass. When current levels of $B_S$ are near the midrange of historical values this assumption seems reasonable. However, if contemporary $S_B$ values are near the bottom of the range, then this approach could be overly optimistic, for it assumes that all historicallyobserved recruitment levels are possible, regardless of $B_S$. The AGEPRO program can generate stochastic recruitments under model 3 based on thousands of input recruitment data points. Note that the empirical recruitment distribution model can be used to make deterministic projections by specifying a single observed recruitment.
+The empirical recruitment distribution approach is nonparametric and assumes that future recruitment is totally independent of spawning stock biomass. When current levels of $B_S$ are near the midrange of historical values this assumption seems reasonable. However, if contemporary $B_S$ values are near the bottom of the range, then this approach could be overly optimistic, for it assumes that all historically observed recruitment levels are possible, regardless of $B_S$. The AGEPRO program can generate stochastic recruitments under model 3 based on thousands of input recruitment data points. Note that the empirical recruitment distribution model can be used to make deterministic projections by specifying a single observed recruitment.
 

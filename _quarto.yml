@@ -30,6 +30,9 @@ book:
         - table4alt_recruit-models.qmd
         - 11-2_model-outputs.qmd
         - 11-3_agepro-examples.qmd
+        - fig01_agepro-flowchart.qmd
+        - fig02_agepro-io.qmd
+    - 12_summary.qmd
     - acknowledgments.qmd
     - references.qmd
   appendices:
