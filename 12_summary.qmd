@@ -1,0 +1,9 @@
+---
+format: html
+editor: 
+  mode: source
+---
+
+## Summary  {.unnumbered}
+
+This reference manual documents AGEPRO version 4.25, a stochastic age-structured projection model and software package designed to evaluate fishery harvest strategies under uncertainty. It describes how AGEPRO simulates population abundance, survival, spawning biomass, catch, landings, discards, and fishing mortality at age for one or more fleets, while explicitly incorporating uncertainty from recruitment, initial population size, and time-varying biological and fishery processes. The manual details a suite of twenty one recruitment models, including empirical, parametric, and covariate-driven formulations, and explains how model probabilities are used to implement recruitment model averaging when projecting future stock trajectories. It further outlines the two harvest control types (effort-based and quota-based), the treatment of biomass and fishing mortality thresholds for policy evaluation, and the three projection modes—standard, rebuilding, and $P*$ (overfishing-probability-based) analyses. Practical guidance is provided on constructing AGEPRO input files, interpreting standard and auxiliary outputs (including updated **AuxiliaryOutputFlag** behavior and optional R export), and using worked examples to implement typical projection problems. Overall, the manual serves as a comprehensive technical guide for configuring, running, and interpreting AGEPRO 4.25 projections to support quantitative fishery management decisions.
