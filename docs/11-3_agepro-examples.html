@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>AGEPRO Projection Examples – AGEPRO Reference Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./fig01_agepro-flowchart.html" rel="next">
+<link href="./11-2_model-outputs.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./11-3_agepro-examples.html">AGEPRO Projection Examples</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AGEPRO Reference Manual</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_age-struct-pop-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Age Structured Population Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table1_AGEPRO-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 1: Glossary of AGEPRO variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_catch-landings-discards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Catch, Landings, and Discards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_pop-harvest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Population Harvest Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_initial-pop-abundance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial Population Abundance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_retroadjust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Retrospective Adjustment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_stock-recruit-relationship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stock Recruitment Relationship</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_recruit-probabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recruitment Model Probabilities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_process-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Process Errors for Population and Fishery Processes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_thresholds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference Point Thresholds</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_harvest-projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Types of Projection Analyses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./11_AGEPRO-software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Age‐Structured Projection Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-1_input-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Input Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table2_AGEPRO-keywords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 2: AGEPRO Keyword Parameters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table3_keyword-struct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 3: AGEPRO Keyword structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table4alt_recruit-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Table 4: Input data structure for AGEPRO Recruitment Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-2_model-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-3_agepro-examples.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">AGEPRO Projection Examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig01_agepro-flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 1: Flowchart for AGEPRO</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig02_agepro-io.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 2: AGEPRO Input/Output</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example1-inpfile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 1 Input File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example2-inpfile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 2 Input File</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example3-inpfile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 3 Input File</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link active" data-scroll-target="#example-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./11-3_agepro-examples.html">AGEPRO Projection Examples</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">AGEPRO Projection Examples</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The following set of examples is provided to illustrate projection options and features of the software. These projections use actual fishery data but are for the purposes of illustration only.</p>
+<section id="example-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="example-1">Example 1</h3>
+<p>The first example is a fishing mortality and landings quota projection for Acadian redfish. The time horizon is 2004-2009. The fishery is comprised of two fleets that have identical fishing mortality rates in 2004, identical quotas in 2005, and fishing mortality rates that differ by 2-fold during 2006-2009. This is standard projection analysis with 1000 bootstraps and 100 simulations per bootstrap based on an ADAPT-VPA stock assessment analysis. The model also outputs an R dataframe named <code>Example1.rdat</code>.</p>
+<p>Running <code>Example1.INP</code> (see Appendix for input file) produces the following output file <code>Example1.out</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>AGEPRO VERSION 4.25</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>REDFISH - RECRUITMENT MODEL 14</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Date &amp; Time of Run: 08 Jan 2026  12:09</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Input File Name:    Example1.INP</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>First Age Class:                         1</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Number of Age Classes:                  26</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Number of Years in Projection:           6</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Number of Fleets:                        2</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Number of Recruitment Models:            1</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Number of Bootstraps:                 1000</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Number of Simulations:                 100</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Bootstrap File Name:            Example1.BSN</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Number of Feasible Solutions:     100000  of     100000 Realizations</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Input Harvest Scenario</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Year  Type        Fleet-1    Fleet-2    </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>2004  F-Mult       0.0024     0.0024 </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>2005  Landings        350        350 </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>2006  F-Mult       0.0100     0.0200 </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>2007  F-Mult       0.0100     0.0200 </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>2008  F-Mult       0.0100     0.0200 </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>2009  F-Mult       0.0100     0.0200 </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Recruits     1000000  Fish</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Year Class   Average        StdDev</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>2004         40.1044       48.2427</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>2005         39.9399       48.4981</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>2006         40.2597       48.6950</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>2007         39.9988       48.2832</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>2008         39.7856       47.8594</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>2009         39.9688       48.3182</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Recruits Distribution</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Year Class 1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>2004     1.6349     2.0914     2.5542     6.4615    29.3437    62.2498    77.8929    90.2558   286.7976</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>2005     1.6336     2.0901     2.5512     6.4411    29.2167    60.7815    77.8458    90.3986   287.6837</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>2006     1.6339     2.0818     2.5503     6.4087    29.2849    62.5382    78.0184    90.7273   288.0993</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>2007     1.6350     2.0884     2.5535     6.4762    29.2302    61.9145    77.9858    90.5247   286.4707</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>2008     1.6291     2.0739     2.5581     6.5566    29.2446    60.6213    77.7622    89.1439   285.0904</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>2009     1.6344     2.0814     2.5486     6.3915    29.2240    61.4137    77.9242    90.3276   286.2365</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass  x       1000 MT</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>2004      175.6964        4.2235</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>2005      192.3968        5.2539</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>2006      201.4634        6.0700</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>2007      207.9324        6.4531</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>2008      213.1456        6.8011</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>2009      215.0860        7.3413</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass Distribution</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Year        1%         5%         10%        25%        50%        75%        90%        95%        99%   </span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>2004   165.8702   168.7647   170.1585   172.7627   175.8220   178.5685   180.8516   182.8590   185.5053 </span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>2005   179.8749   183.7187   185.6316   188.7579   192.5022   195.8404   198.9150   201.2241   204.6585 </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>2006   187.0111   191.5018   193.8064   197.3170   201.4803   205.3870   209.1778   211.8169   215.7979 </span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>2007   192.7825   197.3533   199.8075   203.5520   207.8802   212.1475   216.2537   218.9965   223.3172 </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>2008   197.3391   201.9932   204.6073   208.5440   213.0623   217.5740   221.9409   224.7985   229.3704 </span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>2009   198.4676   203.2255   205.9027   210.1326   214.9256   219.7950   224.6927   227.6786   232.7286 </span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Biomass  x       1000 MT</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>2004      200.4105        5.4728</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>2005      211.6190        6.0268</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>2006      219.0101        6.6628</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>2007      224.8244        7.3809</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>2008      230.5532        8.6656</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>2009      233.1329       10.5266</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Biomass Distribution</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>2004   187.3184   191.4228   193.6020   196.6427   200.3895   203.9879   207.4028   209.8767   213.3962 </span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>2005   197.4898   201.7826   204.0533   207.4975   211.5900   215.5430   219.3343   222.0184   226.0499 </span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>2006   203.4715   208.0624   210.6298   214.5142   218.9408   223.3504   227.6199   230.4028   234.8195 </span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>2007   208.3775   213.0983   215.6009   219.8556   224.5965   229.4970   234.4657   237.6273   242.8899 </span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>2008   212.2679   217.3234   220.0581   224.7349   230.0168   235.6999   241.6313   245.6361   254.4078 </span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>2009   212.1551   217.8595   220.8946   226.1200   232.1720   238.8669   246.3148   251.9618   265.1028 </span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Mean Biomass  x       1000 MT</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>2004      195.1458        5.3333</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>2005      206.0695        5.8806</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>2006      211.4023        6.4287</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>2007      216.9493        7.1218</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>2008      222.4861        8.3792</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>2009      225.0470       10.1991</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Mean Biomass Distribution</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>2004   182.4417   186.3658   188.4707   191.4729   195.1342   198.6408   201.9257   204.3625   207.8441 </span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>2005   192.2944   196.4665   198.6674   202.0518   206.0438   209.8962   213.5909   216.1960   220.1623 </span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>2006   196.4359   200.8599   203.3086   207.0732   211.3393   215.5927   219.6996   222.4014   226.6476 </span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>2007   201.0893   205.6563   208.0480   212.1527   216.7332   221.4409   226.2433   229.2841   234.3950 </span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>2008   204.8088   209.7175   212.3363   216.8661   221.9610   227.4491   233.1935   237.1022   245.6560 </span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>2009   204.7735   210.2648   213.1964   218.2617   224.1069   230.5921   237.8002   243.2953   256.1339 </span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>Combined Catch Biomass  x       1000 MT</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>2004        0.6798        0.0165</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>2005        0.7000        0.0000</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>2006        4.4690        0.1527</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>2007        4.7193        0.1773</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>2008        4.8199        0.1837</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>2009        4.7281        0.1781</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Combined Catch Distribution</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>2004     0.6412     0.6528     0.6582     0.6686     0.6804     0.6910     0.6998     0.7076     0.7181 </span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>2005     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 </span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>2006     4.1055     4.2163     4.2773     4.3641     4.4707     4.5678     4.6673     4.7225     4.8303 </span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>2007     4.2936     4.4271     4.4985     4.5986     4.7187     4.8331     4.9488     5.0200     5.1366 </span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>2008     4.3998     4.5203     4.5918     4.6971     4.8175     4.9389     5.0572     5.1349     5.2583 </span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>2009     4.3327     4.4381     4.5064     4.6087     4.7229     4.8433     4.9631     5.0356     5.1587 </span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>Landings  x       1000 MT</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>2004        0.6798        0.0165</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>2005        0.7000        0.0000</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>2006        4.4690        0.1527</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>2007        4.7193        0.1773</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>2008        4.8199        0.1837</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>2009        4.7281        0.1781</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Landings Distribution</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>2004     0.6412     0.6528     0.6582     0.6686     0.6804     0.6910     0.6998     0.7076     0.7181 </span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>2005     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 </span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>2006     4.1055     4.2163     4.2773     4.3641     4.4707     4.5678     4.6673     4.7225     4.8303 </span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>2007     4.2936     4.4271     4.4985     4.5986     4.7187     4.8331     4.9488     5.0200     5.1366 </span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>2008     4.3998     4.5203     4.5918     4.6971     4.8175     4.9389     5.0572     5.1349     5.2583 </span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>2009     4.3327     4.4381     4.5064     4.6087     4.7229     4.8433     4.9631     5.0356     5.1587 </span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>Total Fishing Mortality</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>2004        0.0048        0.0000</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>2005        0.0048        0.0001</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>2006        0.0300        0.0000</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>2007        0.0300        0.0000</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>2008        0.0300        0.0000</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>2009        0.0300        0.0000</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Total Fishing Mortality Distribution</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>2004     0.0048     0.0048     0.0048     0.0048     0.0048     0.0048     0.0048     0.0048     0.0048 </span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>2005     0.0045     0.0046     0.0047     0.0047     0.0048     0.0049     0.0050     0.0051     0.0052 </span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>2006     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300 </span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>2007     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300 </span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>2008     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300 </span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>2009     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300     0.0300 </span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Numbers at Age  -       1000  Fish</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>2004</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>Age        1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>1    12980.4000 18663.2000 21701.1000 25681.5000 29898.3500 34597.0000 38643.0000 40879.9000 46319.7000</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>2    11012.5000 14992.7000 17067.0000 20861.2000 24688.7000 28313.2000 31703.5000 33915.6000 37991.9000</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>3    11843.8000 14379.0000 16732.3000 19660.0000 22777.9000 26374.3000 29338.5000 30861.6000 34220.9000</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>4    14631.7000 18363.3000 20158.2000 23132.3000 26539.6000 29624.0000 32703.8000 34627.2000 37915.7000</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>5    39321.1000 47758.8000 51266.7000 58450.0000 66254.6500 75027.3000 82757.9000 86914.7000 94299.9000</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>6    76711.2000 88108.7000 93763.8000 107388.6000 120555.9000 132828.1000 144316.0000 149223.0000 160158.6000</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>7    41239.8000 50885.2000 54643.8000 61621.7000 70058.8000 77584.0000 84239.8000 89573.4000 97410.1000</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>8    17696.1000 20383.9000 21852.0000 24527.6000 27082.3500 29770.3000 32105.4000 33636.0000 36595.0000</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>9    12784.7000 14244.0000 15217.9000 16648.0000 18047.2000 19370.0000 20766.1000 21689.7000 22928.3000</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>10    22797.0000 24359.6000 25183.7000 27037.8000 29181.5000 31094.3000 33082.5000 34043.0000 35878.2000</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>11    29175.6000 31160.8000 32789.2000 34906.2000 37188.6500 39709.7000 41823.5000 43349.7000 46085.3000</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>12    148937.5000 151393.6000 152967.8000 155734.2000 159307.7000 162082.0000 164823.3000 166757.3000 170414.4000</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>13    19296.4000 20361.9000 20843.6000 21972.2000 22993.7500 24176.5000 25053.9000 25562.1000 26542.5000</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>14     3630.2000  3939.5000  4095.9000  4415.9000  4741.3000  5059.9000  5336.6000  5489.9000  5780.6000</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>15    23274.4000 24173.1000 24849.4000 25794.3000 26982.5500 28125.9000 29204.3000 29907.3000 31110.6000</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>16     7200.0000  7925.4000  8276.4000  8969.3000  9753.8500 10518.0000 11137.9000 11616.7000 12312.1000</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>17     1428.2000  1537.6000  1589.1000  1683.7000  1793.3500  1908.8000  2011.1000  2067.0000  2171.2000</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>18     1688.2000  1821.4000  1883.0000  1980.9000  2083.3500  2173.8000  2267.2000  2330.4000  2442.0000</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>19     4025.2000  4218.2000  4335.6000  4562.6000  4810.0000  5036.4000  5239.8000  5352.6000  5539.9000</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>20     5503.5000  5798.0000  6012.8000  6298.4000  6600.7000  6913.5000  7173.3000  7299.5000  7622.9000</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>21     2002.3000  2159.2000  2247.8000  2418.3000  2588.3500  2760.3000  2921.5000  3024.9000  3156.9000</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>22     5127.7000  5290.6000  5384.3000  5554.6000  5759.7500  5966.0000  6142.3000  6278.8000  6478.8000</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>23     2091.4000  2237.8000  2305.4000  2403.9000  2533.0500  2629.3000  2724.5000  2773.4000  2899.3000</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>24      473.2000   516.3000   536.4000   574.9000   613.0500   654.3000   683.8000   705.2000   741.2000</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>25      333.0000   363.6000   378.9000   405.4000   435.4500   464.7000   488.8000   502.8000   522.0000</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>26+   15582.3000 15855.1000 15972.9000 16175.2000 16386.1000 16574.2000 16753.4000 16854.0000 17053.3000</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>2005</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>Age        1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>1     1634.9050  2091.3580  2554.2110  6461.5020 29343.6950 62249.8000 77892.9300 90255.7900 286797.6000</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>2    12404.4000 17770.0600 20673.3000 24432.9400 28455.4750 32883.7800 36787.1100 38974.5100 44154.7800</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>3    10587.7600 14259.3400 16263.1600 19836.4400 23500.4900 26891.4800 30177.0200 32205.2100 36260.5800</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>4    11285.9300 13716.4700 15918.4400 18674.3000 21675.5200 25105.4100 27922.6300 29415.5000 32642.6700</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>5    13959.2400 17488.8600 19194.2900 22008.7000 25286.4500 28203.0100 31163.1200 33015.3600 36117.5400</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>6    37546.3300 45497.1500 48694.0100 55562.6500 62998.9900 71255.7600 78599.8300 82499.8800 89686.8700</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>7    72914.7800 83607.5500 89072.2500 102083.4000 114294.1000 126059.0000 136937.1000 141589.0000 152832.4000</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>8    39577.1000 48218.9300 51834.2500 58446.8600 66450.1850 73534.0500 79911.0000 84929.7700 92504.9300</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>9    16809.0100 19345.8500 20699.9800 23218.2500 25672.9000 28255.1900 30432.0600 31875.7000 34865.1500</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>10    12104.0900 13507.5300 14405.3600 15766.5300 17078.5300 18328.8100 19706.9100 20567.8600 21753.7800</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>11    21584.6000 23048.5200 23866.8500 25625.4500 27603.9600 29441.6800 31359.7900 32260.6600 34073.7600</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>12    27633.9100 29613.6500 31101.5200 33058.8600 35225.8850 37644.2400 39631.0100 41074.8300 43755.4800</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>13    140835.7000 143255.2000 144870.5000 147550.9000 150858.2000 153645.8000 156265.9000 158049.6000 161543.3000</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>14    18318.3800 19301.4300 19747.0900 20795.0100 21812.4600 22935.3100 23756.2000 24257.5400 25214.6100</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>15     3448.6550  3730.1610  3881.9280  4183.9860  4490.4720  4800.3410  5061.6830  5206.3510  5502.2860</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>16    22068.8100 22904.1600 23542.1600 24467.1800 25572.2650 26666.1100 27672.1000 28331.5500 29634.8300</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>17     6845.8070  7515.4660  7841.4510  8507.7950  9241.4985  9959.9020 10567.9700 11016.5800 11690.5700</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>18     1352.1820  1456.8560  1506.4220  1595.9600  1701.8040  1808.7340  1906.8530  1962.1780  2063.4870</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>19     1608.5510  1725.9130  1782.7160  1875.1780  1972.6305  2059.7620  2149.6690  2207.1060  2320.6210</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>20     3823.7300  3997.1220  4106.9940  4322.0520  4556.8515  4774.9750  4966.8000  5077.7530  5272.2170</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>21     5222.2840  5502.6230  5699.3250  5973.3890  6256.0230  6554.0860  6802.4180  6938.2550  7234.9510</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>22     1903.1400  2046.5150  2131.8830  2292.5410  2451.2070  2617.9470  2769.2590  2862.9020  2999.8580</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>23     4863.8980  5012.6490  5101.2380  5266.3660  5456.8795  5652.0330  5827.9980  5952.3480  6144.0370</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>24     1988.2130  2122.8030  2186.7260  2278.4290  2399.4130  2493.3450  2584.5640  2627.9410  2752.0140</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>25      448.4781   489.6495   508.3790   545.1621   581.0267   620.1249   649.0766   668.9445   702.9467</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>26+   15188.0700 15421.4400 15540.4800 15731.6000 15941.7750 16134.6400 16302.8400 16400.8400 16595.9300</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>2006</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>Age        1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>1     1633.5550  2090.0730  2551.2010  6441.0810 29216.7200 60781.5300 77845.8400 90398.5900 287683.7000</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>2     1554.5840  1988.3930  2429.3180  6148.0710 27947.3500 59162.8700 74152.5000 85893.7700 272379.1000</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>3    11808.5300 16897.2500 19662.3000 23237.1800 27068.3600 31274.7500 34991.7100 37089.5400 42020.8500</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>4    10072.0900 13561.3000 15474.4800 18863.3500 22356.8800 25574.6300 28713.4200 30615.8700 34482.0900</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>5    10725.2200 13059.8600 15122.7900 17750.2100 20618.3400 23882.6900 26557.5800 27969.1600 31016.0500</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>6    13264.8000 16621.4900 18243.0400 20921.6800 24027.7700 26812.1100 29629.8500 31388.0500 34349.7200</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>7    35642.2000 43200.3700 46202.9300 52710.7600 59784.4150 67604.9600 74563.5300 78265.2300 85104.9900</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>8    69163.6400 79217.1100 84472.2800 96778.8600 108334.2000 119526.2000 129852.3000 134357.9000 145012.4000</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>9    37651.6200 45643.6800 49127.3700 55377.2300 62979.1550 69696.9900 75764.8700 80447.7900 87768.6100</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>10    15907.7100 18322.9600 19599.5800 21969.4600 24304.6350 26760.3900 28823.3200 30186.0600 32994.5500</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>11    11450.5000 12789.8700 13635.9800 14928.1300 16161.4950 17349.8800 18667.6700 19480.3400 20597.5000</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>12    20409.7200 21820.5300 22611.4300 24278.1200 26131.1950 27889.3200 29703.5300 30574.3700 32315.9800</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>13    26160.4200 28063.3500 29463.9000 31315.7900 33387.8600 35692.7500 37566.8000 38933.5200 41483.0800</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>14    133319.2000 135741.3000 137259.8000 139861.5000 142994.8000 145708.5000 148230.7000 149937.4000 153275.3000</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>15    17387.4600 18292.1600 18717.7500 19705.0800 20681.9200 21747.9400 22535.5100 23005.3000 23922.2800</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>16     3268.3730  3535.4920  3679.2940  3965.6490  4255.8290  4551.9880  4800.0730  4938.4300  5219.0200</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>17    20912.9900 21711.7200 22301.3500 23194.6800 24242.7200 25286.6200 26239.4600 26867.4400 28091.3100</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>18     6487.4040  7119.3860  7431.9400  8063.3250  8763.5810  9439.9440 10024.8200 10446.5000 11090.3900</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>19     1280.0760  1380.8470  1427.8160  1513.1600  1613.8665  1715.1190  1808.5360  1860.6590  1956.8070</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>20     1525.8160  1635.4730  1689.7810  1776.6430  1869.8330  1952.8200  2038.2680  2092.9440  2200.4670</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>21     3625.4690  3787.8570  3892.2190  4095.5200  4319.6270  4527.4450  4709.0310  4815.0730  5006.7560</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>22     4953.9110  5218.2170  5400.9480  5662.0610  5931.9825  6213.3380  6450.3580  6582.9370  6860.6230</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>23     1804.9150  1940.6280  2021.1980  2173.3170  2323.7725  2481.5780  2625.4240  2713.7320  2846.0640</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>24     4608.8600  4750.6550  4835.5090  4992.3780  5172.5240  5358.7520  5527.3500  5640.9010  5828.6620</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>25     1885.6220  2012.7910  2073.1110  2159.9330  2274.0410  2364.8120  2450.2040  2491.5730  2608.4110</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>26+   14943.0800 15148.4600 15262.1100 15458.7600 15661.0100 15853.8800 16024.0000 16123.8400 16312.5700</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>2007</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>Age        1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>1     1633.8770  2081.7880  2550.2700  6408.6690 29284.9300 62538.1600 78018.4100 90727.2800 288099.3000</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>2     1553.9560  1987.5510  2426.3150  6126.7130 27840.3150 57809.0500 74065.0600 85936.4400 273819.8000</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>3     1478.2740  1892.3280  2311.5590  5846.9230 26608.8100 56220.3400 70562.7900 81738.1800 259063.7000</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>4    11221.1200 16062.9700 18684.6000 22089.5000 25748.3600 29736.4400 33266.4000 35263.6600 39954.8000</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>5     9591.8010 12870.5200 14690.0000 17906.7100 21233.4500 24281.6900 27261.3100 29078.5600 32732.5100</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>6    10123.9200 12347.7800 14280.3200 16766.5300 19489.0300 22569.2300 25102.5100 26437.2200 29284.8300</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>7    12412.5400 15569.1700 17094.1700 19592.3900 22493.5500 25115.8200 27759.3100 29388.8800 32193.5800</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>8    33268.2900 40305.4800 43081.2700 49166.9800 55760.7550 63067.0700 69540.9200 73012.7000 79386.9900</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>9    64273.1100 73579.6300 78517.0600 89910.6300 100639.2000 111050.4000 120645.3000 124934.9000 134877.2000</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>10    34789.4400 42091.9500 45333.9000 51112.8300 58143.6800 64349.4800 69949.2400 74239.0000 81027.9100</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>11    14681.6200 16914.1200 18096.2800 20274.7400 22438.0650 24710.1400 26614.8900 27867.0900 30455.6500</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>12    10614.3300 11857.2800 12634.3600 13838.6500 14980.2000 16086.5400 17316.4800 18069.2100 19094.4400</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>13    18958.2400 20277.6700 21017.6500 22566.2400 24284.6400 25924.0000 27616.7300 28433.5700 30042.6600</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>14    24341.3600 26159.4000 27448.5000 29189.3100 31116.3450 33273.8400 35018.5300 36285.8300 38663.3300</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>15    124119.8000 126497.1000 127897.1000 130372.3000 133311.9500 135924.1000 138304.8000 139880.4000 142997.2000</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>16    16192.7600 17050.0600 17454.4500 18368.0100 19283.1650 20278.7000 21021.0400 21460.6300 22313.1000</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>17     3044.9410  3294.9670  3430.8980  3697.2650  3968.0605  4243.9300  4477.7210  4607.3190  4868.8690</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>18    19488.3800 20247.3900 20785.5000 21629.0200 22609.0550 23582.1300 24479.4600 25052.9800 26195.2200</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>19     6047.9080  6636.9130  6927.4790  7517.5440  8171.6335  8799.5860  9349.8760  9742.5300 10350.3600</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>20     1192.5400  1287.0810  1331.4860  1410.7070  1505.0030  1599.5570  1686.7890  1734.9440  1825.0320</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>21     1423.1090  1523.8990  1575.2460  1655.9950  1743.1115  1821.1540  1901.0320  1951.4100  2053.1220</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>22     3376.3490  3530.4540  3628.5860  3817.7870  4027.0575  4221.7900  4391.3920  4491.2230  4675.0600</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>23     4616.6280  4865.6160  5035.3570  5278.6950  5531.5805  5794.1770  6016.4370  6139.6360  6402.6650</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>24     1682.2490  1809.1320  1883.9760  2026.2560  2166.8960  2314.1510  2448.7740  2529.5140  2656.0550</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>25     4295.9040  4427.8880  4508.6410  4654.3580  4822.9430  4997.4580  5155.8980  5259.9980  5435.9720</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>26+   15939.8100 16170.1700 16295.3700 16497.3000 16710.3100 16919.8400 17105.7400 17218.0100 17427.8800</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>2008</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>Age        1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>1     1635.0320  2088.3650  2553.4760  6476.1610 29230.2100 61914.5500 77985.7600 90524.6800 286470.7000</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>2     1554.6100  1979.6510  2426.6440  6098.1270 27916.7850 59484.4600 74294.7400 86307.5500 274000.8000</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>3     1477.5630  1890.0370  2307.9560  5831.3390 26497.3200 54958.4900 70472.6300 81779.6900 260586.5000</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>4     1406.4420  1800.1310  2199.3400  5561.4770 25313.3500 53445.7200 67123.7800 77712.6200 246408.5000</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>5    10654.7200 15247.2300 17734.8100 20978.6800 24447.3100 28231.9500 31589.9400 33493.0800 37954.4300</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>6     9061.2470 12151.6400 13877.2200 16918.5400 20066.7700 22944.0400 25763.1700 27484.3200 30975.0000</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>7     9475.2330 11572.4000 13365.2100 15698.5000 18252.8800 21134.8400 23509.2900 24753.4400 27412.9700</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>8    11573.2000 14518.7100 15946.3500 18276.8000 20972.1000 23435.1300 25905.9500 27428.3300 30035.8100</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>9    30884.4500 37473.4700 40042.1700 45680.5700 51810.2600 58609.7600 64601.7800 67841.1800 73785.7500</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>10    59338.9700 67895.4500 72503.9700 82971.6700 92882.4900 102497.8000 111365.0000 115390.2000 124626.9000</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>11    32140.3400 38831.0000 41832.1300 47181.1300 53671.9850 59411.6000 64611.2600 68509.2700 74845.3300</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>12    13597.6800 15683.6400 16777.0800 18794.6700 20808.5350 22914.7900 24682.6200 25845.6800 28217.5800</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>13     9858.6200 11022.5300 11743.0500 12858.8800 13921.6200 14954.6400 16097.6300 16798.7200 17766.4100</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>14    17663.2800 18894.3800 19593.6700 21034.0100 22624.3650 24166.1600 25735.3600 26509.9400 28005.4200</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>15    22650.8400 24392.8400 25590.6700 27211.2200 29016.1400 31025.0700 32662.3200 33839.6200 36039.5500</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>16    115572.0000 117877.7000 119200.9000 121541.9000 124271.4000 126776.9000 129027.1000 130519.5000 133465.9000</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>17    15097.1400 15888.5300 16276.2800 17121.1100 17982.1350 18908.7600 19604.2200 20014.5800 20818.1900</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>18     2839.7310  3072.3100  3199.3780  3447.5750  3699.2655  3956.3810  4175.1820  4297.7180  4541.5740</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>19    18155.8600 18871.9200 19375.1400 20169.5800 21082.8650 21993.3100 22828.5900 23363.8200 24418.7100</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>20     5639.4070  6185.9540  6458.7520  7009.5110  7619.5430  8203.4690  8720.7260  9086.2030  9664.8090</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>21     1111.6510  1199.8570  1241.4600  1315.3150  1403.6360  1491.6420  1573.0090  1618.0260  1702.7350</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>22     1327.4670  1420.3660  1468.1660  1543.5750  1625.2205  1698.1130  1772.5600  1820.0600  1914.8200</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>23     3146.4760  3291.9360  3382.5970  3559.2970  3754.8165  3936.7560  4095.3120  4189.6340  4358.4400</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>24     4302.6310  4534.9940  4694.2430  4921.3080  5158.4490  5403.6320  5610.7460  5727.4110  5972.5750</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>25     1570.4490  1686.4470  1756.3220  1888.7530  2020.3265  2157.9960  2283.2870  2359.0020  2477.5030</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>26+   19203.1100 19464.1500 19595.2800 19818.4200 20074.3900 20336.5900 20580.7000 20722.6300 20971.3700</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>2009</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>Age        1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>1     1629.0870  2073.8880  2558.1460  6556.5670 29244.6100 60621.2500 77762.2000 89143.9200 285090.4000</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>2     1554.6660  1986.1750  2429.6810  6157.6460 27846.3800 58854.6700 74247.8600 86165.1800 272313.6000</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>3     1478.2020  1881.8260  2308.9790  5801.3760 26575.8850 56592.1100 70711.6700 82099.0200 260995.7000</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>4     1405.0330  1797.1580  2196.0090  5542.6200 25208.0350 52282.5500 67025.0400 77746.7000 247680.5000</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>5     1336.0210  1709.6020  2089.5760  5282.4850 24051.2350 50713.6200 63778.7500 73742.9900 234020.4000</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>6    10060.6600 14404.3200 16767.4300 19819.2000 23105.5650 26670.6800 29864.6500 31656.1400 35867.1700</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>7     8490.3400 11370.8700 12994.9000 15838.9000 18788.8250 21487.0700 24124.5200 25739.3400 28969.5000</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>8     8838.5860 10799.1700 12459.8600 14639.7600 17024.8100 19709.0700 21927.7300 23080.6400 25587.6800</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>9    10736.7100 13478.7000 14818.0800 16980.7900 19486.9900 21775.3200 24071.2100 25478.9600 27905.5600</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>10    28537.4000 34606.1800 36969.6100 42159.8000 47825.8650 54108.5200 59654.5400 62620.1500 68084.7900</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>11    54832.5600 62666.1100 66942.7300 76586.7500 85740.7750 94632.6300 102793.9000 106599.6000 115060.3000</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>12    29782.7500 35997.2200 38758.7600 43745.6000 49758.1450 55094.3800 59918.6200 63508.3000 69382.5600</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>13    12631.0100 14577.5000 15591.5700 17472.9100 19347.0800 21302.4300 22952.2600 24023.0400 26225.9200</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>14     9185.7300 10275.2900 10937.8700 11982.9500 12975.2400 13940.7200 15008.3100 15659.3700 16561.5900</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>15    16455.1300 17616.3200 18264.4300 19611.7900 21093.1000 22533.4100 24001.2900 24718.8000 26109.6700</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>16    21101.8400 22739.5600 23849.0800 25359.4200 27057.9350 28932.3500 30471.6100 31552.8000 33597.4400</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>17    107627.7000 109831.8000 111092.2000 113314.6000 115867.0000 118248.9000 120365.3000 121780.4000 124595.4000</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>18    14063.8400 14810.0000 15175.1600 15961.3800 16767.6000 17632.0100 18286.6200 18670.6400 19425.3000</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>19     2647.7930  2863.9190  2982.3350  3214.9730  3449.5570  3689.4040  3894.4640  4006.7490  4236.8940</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>20    16915.2000 17592.8000 18060.2900 18801.2000 19658.0250 20512.8500 21289.1700 21792.0100 22768.7100</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>21     5254.2520  5765.7040  6021.1940  6536.6240  7105.4475  7648.2030  8134.3950  8474.6100  9014.3330</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>22     1036.3350  1117.8810  1157.2690  1226.5760  1308.9590  1390.9280  1466.8110  1508.9080  1588.6030</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>23     1238.6270  1324.1780  1368.3550  1438.8980  1515.1955  1583.6540  1653.1420  1697.6120  1786.4740</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>24     2932.8290  3068.0800  3153.6430  3318.6100  3501.3740  3671.4330  3819.0730  3906.8520  4067.5890</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>25     4010.3320  4228.4660  4374.9310  4587.5370  4809.2845  5039.2940  5232.3320  5342.5880  5569.4730</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>26+   19643.0700 19939.6000 20079.1500 20315.2000 20604.2150 20895.2500 21148.2000 21307.6800 21594.5400</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>Probability Spawning Stock Biomass Exceeds Threshold    236.700 (1000 MT)</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>Year    Probability</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>2004    0.000000</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>2005    0.000000</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>2006    0.000000</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>2007    0.000000</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>2008    0.000010</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>2009    0.001940</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>Probability Threshold Exceeded at Least Once =     0.0019</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>Probability Total Fishing Mortality Exceeds Threshold     0.0400 </span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>Year    Probability</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>2004    0.000000</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>2005    0.000000</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>2006    0.000000</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>2007    0.000000</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>2008    0.000000</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>2009    0.000000</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>Probability Threshold Exceeded at Least Once =     0.0000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="example-2">Example 2</h3>
+<p>The second example is a fishing mortality and landings quota projection for Gulf of Maine haddock with a PStar analysis in 2018. The time horizon is 2014-2020. The fishery is comprised of one fleet. This is PStar projection analysis with 1000 bootstraps and 10 simulations per bootstrap based on an ASAP stock assessment analysis. The model output shows that total allowable catch amounts in 2018 to produce probabilities of overfishing of 10%, 20%, 30%, 40% and 50% at the overfishing level of <span class="math inline">\(F\)</span>=0.35. The total allowable catches to produce overfishing probabilities of 10%, 20%, 30%, 40% and 50% are calculated to be 1780, 1998, 2176, 2332, and 2497 mt, respectively. The model output includes a stock summary of numbers at age and also outputs a percentile analysis for key outputs at the 90th percentile.</p>
+<p>Running <code>Example2.INP</code> produces the following output file <code>Example2.out</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>AGEPRO VERSION 4.25</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>GoM haddock ASAP_final (1977-2011 recruitment)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Date &amp; Time of Run: 08 Jan 2026  12:12</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Input File Name:    Example2.INP</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>First Age Class:                         1</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>Number of Age Classes:                   9</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Number of Years in Projection:           7</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Number of Fleets:                        1</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Number of Recruitment Models:            1</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Number of Bootstraps:                 1000</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>Number of Simulations:                  10</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Bootstrap File Name:            Example2.BSN</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>Number of Feasible Solutions:      10000  of      10000 Realizations</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>Input Harvest Scenario</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>Year  Type         Value</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>2014  Landings        500 </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>2015  F-Mult       0.2000 </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>2016  F-Mult       0.2000 </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>2017  F-Mult       0.2000 </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>2018  Removals       2497 </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>2019  F-Mult       0.2000 </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>2020  F-Mult       0.2000 </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>Recruits        1000  Fish</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>Year Class   Average        StdDev</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>2014       2113.8225     2387.2409</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>2015       2095.2435     2388.6322</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>2016       2161.9981     2415.4853</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>2017       2154.6634     2430.4964</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>2018       2141.7581     2406.3266</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>2019       2156.4185     2450.1039</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>2020       2183.0481     2465.0965</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>Recruits Distribution</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>Year Class 1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>2014   150.1671   205.1791   227.5903   331.1452  1120.8200  2542.1990  6162.8810  6484.1110 11028.6100</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>2015   149.3512   204.6887   228.6934   334.4683  1120.1820  2541.2640  6152.7080  6487.6110 11048.1000</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>2016   154.2960   203.8387   225.7294   361.4124  1129.3905  2545.1890  6212.6520  6501.7350 10886.1000</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>2017   152.0371   210.7372   232.7332   359.0538  1129.9945  2544.1510  6190.1710  6506.0160 11309.1700</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>2018   153.6666   204.7484   227.5898   349.5553  1122.8935  2544.3130  6203.1390  6499.2570 11243.7600</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>2019   152.0957   209.2503   231.1399   342.5836  1125.1445  2543.9000  6212.2790  6536.6520 11337.6800</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>2020   150.5870   206.1237   230.0479   360.4650  1132.4435  2544.9890  6226.1050  6535.5360 11422.0900</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass  x       1000 MT</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>2014        6.6153        1.5860</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>2015       11.0899        2.9220</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>2016       12.8636        3.4163</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>2017       12.6038        3.2662</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>2018       11.3916        3.0953</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>2019        9.7421        3.0356</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>2020        9.0292        2.7831</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass Distribution</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>Year        1%         5%         10%        25%        50%        75%        90%        95%        99%   </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>2014     3.5200     4.3275     4.7137     5.4851     6.4722     7.5894     8.7222     9.4729    10.9446 </span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>2015     5.4666     6.9514     7.6632     8.9364    10.7412    12.9279    14.9858    16.4572    19.3031 </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>2016     6.4490     8.0138     8.8712    10.3627    12.4238    15.0340    17.4631    19.0611    22.6196 </span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>2017     6.5380     7.9215     8.7276    10.2139    12.2223    14.6495    17.0540    18.4992    21.5570 </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>2018     5.6092     6.9035     7.6665     9.1293    11.0387    13.3430    15.5845    16.9557    19.8974 </span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>2019     4.0236     5.3269     6.0556     7.5435     9.4281    11.6586    13.8259    15.2291    17.8403 </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>2020     3.8158     4.9913     5.6425     6.9951     8.7759    10.8011    12.7350    14.0313    16.5065 </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Biomass  x       1000 MT</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>2014       11.4167        2.9021</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>2015       13.9657        3.6246</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>2016       14.8968        3.8103</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>2017       14.6414        3.6817</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>2018       13.7025        3.4096</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>2019       11.6265        3.4733</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>2020       10.8758        3.2285</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Biomass Distribution</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>2014     5.8387     7.3015     8.0296     9.3083    11.0600    13.2142    15.2749    16.6707    19.5190 </span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>2015     7.1894     8.8204     9.7234    11.2971    13.5244    16.2526    18.8028    20.6046    24.1617 </span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>2016     7.7881     9.4605    10.4082    12.1233    14.4212    17.2943    20.0188    21.8708    25.6910 </span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>2017     7.7478     9.3316    10.2328    11.9419    14.2320    16.9148    19.6778    21.2949    24.6684 </span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>2018     7.2064     8.7307     9.5603    11.2420    13.3875    15.8500    18.2481    19.8581    22.8287 </span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>2019     4.9782     6.5211     7.4069     9.0983    11.3092    13.8388    16.3219    17.7958    20.9340 </span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>2020     4.7593     6.1337     6.9781     8.5232    10.5738    12.9143    15.2091    16.6590    19.4733 </span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>Mean Biomass  x       1000 MT</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>2014       13.5594        3.5654</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>2015       15.0921        4.0054</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>2016       15.3716        3.9588</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>2017       14.6866        3.7276</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>2018       12.9499        3.5927</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>2019       11.4205        3.4391</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>2020       10.7213        3.2607</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>Mean Biomass Distribution</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>2014     6.7743     8.5594     9.4054    10.9301    13.1275    15.7951    18.3751    20.0235    23.4287 </span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>2015     7.5738     9.4465    10.3652    12.1587    14.5926    17.5658    20.4590    22.3897    26.2371 </span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>2016     7.9903     9.7496    10.6488    12.4953    14.9115    17.8132    20.7241    22.5648    26.2661 </span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>2017     7.6799     9.2810    10.1779    11.9493    14.2831    17.0375    19.6923    21.2855    24.9087 </span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>2018     6.1034     7.6719     8.5812    10.3214    12.6155    15.2101    17.6818    19.3861    22.5858 </span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>2019     4.9062     6.3754     7.2373     8.9247    11.0836    13.6122    15.9977    17.5320    20.7117 </span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>2020     4.6255     5.9719     6.7819     8.3407    10.4020    12.7506    15.0877    16.4991    19.5794 </span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>Combined Catch Biomass  x       1000 MT</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>2014        0.5000        0.0000</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>2015        0.8803        0.2338</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>2016        1.1420        0.3043</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>2017        1.4560        0.3947</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>2018        2.4966        0.0000</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>2019        1.3033        0.4176</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>2020        1.2978        0.4060</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>Combined Catch Distribution</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>2014     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 </span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>2015     0.4340     0.5427     0.6046     0.7113     0.8555     1.0264     1.1884     1.3045     1.5357 </span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>2016     0.5651     0.7098     0.7834     0.9215     1.1052     1.3265     1.5480     1.6929     1.9909 </span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>2017     0.7298     0.9039     0.9911     1.1700     1.4071     1.6944     1.9823     2.1726     2.6016 </span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>2018     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966 </span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>2019     0.5368     0.7012     0.8076     0.9984     1.2549     1.5584     1.8669     2.0601     2.4484 </span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>2020     0.5392     0.7114     0.8088     1.0025     1.2569     1.5518     1.8438     2.0309     2.3896 </span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>Landings  x       1000 MT</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>2014        0.5000        0.0000</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>2015        0.8803        0.2338</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>2016        1.1420        0.3043</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>2017        1.4560        0.3947</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>2018        2.4966        0.0000</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>2019        1.3033        0.4176</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>2020        1.2978        0.4060</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Landings Distribution</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>2014     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 </span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>2015     0.4340     0.5427     0.6046     0.7113     0.8555     1.0264     1.1884     1.3045     1.5357 </span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>2016     0.5651     0.7098     0.7834     0.9215     1.1052     1.3265     1.5480     1.6929     1.9909 </span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>2017     0.7298     0.9039     0.9911     1.1700     1.4071     1.6944     1.9823     2.1726     2.6016 </span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>2018     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966     2.4966 </span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>2019     0.5368     0.7012     0.8076     0.9984     1.2549     1.5584     1.8669     2.0601     2.4484 </span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>2020     0.5392     0.7114     0.8088     1.0025     1.2569     1.5518     1.8438     2.0309     2.3896 </span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>Total Fishing Mortality</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>2014        0.2105        0.0583</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>2015        0.2000        0.0000</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>2016        0.2000        0.0000</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>2017        0.2000        0.0000</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>2018        0.3687        0.1159</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>2019        0.2000        0.0000</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>2020        0.2000        0.0000</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>Total Fishing Mortality Distribution</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>2014     0.1148     0.1340     0.1461     0.1696     0.2014     0.2412     0.2857     0.3139     0.3952 </span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>2015     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 </span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>2016     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 </span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>2017     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 </span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>2018     0.1825     0.2189     0.2408     0.2860     0.3500     0.4296     0.5190     0.5799     0.7405 </span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>2019     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 </span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>2020     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 </span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>Requested Percentile Report</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>Percentile =    90.00 %</span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>                                 2014       2015       2016       2017       2018       2019       2020 </span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>Recruits                    6162.8810  6152.7080  6212.6520  6190.1710  6203.1390  6212.2790  6226.1050 </span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass         8.7222    14.9858    17.4631    17.0540    15.5845    13.8259    12.7350 </span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>Jan-1 Stock Biomass           15.2749    18.8028    20.0188    19.6778    18.2481    16.3219    15.2091 </span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>Mean Biomass                  18.3751    20.4590    20.7241    19.6923    17.6818    15.9977    15.0877 </span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>Combined Catch Biomass         0.5000     1.1884     1.5480     1.9823     2.4966     1.8669     1.8438 </span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>Landings                       0.5000     1.1884     1.5480     1.9823     2.4966     1.8669     1.8438 </span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>FMort                          0.2857     0.2000     0.2000     0.2000     0.5190     0.2000     0.2000 </span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>PStar Summary Report</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>Overfishing F =     0.3500   Target Year = 2018</span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>  PStar          TAC</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>  0.1000         1780</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>  0.2000         1998</span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>  0.3000         2176</span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>  0.4000         2332</span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>  0.5000         2497</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="example-3">Example 3</h3>
+<p>The third example is a fishing mortality and landings quota projection for Gulf of Maine haddock with a rebuilding analysis for 2014-2020. The fishery is comprised of one fleet with process error in fishery selectivity. This is rebuilding projection with 1000 bootstraps and 10 simulations per bootstrap based on an ASAP stock assessment analysis. The model output shows the constant fishing mortality to rebuild the stock is <span class="math inline">\(F_{REBUILD} = 0.045\)</span>. The model output includes a stock summary of numbers at age and also outputs a percentile analysis for key outputs at the <span class="math inline">\(90^{th}\)</span> percentile.</p>
+<p>Running <code>Example3.INP</code> produces the following output file <code>Example3.out</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>AGEPRO VERSION 4.25</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>GoM haddock ASAP_final FREBUILD Projection</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Date &amp; Time of Run: 08 Jan 2026  13:56</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Input File Name:    Example3.INP</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>First Age Class:                         1</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Number of Age Classes:                   9</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Number of Years in Projection:           7</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>Number of Fleets:                        1</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Number of Recruitment Models:            1</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>Number of Bootstraps:                 1000</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>Number of Simulations:                  10</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>Bootstrap File Name:            Example3.BSN</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Number of Feasible Solutions:      10000  of      10000 Realizations</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>Input Harvest Scenario</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>Year  Type         Value</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>2014  Landings        500 </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>2015  F-Mult       0.3000 </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>2016  F-Mult       0.3000 </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>2017  F-Mult       0.3000 </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>2018  F-Mult       0.3000 </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>2019  F-Mult       0.3000 </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>2020  F-Mult       0.3000 </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>Recruits        1000  Fish</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>Year Class   Average        StdDev</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>2014       2170.8200     2441.8617</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>2015       2144.2492     2416.6899</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>2016       2150.4373     2418.5021</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>2017       2077.7020     2359.7104</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>2018       2169.2781     2458.9123</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>2019       2146.2591     2453.9399</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>2020       2109.8574     2409.5591</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>Recruits Distribution</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>Year Class 1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>2014   153.7521   208.0085   229.3621   347.0616  1132.0955  2545.3470  6225.6320  6522.2980 11133.4100</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>2015   152.8537   207.5118   228.9794   352.4027  1126.1215  2542.6540  6181.5870  6500.1300 11200.0900</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>2016   152.0864   205.9702   227.0639   334.5421  1120.9140  2544.0470  6196.3710  6505.2510 10864.6400</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>2017   153.9306   204.6065   223.9934   335.6253  1120.2075  2541.6660  6154.7360  6491.9800 10947.3800</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>2018   151.7663   206.4086   227.8564   353.3611  1136.3925  2544.5000  6227.9310  6534.0640 11412.9500</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>2019   150.6260   205.4969   229.0507   342.5477  1120.8380  2543.5260  6205.1600  6521.0480 11515.9200</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>2020   152.6280   209.8481   230.9342   348.8617  1120.4415  2541.6850  6179.7760  6495.6550 11322.8800</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass  x       1000 MT</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>2014        6.6170        1.5864</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>2015       11.2472        2.9734</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>2016       13.6893        3.6225</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>2017       14.2545        3.6743</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>2018       14.2000        3.5843</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>2019       13.8474        3.4929</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>2020       13.5056        3.3958</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass Distribution</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>Year        1%         5%         10%        25%        50%        75%        90%        95%        99%   </span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>2014     3.5078     4.3130     4.7139     5.4741     6.4677     7.5996     8.7246     9.5079    10.8959 </span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>2015     5.5792     7.0419     7.7295     9.0558    10.8637    13.1037    15.2164    16.6561    19.6791 </span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>2016     6.8389     8.5537     9.4430    11.0420    13.2202    15.9565    18.5612    20.2245    23.9665 </span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>2017     7.3671     8.9936     9.9199    11.6008    13.8159    16.5604    19.2488    20.9204    24.5266 </span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>2018     7.4340     9.0080     9.8747    11.5974    13.8368    16.4445    18.9478    20.6655    24.1175 </span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>2019     7.2135     8.7442     9.6034    11.3116    13.5319    16.0556    18.4609    20.0106    23.2609 </span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>2020     7.1247     8.5118     9.3369    11.0000    13.2158    15.6735    18.0730    19.5799    22.4662 </span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Biomass  x       1000 MT</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>2014       11.4174        2.8996</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>2015       13.9853        3.6385</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>2016       15.5776        3.9671</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>2017       16.1162        4.0252</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>2018       16.0743        3.9486</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>2019       15.7028        3.8651</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>2020       15.3638        3.7809</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>JAN-1 Stock Biomass Distribution</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>2014     5.9561     7.3305     8.0160     9.3127    11.0570    13.2145    15.2783    16.6890    19.4895 </span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>2015     7.0768     8.8151     9.7325    11.3215    13.5287    16.2558    18.8747    20.6014    24.4138 </span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>2016     8.1564     9.8810    10.8909    12.7070    15.0950    18.1127    20.8555    22.7520    26.5053 </span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>2017     8.5564    10.2829    11.2717    13.1921    15.6896    18.6290    21.5091    23.3583    27.0562 </span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>2018     8.5860    10.3039    11.2642    13.1568    15.7288    18.5593    21.3129    23.1065    26.8372 </span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>2019     8.3366    10.0510    10.9747    12.8914    15.3734    18.1349    20.8302    22.5606    26.1722 </span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>2020     8.1237     9.7586    10.7283    12.5950    15.0481    17.7564    20.3938    22.0870    25.1322 </span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>Mean Biomass  x       1000 MT</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>2014       13.5499        3.5542</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>2015       15.4331        4.0737</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>2016       16.4904        4.2029</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>2017       16.6939        4.1849</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>2018       16.3128        4.0289</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>2019       15.7412        3.9122</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>2020       15.4252        3.8993</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>Mean Biomass Distribution</span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>2014     6.8296     8.5113     9.3948    10.9509    13.0968    15.7592    18.2887    20.0230    23.4237 </span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>2015     7.8519     9.6342    10.6250    12.5018    14.9013    17.9378    20.8969    22.8972    27.2031 </span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>2016     8.6093    10.4184    11.4735    13.4336    16.0525    19.1332    22.1543    24.0733    28.1761 </span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>2017     8.7683    10.6194    11.6720    13.6335    16.2788    19.3000    22.2328    24.2065    28.2042 </span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>2018     8.6469    10.3838    11.3612    13.3676    15.9913    18.8559    21.6646    23.4337    27.1639 </span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>2019     8.3179     9.9544    10.9414    12.8538    15.4182    18.2748    20.9306    22.6906    26.1512 </span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>2020     7.9700     9.6937    10.6649    12.5609    15.0972    17.9037    20.6399    22.3327    25.8592 </span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>Combined Catch Biomass  x       1000 MT</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>2014        0.5000        0.0000</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>2015        0.2016        0.0530</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>2016        0.2789        0.0737</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>2017        0.3796        0.1018</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>2018        0.4419        0.1161</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>2019        0.4422        0.1156</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>2020        0.4748        0.1232</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>Combined Catch Distribution</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>2014     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 </span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>2015     0.1003     0.1249     0.1392     0.1633     0.1963     0.2339     0.2728     0.2977     0.3469 </span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>2016     0.1394     0.1741     0.1925     0.2250     0.2708     0.3237     0.3775     0.4135     0.4824 </span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>2017     0.1914     0.2364     0.2608     0.3046     0.3669     0.4417     0.5168     0.5646     0.6686 </span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>2018     0.2283     0.2769     0.3047     0.3575     0.4290     0.5124     0.5971     0.6567     0.7565 </span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>2019     0.2287     0.2767     0.3051     0.3569     0.4295     0.5137     0.5978     0.6517     0.7612 </span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>2020     0.2444     0.2973     0.3263     0.3852     0.4629     0.5511     0.6407     0.6968     0.8046 </span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>Landings  x       1000 MT</span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>2014        0.5000        0.0000</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>2015        0.2016        0.0530</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>2016        0.2789        0.0737</span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>2017        0.3796        0.1018</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>2018        0.4419        0.1161</span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>2019        0.4422        0.1156</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>2020        0.4748        0.1232</span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>Landings Distribution</span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>2014     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 </span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>2015     0.1003     0.1249     0.1392     0.1633     0.1963     0.2339     0.2728     0.2977     0.3469 </span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>2016     0.1394     0.1741     0.1925     0.2250     0.2708     0.3237     0.3775     0.4135     0.4824 </span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>2017     0.1914     0.2364     0.2608     0.3046     0.3669     0.4417     0.5168     0.5646     0.6686 </span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>2018     0.2283     0.2769     0.3047     0.3575     0.4290     0.5124     0.5971     0.6567     0.7565 </span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>2019     0.2287     0.2767     0.3051     0.3569     0.4295     0.5137     0.5978     0.6517     0.7612 </span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>2020     0.2444     0.2973     0.3263     0.3852     0.4629     0.5511     0.6407     0.6968     0.8046 </span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>Total Fishing Mortality</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>Year       Average        StdDev</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>2014        0.2102        0.0578</span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>2015        0.0445        0.0000</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>2016        0.0445        0.0000</span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>2017        0.0445        0.0000</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>2018        0.0445        0.0000</span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>2019        0.0445        0.0000</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>2020        0.0445        0.0000</span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>Total Fishing Mortality Distribution</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a>Year       1%         5%         10%        25%        50%        75%        90%        95%        99%    </span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>2014     0.1162     0.1334     0.1462     0.1696     0.2015     0.2408     0.2839     0.3145     0.3851 </span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>2015     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>2016     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>2017     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>2018     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a>2019     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>2020     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a>Requested Percentile Report</span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>Percentile =    90.00 %</span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>                                 2014       2015       2016       2017       2018       2019       2020 </span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>Recruits                    6225.6320  6181.5870  6196.3710  6154.7360  6227.9310  6205.1600  6179.7760 </span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>Spawning Stock Biomass         8.7246    15.2164    18.5612    19.2488    18.9478    18.4609    18.0730 </span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>Jan-1 Stock Biomass           15.2783    18.8747    20.8555    21.5091    21.3129    20.8302    20.3938 </span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>Mean Biomass                  18.2887    20.8969    22.1543    22.2328    21.6646    20.9306    20.6399 </span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a>Combined Catch Biomass         0.5000     0.2728     0.3775     0.5168     0.5971     0.5978     0.6407 </span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>Landings                       0.5000     0.2728     0.3775     0.5168     0.5971     0.5978     0.6407 </span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a>FMort                          0.2839     0.0445     0.0445     0.0445     0.0445     0.0445     0.0445 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11-2_model-outputs.html" class="pagination-link" aria-label="Model Outputs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model Outputs</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./fig01_agepro-flowchart.html" class="pagination-link" aria-label="Figure 1: Flowchart for AGEPRO">
+        <span class="nav-page-text">Figure 1: Flowchart for AGEPRO</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
