@@ -6,7 +6,6 @@ book:
   author:
     - name: "Jon Brodziak"
     - name: "Eric Fletcher"
-  date: "12/2025"
   chapters:
     - index.qmd
     - part: intro.qmd
