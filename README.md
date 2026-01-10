@@ -1,25 +1,30 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# *AGEPRO Reference Manual* Quatro Book Version
+# *AGEPRO Reference Manual* Quatro Book
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-This is the source code repository for the [Quatro
-Book](https://quarto.org/docs/books/) version of the *AGEPRO Reference
-Manual.*
+This the repository for Quarto version of the *AGEPRO Reference Manual.*
+
+The *AGEPRO Reference Manual* documents AGEPRO Version 4.25, a
+stochastic age-structured projection model and software package designed
+to evaluate fishery harvest strategies under uncertainty to support
+quantitative fishery management decisions.
+
+The [Quatro Book](https://quarto.org/docs/books/) implementation of the
+*AGEPRO Reference Manual* aims to be more accessible and promote
+reproducibility.  
+<https://github.com/nmfs-ost/agepro-ref-manual>
 
 **If you using AGEPRO for production, please use:**
 
-- [GUI interface for AGEPRO, Includes binary of AGEPRO calculation
-  Engine (installer & source)](https://github.com/nmfs-ost/AGEPRO-GUI)
+- [AGEPRO-GUI, includes binary of AGEPRO calculation Engine (installer &
+  source)](https://github.com/nmfs-ost/AGEPRO-GUI)
 - [AGEPRO Calcuation Engine Command Line Program source
   code](https://github.com/noaa-pifsc/AGEPRO)
-
-This quarto version of the *AGEPRO Reference Manual* is based on the
-documentation that was included with AGEPRO and AGEPRO-GUI.
 
 <!-- Do not edit below. This adds the Disclaimer and NMFS footer. -->
 
