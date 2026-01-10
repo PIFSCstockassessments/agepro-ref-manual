@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Table 1: Glossary of AGEPRO variables – AGEPRO Reference Manual</title>
+<title>Table 4: Input data structure for AGEPRO Recruitment Models – AGEPRO Reference Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_catch-landings-discards.html" rel="next">
-<link href="./01_age-struct-pop-model.html" rel="prev">
+<link href="./11-2_model-outputs.html" rel="next">
+<link href="./table3_keyword-struct.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./table1_AGEPRO-variables.html">Table 1: Glossary of AGEPRO variables</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./table4alt_recruit-models.html">Table 4: Input data structure for AGEPRO Recruitment Models</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,7 +158,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./table1_AGEPRO-variables.html" class="sidebar-item-text sidebar-link active">
+  <a href="./table1_AGEPRO-variables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table 1: Glossary of AGEPRO variables</span></a>
   </div>
 </li>
@@ -247,7 +247,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./table4alt_recruit-models.html" class="sidebar-item-text sidebar-link">
+  <a href="./table4alt_recruit-models.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Table 4: Input data structure for AGEPRO Recruitment Models</span></a>
   </div>
 </li>
@@ -335,9 +335,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./table1_AGEPRO-variables.html">Table 1: Glossary of AGEPRO variables</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./table4alt_recruit-models.html">Table 4: Input data structure for AGEPRO Recruitment Models</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Table 1: Glossary of AGEPRO variables</h1>
+<h1 class="title">Table 4: Input data structure for AGEPRO Recruitment Models</h1>
 </div>
 
 
@@ -354,147 +354,220 @@ window.Quarto = {
 </header>
 
 
-<div id="tbl-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>116</p>
+<div id="tbl-4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Glossary of variables in the AGEPRO module.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Required input data for AGEPRO recruitment models, <br> where spawning biomass and recruitment inputs are measured in units of <code>RECRUIT</code> the conversion factors <strong>SSBFac</strong> and <strong>RecFac</strong> respectively, which typically have units of <strong>SSBFac</strong>=<strong>RecFac</strong>=1000.
 </figcaption>
-<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
+<col style="width: 2%">
+<col style="width: 19%">
+<col style="width: 77%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Variable</th>
-<th>Description</th>
+<th>Model Number</th>
+<th>Recruitment Model</th>
+<th>Recruitment Model Input Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(A\)</span></td>
-<td>Age of plus-group (fish age-<span class="math inline">\(A\)</span> and older) and last index value for <span class="math inline">\(\underline{N}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(B_S(t)\)</span></td>
-<td>Spawning biomass in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\overline{B}(t)\)</span></td>
-<td>Mean stock biomass in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(B_T\)</span></td>
-<td>Total stock biomass on January <span class="math inline">\(1^{st}\)</span> of year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(B\)</span></td>
-<td>Number of input initial population vectors <span class="math inline">\(\underline{N}(t)\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(C_a(t)\)</span></td>
-<td>Total catch number of age-<span class="math inline">\(a\)</span> fish that are caught in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(C_{a,v}(t)\)</span></td>
-<td>Number of age-<span class="math inline">\(a\)</span> fish caught by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(D(t)\)</span></td>
-<td>Total weight of fish discarded fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(F(t)\)</span></td>
-<td>Instantaneous fully-selected fishing mortality rate in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(F_a(t)\)</span></td>
-<td>Total fishing mortality rate for age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(F_{a,v}(t)\)</span></td>
-<td>Fishing mortality rate on age-<span class="math inline">\(a\)</span> fish by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(F_B\)</span></td>
-<td>Instantaneous fishing mortality weighted by mean biomass in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(H(t)\)</span></td>
-<td><p>Harvest index for year <span class="math inline">\(t\)</span>.</p>
+<td>1</td>
+<td>Markov Matrix</td>
+<td><ul>
+<li>Input the number of Recruitment States: <span class="math inline">\(K\)</span></li>
+<li>On the next line, input the recruitment values: <span class="math inline">\(R_1,R_2,...,R_K\)</span></li>
+<li>On the next line, input number of spawning biomass states: <span class="math inline">\(J\)</span></li>
+<li>On the next line, input <span class="math inline">\(J-1\)</span> cut points : <span class="math inline">\(B_{S,1},B_{S,2},...,B_{S,J-1}\)</span></li>
+<li>On the next <span class="math inline">\(J\)</span> lines, input the conditional recruitment probabilities for the spawning biomass states:
 <ul>
-<li><p>If <span class="math inline">\(H(t)=1\)</span>, then harvest is based on a specified landings quota <span class="math inline">\(Q(t)\)</span> in metric tons</p></li>
-<li><p>Else if <span class="math inline">\(H(t) = 0\)</span>, then harvest is based on a fishing mortality rate <span class="math inline">\(F(t)\)</span></p></li>
+<li><span class="math inline">\(\begin{matrix} P_{1,1} \quad P_{1,2} \quad \dots \quad P_{1,K} \\ P_{2,1} \quad P_{2,2} \quad \dots \quad P_{2,k} \\ \quad \vdots \quad\quad \vdots \qquad\quad \vdots \qquad\quad \vdots \\ P_{J,1}, \quad P_{J,2}, \quad \dots, \quad P_{J,K} \end{matrix}\)</span></li>
+</ul></li>
 </ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(L_v(t)\)</span></td>
-<td>Total weight of fish landed by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
+<td>2</td>
+<td>Empirical Recruits Per Spawning Biomass Distribution</td>
+<td><ul>
+<li>Input the number of stock recruitment data points: <span class="math inline">\(T\)</span></li>
+<li>On the next line, input the recruitments: <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
+<li>On the next line, input the spawning biomasses: <span class="math inline">\(B_{S,1}, B_{S,2}, ..., B_{S,T}\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(M_a(t)\)</span></td>
-<td>Instantaneous natural mortality rate of age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
+<td>3</td>
+<td>Empirical Recruitment Distribution</td>
+<td><ul>
+<li>Input the number of recruitment data points: <span class="math inline">\(T\)</span></li>
+<li>On the next line, input the recruitment: <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(N_a(t)\)</span></td>
-<td>Number of age-<span class="math inline">\(a\)</span> fish alive on January 1st of year <span class="math inline">\(t\)</span></td>
+<td>4</td>
+<td>Two-Stage Empirical Recruits Per Spawning Biomass Distribution</td>
+<td><ul>
+<li>Input the number of low and high recruits per spawning biomass data points: <span class="math inline">\(T_{Low} \cdot T_{High}\)</span></li>
+<li>On the next line, input the cutoff level of spawning biomass: <span class="math inline">\(B^*_S\)</span></li>
+<li>On the next line, input the low state recruitment: <span class="math inline">\(R_1,R_2,...,R_{T_{Low}}\)</span></li>
+<li>On the next line, input the low state spawning biomass: <span class="math inline">\(B_{S,1}, B_{S,2}, ..., B_{S,T_{Low}}\)</span></li>
+<li>On the next line, input the high state recruitment: <span class="math inline">\(R_1,R_2,...,R_{T_{High}}\)</span></li>
+<li>On the next line, input the high state spawning biomass: <span class="math inline">\(B_{S,1}, B_{S,2}, ..., B_{S,T_{High}}\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(N_M\)</span></td>
-<td>Number of recruitment models used in the projection</td>
+<td>5</td>
+<td>Beverton-Holt Curve with Lognormal Error</td>
+<td><ul>
+<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(d_{a,v}(t)\)</span></td>
-<td>Proportion of age-<span class="math inline">\(a\)</span> fish caught by fleet <span class="math inline">\(v\)</span> and discarded in year <span class="math inline">\(t\)</span></td>
+<td>6</td>
+<td>Ricker Curve with Lognormal Error</td>
+<td><ul>
+<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(S_{a,v}(t)\)</span></td>
-<td>Fishery selectivity for age-<span class="math inline">\(a\)</span> fish by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
+<td>7</td>
+<td>Shepherd Curve with Lognormal Error</td>
+<td><ul>
+<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, k, \sigma^2_w\)</span></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(P_{R,i}(t)\)</span></td>
-<td>Probability that the <span class="math inline">\(i^{th}\)</span> recruitment model is applied in year <span class="math inline">\(t\)</span></td>
+<td>8</td>
+<td>Lognormal Distribution</td>
+<td><ul>
+<li>Input the log-scale mean and standard deviation: <span class="math inline">\(\mu_{\log(r)},\sigma_{\log(r)}\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(p_{a}(t)\)</span></td>
-<td>Fraction of of age-<span class="math inline">\(a\)</span> fish that are sexually mature in year <span class="math inline">\(t\)</span></td>
+<td>10</td>
+<td>Beverton-Holt Curve with Autocorrected Lognornal Error</td>
+<td><ul>
+<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
+<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\varphi(t)\)</span></td>
-<td>Fraction of total mortality occurring prior to spawning in year <span class="math inline">\(t\)</span></td>
+<td>11</td>
+<td>Ricker Curve with Autocorrected Lognormal Error</td>
+<td><ul>
+<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
+<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(Q_v(t)\)</span></td>
-<td>Landings quota (mt) for fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
+<td>12</td>
+<td>Shepherd Curve with Autocorrected Lognormal Error</td>
+<td><ul>
+<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, k, \sigma^2_w\)</span></li>
+<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(R(t)\)</span></td>
-<td>Recruitment (number of age-1 fish on January <span class="math inline">\(1^{st}\)</span>) in year <span class="math inline">\(t\)</span></td>
+<td>13</td>
+<td>Autocorrected Lognormal Distribution</td>
+<td><ul>
+<li>Input the log-scale mean and standard deviation: <span class="math inline">\(\mu_{\log(r)},\sigma_{\log(r)}\)</span></li>
+<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(W_{P,a}(t)\)</span></td>
-<td>Average <em>population weight</em> of an age-<span class="math inline">\(a\)</span> fish on January <span class="math inline">\(1^{st}\)</span> in year <span class="math inline">\(t\)</span></td>
+<td>14</td>
+<td>Empirical Cumulative Distribution Function of Recruitment</td>
+<td><ul>
+<li>Input the number of recruitment data points: <span class="math inline">\(T\)</span></li>
+<li>On the next line, input the recruitments <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(W_{L,a,v}(t)\)</span></td>
-<td>Average <em>landed (catch) weight</em> of age of an age-<span class="math inline">\(a\)</span> fish by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
+<td>15</td>
+<td>Two-Stage Empirical Cumulative Distribution Function of Recruitment</td>
+<td><ul>
+<li>Input the number of low and high recruits per spawning biomass data points: <span class="math inline">\(T_{Low} \cdot T_{High}\)</span></li>
+<li>On the next line, input cutoff level of spawning biomass: <span class="math inline">\(B^*_S\)</span></li>
+<li>On the next line, input the low state recruitment: <span class="math inline">\(R_1,R_2,...,R_{T_{Low}}\)</span></li>
+<li>On the next line, input the high state recruitment: <span class="math inline">\(R_1,R_2,...,R_{T_{High}}\)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(W_{S,a}(t)\)</span></td>
-<td>Average <em>spawning weight</em> of an age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
+<td>16</td>
+<td>Linear Recruits Per Spawning Biomass Predictor with Normal Error</td>
+<td><ul>
+<li>Input the predictors: <span class="math inline">\(N_P\)</span></li>
+<li>On the next line, input the intercept coefficient: <span class="math inline">\(\beta_0\)</span></li>
+<li>On the next line, input the slope coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_p}\)</span></li>
+<li>On the next line, input the error variance: <span class="math inline">\(\sigma^2\)</span></li>
+<li>On the next <span class="math inline">\(N_P\)</span> lines, input the expected value of the predictor through projection time horizon:
+<ul>
+<li><span class="math inline">\(\begin{matrix} X_1(1) \quad\ \dots \quad\ X_1(Y) \\ X_2(1) \quad\ \dots \quad\ X_2(Y) \\ \ \vdots \qquad\quad \ \vdots \qquad\quad\ \ \vdots \\ X_P(1) \quad\ \dots \quad\ X_P(Y) \end{matrix}\)</span></li>
+</ul></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(W_{MY,a}(t)\)</span></td>
-<td>Average mid-year, or <em>mean population weight</em> of an age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
+<td>17</td>
+<td>Linear Recruits Per Spawning Biomass Predictor with Lognormal Error</td>
+<td><ul>
+<li>Input the number of predictors: <span class="math inline">\(N_P\)</span></li>
+<li>On the next line, input the intercept: <span class="math inline">\(\beta_0\)</span></li>
+<li>On the next line, input the linear coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_P}\)</span></li>
+<li>On the next line, input the log-scale error variance: <span class="math inline">\(\sigma^2\)</span></li>
+<li>And on the next <span class="math inline">\(N_P\)</span> lines, input the expected predictor values over the forecast time horizon <span class="math inline">\(1, ..., Y\)</span>
+<ul>
+<li><span class="math inline">\(\begin{matrix} X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y) \\ X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y) \\ \quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots \\ X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y) \end{matrix}\)</span></li>
+</ul></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(W_{D,a,v}(t)\)</span></td>
-<td>Average <em>discarded weight</em> of an age-<span class="math inline">\(a\)</span> fish by fleet-<span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
+<td>18</td>
+<td>Linear Recruitment Predictor with Normal Error</td>
+<td><ul>
+<li>Input the number of predictors: <span class="math inline">\(N_P\)</span></li>
+<li>On the next line, input the intercept: <span class="math inline">\(\beta_0\)</span></li>
+<li>On the next line, input the linear coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_P}\)</span></li>
+<li>On the next line, input the error variance: <span class="math inline">\(\sigma^2\)</span></li>
+<li>And on the next <span class="math inline">\(N_P\)</span> lines, input the expected predictor values over the forecast time horizon <span class="math inline">\(1, ..., Y\)</span>
+<ul>
+<li><span class="math inline">\(\begin{matrix} X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y) \\ X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y) \\ \quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots \\ X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y) \end{matrix}\)</span></li>
+</ul></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(Y\)</span></td>
-<td>Number of Years in projection time horizon where <span class="math inline">\(t= 1,2,...,Y\)</span></td>
+<td>19</td>
+<td>Loglinear Recruitment Predictor with Lognormal Error</td>
+<td><ul>
+<li>Input the number of predictors: <span class="math inline">\(N_P\)</span></li>
+<li>On the next line, input the intercept: <span class="math inline">\(\beta_0\)</span></li>
+<li>On the next line, input the linear coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_P}\)</span></li>
+<li>On the next line, input the log-scale error variance: <span class="math inline">\(\sigma^2\)</span></li>
+<li>And on the next <span class="math inline">\(N_P\)</span> lines, input the expected predictor values over the forecast time horizon <span class="math inline">\(1, ..., Y\)</span>
+<ul>
+<li><span class="math inline">\(\begin{matrix} X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y) \\ X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y) \\ \quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots \\ X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y) \end{matrix}\)</span></li>
+</ul></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>Fixed Recruitment</td>
+<td><ul>
+<li>Input the number of recruitment data points: <span class="math inline">\(T\)</span></li>
+<li>On the next line, input the Recruitment: <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td>Empirical Cumulative Distribution Function of Recruitment with Linear Decline to Zero</td>
+<td><ul>
+<li>Input the number of number of observed recruitment values: <span class="math inline">\(T\)</span></li>
+<li>On the next line, input the recruitment values: <span class="math inline">\(R_1, R_2, ..., R_T\)</span></li>
+<li>And on the next line, input spawning biomass threshold: <span class="math inline">\(B^*_S\)</span></li>
+</ul></td>
 </tr>
 </tbody>
 </table>
@@ -924,13 +997,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01_age-struct-pop-model.html" class="pagination-link" aria-label="Age Structured Population Model">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Age Structured Population Model</span>
+      <a href="./table3_keyword-struct.html" class="pagination-link" aria-label="Table 3: AGEPRO Keyword structure">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Table 3: AGEPRO Keyword structure</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_catch-landings-discards.html" class="pagination-link" aria-label="Catch, Landings, and Discards">
-        <span class="nav-page-text">Catch, Landings, and Discards</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-2_model-outputs.html" class="pagination-link" aria-label="Model Outputs">
+        <span class="nav-page-text">Model Outputs</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

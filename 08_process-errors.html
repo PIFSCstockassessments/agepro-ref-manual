@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AGEPRO Reference Manual - Process Errors for Population and Fishery Processes</title>
+<title>Process Errors for Population and Fishery Processes – AGEPRO Reference Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,17 +37,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,29 +62,57 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-sidebar floating">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./08_process-errors.html">Process Errors for Population and Fishery Processes</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./08_process-errors.html">Process Errors for Population and Fishery Processes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AGEPRO Reference Manual</a> 
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -137,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_pop-harvest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Population Harvest</span></a>
+ <span class="menu-text">Population Harvest Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./11_AGEPRO-software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Age‐Structured Projection Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -213,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./table4_recruit-models.html" class="sidebar-item-text sidebar-link">
+  <a href="./table4alt_recruit-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table 4: Input data structure for AGEPRO Recruitment Models</span></a>
   </div>
 </li>
@@ -229,8 +263,26 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">AGEPRO Projection Examples</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig01_agepro-flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 1: Flowchart for AGEPRO</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig02_agepro-io.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 2: AGEPRO Input/Output</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
@@ -245,9 +297,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -275,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -291,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./08_process-errors.html">Process Errors for Population and Fishery Processes</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Process Errors for Population and Fishery Processes</h1>
 </div>
@@ -306,13 +358,15 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
+
 <p>Process errors to generate time-varying dynamics of population and fishery processes can be included in stock projections using AGEPRO. These process errors are defined as independent multiplicative lognormal error distributions for each life history and fishery process.</p>
-<p>The general form for a lognormal multiplicative process error term in year <span class="math inline">\(t\)</span>, denoted by <span class="math inline">\(\varepsilon_i\)</span>, is</p>
+<p>The general form for a lognormal multiplicative process error term in year <span class="math inline">\(t\)</span>, denoted by <span class="math inline">\(\varepsilon_t\)</span>, is</p>
 <p><span class="math display">\[
 \begin{split}
-&amp; \varepsilon_i \sim \exp(w) \\
+&amp; \varepsilon_t \sim \exp(w) \\
 &amp; where\  w \sim N(-0.5\sigma^2, \sigma^2)\\
 \end{split}
 \tag{46}\label{eq:46}
@@ -320,29 +374,28 @@ ul.task-list li input[type="checkbox"] {
 <p>And where the user specifies the coefficient of variation of the lognormal process error as <span class="math inline">\(CV = \sqrt{\exp(\sigma^2) - 1}\)</span> which sets the value of <span class="math inline">\(\sigma\)</span> as <span class="math inline">\(\sigma = \sqrt{\log(CV^2 + 1)}\)</span>.</p>
 <p>The five population processes and four fishery processes that can include process error along with the input file keyword to specify the process are (keyword):</p>
 <ul>
-<li>Natural mortality at age (<code>NATMORT</code>) <span class="math inline">\(M_a(t)\)</span></li>
-<li>Maturation fraction at age (<code>MATURITY</code>) <span class="math inline">\(P_{mature,a}(t)\)</span></li>
-<li>Stock weight on January 1st at age (<code>STOCK_WEIGHT</code>) <span class="math inline">\(W_{P,a}(t)\)</span></li>
-<li>Spawning stock weight at age (<code>SSB_WEIGHT</code>) <span class="math inline">\(W_{S,a}(t)\)</span></li>
-<li>Midyear mean population weight at age (<code>MEAN_WEIGHT</code>) <span class="math inline">\(W_{midyear,a}(t)\)</span></li>
-<li>Fishery selectivity at age by fleet (<code>FISHERY</code>) <span class="math inline">\(S_{v,a}(t)\)</span></li>
-<li>Discard fraction at age by fleet (<code>DISCARD</code>) <span class="math inline">\(P_{y,D,a}(t)\)</span></li>
-<li>Landed catch weight at age by fleet (<code>CATCH_WEIGHT</code>) <span class="math inline">\(W_{y,L,a}(t)\)</span></li>
-<li>Discard weight at age by fleet (<code>DISC_WEIGHT</code>) <span class="math inline">\(W_{v,D,a}(t)\)</span></li>
+<li>Natural mortality at age (<code>NATMORT</code>) <span class="math inline">\(M_{\small\text{a}}(t)\)</span></li>
+<li>Maturation fraction at age (<code>MATURITY</code>) <span class="math inline">\({\large p}_{\small\text{a}}(t)\)</span></li>
+<li>Stock weight on January 1st at age (<code>STOCK_WEIGHT</code>) <span class="math inline">\({\large w}_{\small\text{P,a}}(t)\)</span></li>
+<li>Spawning stock weight at age (<code>SSB_WEIGHT</code>) <span class="math inline">\({\large w}_{\small\text{S,a}}(t)\)</span></li>
+<li>Midyear mean population weight at age (<code>MEAN_WEIGHT</code>) <span class="math inline">\({\large w}_{\small\text{MY,a}}(t)\)</span></li>
+<li>Fishery selectivity at age by fleet (<code>FISHERY</code>) <span class="math inline">\(S_{\small\text{a,v}}(t)\)</span></li>
+<li>Discard fraction at age by fleet (<code>DISCARD</code>) <span class="math inline">\({\large p}_{\small\text{D,a,v}}(t)\)</span></li>
+<li>Landed catch weight at age by fleet (<code>CATCH_WEIGHT</code>) <span class="math inline">\({\large w}_{\small\text{L,a,v}}(t)\)</span></li>
+<li>Discard weight at age by fleet (<code>DISC_WEIGHT</code>) <span class="math inline">\({\large w}_{\small\text{D,a,v}}(t)\)</span></li>
 </ul>
 <p>For detailed documentation of projection results, the user can choose to store individual simulated values of these processes through time in auxiliary data files by setting the value of the DataFlag=1 under the keyword <code>OPTIONS</code> (Table 3). The auxiliary file names are constructed from the AGEPRO input filename with file extensions ranging from <code>.xxx1</code> to <code>.xxx9</code> for the nine processes in the bullet list above, noting that not all processes may be used in a given projection, e.g., discarding. For processes that are used, the auxiliary file names are assigned in the order in which the process parameters are set in the AGEPRO input file. For example, if the spawning stock weight at age process parameters appeared fifth in the ordering of keywords to specify these nine processes in the AGEPRO input file, then the time series of simulated spawning stock weights at age would be store in the auxiliary output file name <code>input_filename.xxx5</code>. Each row in this file would be the spawning weights at age for one year, in sequence, for each bootstrap replicate and simulation.</p>
 <section id="total-stock-biomass" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="total-stock-biomass">Total Stock Biomass</h2>
-<p>Total stock biomass <span class="math inline">\(B_T\)</span> is the sum over the recruitment age (<span class="math inline">\(r\)</span>) to the plus-group age (<span class="math inline">\(A\)</span>) of stock biomass at age on January 1<sup>st</sup>. The computational formula for <span class="math inline">\(B_T\)</span> in year <span class="math inline">\(t\)</span> is</p>
-<p><span class="math display">\[
-B_T(t) = \sum\limits_{a=r}^{A}W_{P,a}(t) \cdot N_a(t) \tag{47}\label{eq:47}
-\]</span> where <span class="math inline">\(W_{P,a}(t)\)</span> is the population mean weight of age-a fish on January 1<sup>st</sup> in year <span class="math inline">\(t\)</span>.</p>
+<p>Total stock biomass <span class="math inline">\(B_T\)</span> is the sum of stock biomass at age on January 1<sup>st</sup>. <span class="math display">\[
+B_T(t) = \sum\limits_{a=1}^{A}w_{P,a}(t) \cdot N_a(t) \tag{47}\label{eq:47}
+\]</span> where <span class="math inline">\(w_{P,a}(t)\)</span> is the population mean weight of age-a fish on January 1<sup>st</sup> in year <span class="math inline">\(t\)</span>.</p>
 </section>
 <section id="mean-biomass" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="mean-biomass">Mean Biomass</h2>
-<p>Mean stock biomass <span class="math inline">\(\overline{B}\)</span> is the average biomass of the stock over a given year. In particular, mean stock biomass depends on the total mortality rate experienced by the stock in each year. In the AGEPRO model, the user selects the range of ages to be used for calculating mean biomass. One can choose the full range of ages in the model (age-<span class="math inline">\(r\)</span> through age-<span class="math inline">\(A\)</span>) or alternatively select a smaller age range if desired. In this case, the upper age <span class="math inline">\(A_U\)</span> for mean biomass calculations must be less than or equal to the plus group age <span class="math inline">\(A.\)</span> Similarly, the lower age <span class="math inline">\(A_L\)</span> must be greater than or equal to the recruitment age <span class="math inline">\(r\)</span>. If <span class="math inline">\(W_{midyear,a}(t)\)</span> denotes the mean weight of age-<span class="math inline">\(a\)</span> fish at the mid-point of year <span class="math inline">\(t\)</span> then the computational formula for <span class="math inline">\(\overline{B}\)</span> in year <span class="math inline">\(t\)</span> is</p>
+<p>Mean stock biomass <span class="math inline">\(\overline{B}\)</span> is the average biomass of the stock over a given year. In particular, mean stock biomass depends on the total mortality rate experienced by the stock in each year. In the AGEPRO model, the user selects the range of ages to be used for calculating mean biomass. One can choose the full range of ages in the model (age-<span class="math inline">\(r\)</span> through age-<span class="math inline">\(A\)</span>) or alternatively select a smaller age range if desired. In this case, the upper age <span class="math inline">\(A_U\)</span> for mean biomass calculations must be less than or equal to the plus group age <span class="math inline">\(A.\)</span> Similarly, the lower age <span class="math inline">\(A_L\)</span> must be greater than or equal to the recruitment age <span class="math inline">\(r\)</span>. Let <span class="math inline">\(w_{MY,a}(t)\)</span> be the mean weight of age-<span class="math inline">\(a\)</span> fish at the mid-point of year <span class="math inline">\(t\)</span>, then <span class="math inline">\(\overline{B}\)</span> in year <span class="math inline">\(t\)</span> is</p>
 <p><span class="math display">\[
-\overline{B}(t) = \sum\limits_{a=A_L}^{A_U}W_{midyear,a}(t) \cdot N_a(t) \cdot \dfrac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}
+\overline{B}(t) = \sum\limits_{a=A_L}^{A_U}w_{MY,a}(t) \cdot N_a(t) \cdot \dfrac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}
 \tag{48}\label{eq:48}
 \]</span></p>
 <p>where <span class="math inline">\(F_a(t)\)</span> is the total fishing mortality on age-<span class="math inline">\(a\)</span> fish calculated across all fleets.</p>
@@ -354,7 +407,7 @@ B_T(t) = \sum\limits_{a=r}^{A}W_{P,a}(t) \cdot N_a(t) \tag{47}\label{eq:47}
 \begin{split}
 &amp; F_{\overline{B}}(t) = \frac{\sum\limits_{a=A_L}^{A_u} \overline{B}_a(t) \cdot F_a(t) }{\overline{B}(t)}\\
 &amp; \\
-&amp; where\ \overline{B}_a(t) = W_{midyear,a}(t)\cdot N_a(t) \cdot  \frac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}\\
+&amp; where\ \overline{B}_a(t) = w_{MY,a}(t)\cdot N_a(t) \cdot  \frac{\bigl(1-\exp(-M_a(t)-F_a(t))\bigr)}{\bigl(M_a(t)+F_a(t)\bigr)}\\
 \end{split}
 \tag{49}\label{eq:49}
 \]</span></p>
@@ -399,18 +452,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -442,11 +484,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -456,8 +535,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -469,7 +557,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -513,6 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -538,6 +749,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -599,17 +836,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07_recruit-probabilities.html" class="pagination-link">
+      <a href="./07_recruit-probabilities.html" class="pagination-link" aria-label="Recruitment Model Probabilities">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Recruitment Model Probabilities</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./09_thresholds.html" class="pagination-link">
+      <a href="./09_thresholds.html" class="pagination-link" aria-label="Reference Point Thresholds">
         <span class="nav-page-text">Reference Point Thresholds</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

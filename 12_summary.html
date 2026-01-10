@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AGEPRO Reference Manual - Table 4: Input data structure for AGEPRO Recruitment Models</title>
+<title>Summary – AGEPRO Reference Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,24 +30,30 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11-2_model-outputs.html" rel="next">
-<link href="./table3_keyword-struct.html" rel="prev">
+<link href="./acknowledgments.html" rel="next">
+<link href="./fig02_agepro-io.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,29 +62,57 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-sidebar floating">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./table4_recruit-models.html">Table 4: Input data structure for AGEPRO Recruitment Models</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_summary.html">Summary</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AGEPRO Reference Manual</a> 
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -137,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_pop-harvest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Population Harvest</span></a>
+ <span class="menu-text">Population Harvest Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./11_AGEPRO-software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Age‐Structured Projection Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -213,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./table4_recruit-models.html" class="sidebar-item-text sidebar-link active">
+  <a href="./table4alt_recruit-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table 4: Input data structure for AGEPRO Recruitment Models</span></a>
   </div>
 </li>
@@ -229,8 +263,26 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">AGEPRO Projection Examples</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig01_agepro-flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 1: Flowchart for AGEPRO</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig02_agepro-io.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 2: AGEPRO Input/Output</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_summary.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
@@ -245,9 +297,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -275,9 +327,9 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -285,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Table 4: Input data structure for AGEPRO Recruitment Models</h1>
+<h1 class="title">Summary</h1>
 </div>
 
 
@@ -298,221 +350,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<div id="tbl-4" class="anchored">
-<table class="table">
-<caption>Table&nbsp;4: Required input data for AGEPRO recruitment models, where spawning biomass and recruitment inputs are measured in units of <code>RECRUIT</code> the conversion factors <strong>SSBFac</strong> and <strong>RecFac</strong> respectively, which typically have units of <strong>SSBFac</strong>=<strong>RecFac</strong>=1000.</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 20%">
-<col style="width: 72%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Model Number</th>
-<th>Recruitment Model</th>
-<th>Recruitment Model Input Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Markov Matrix</td>
-<td><ul>
-<li>Input the number of Recruitment States: <span class="math inline">\(K\)</span></li>
-<li>On the next line, input the recruitment values: <span class="math inline">\(R_1,R_2,...,R_K\)</span></li>
-<li>On the next line, input number of spawning biomass states: <span class="math inline">\(J\)</span></li>
-<li>On the next line, input <span class="math inline">\(J-1\)</span> cut points : <span class="math inline">\(B_{S,1},B_{S,2},...,B_{S,J-1}\)</span></li>
-<li>On the next <span class="math inline">\(J\)</span> lines, input the conditional recruitment probabilities for the spawning biomass states:
-<ul>
-<li><span class="math inline">\(P_{1,1}, \quad P_{1,2}, \quad \dots, \quad P_{1,K}\)</span> <br> <span class="math inline">\(P_{2,1}, \quad P_{2,2}, \quad \dots, \quad P_{2,k}\)</span> <br> <span class="math inline">\(\quad \vdots \quad\quad \vdots \qquad\quad \vdots \qquad\quad \vdots\)</span> <br> <span class="math inline">\(P_{J,1}, \quad P_{J,2}, \quad \dots, \quad P_{J,K}\)</span></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Empirical Recruits Per Spawning Biomass Distribution</td>
-<td><ul>
-<li>Input the number of stock recruitment data points: <span class="math inline">\(T\)</span></li>
-<li>On the next line, input the recruitments: <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
-<li>On the next line, input the spawning biomasses: <span class="math inline">\(B_{S,1}, B_{S,2}, ..., B_{S,T}\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Empirical Recruitment Distribution</td>
-<td><ul>
-<li>Input the number of recruitment data points: <span class="math inline">\(T\)</span></li>
-<li>On the next line, input the recruitments: <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Two-Stage Empirical Recruits Per Spawning Biomass Distribution</td>
-<td><ul>
-<li>Input the number of low and high recruits per spawning biomass data points: <span class="math inline">\(T_{Low} \cdot T_{High}\)</span></li>
-<li>On the next line, input the cutoff level of spawning biomass: <span class="math inline">\(B^*_S\)</span></li>
-<li>On the next line, input the low state recruitments: <span class="math inline">\(R_1,R_2,...,R_{T_{Low}}\)</span></li>
-<li>On the next line, input the low state spawning biomasses: <span class="math inline">\(B_{S,1}, B_{S,2}, ..., B_{S,T_{Low}}\)</span></li>
-<li>On the next line, input the high state recruitments: <span class="math inline">\(R_1,R_2,...,R_{T_{High}}\)</span></li>
-<li>On the next line, input the high state spawning biomasses: <span class="math inline">\(B_{S,1}, B_{S,2}, ..., B_{S,T_{High}}\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Beverton-Holt Curve with Lognormal Error</td>
-<td><ul>
-<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Ricker Curve with Lognormal Error</td>
-<td><ul>
-<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Shepherd Curve with Lognormal Error</td>
-<td><ul>
-<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, k, \sigma^2_w\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Lognormal Distribution</td>
-<td><ul>
-<li>Input the log-scale mean and standard deviation: <span class="math inline">\(\mu_{\log(r)},\sigma_{\log(r)}\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>Beverton-Holt Curve with Autocorrected Lognornal Error</td>
-<td><ul>
-<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
-<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>Ricker Curve with Autocorrected Lognormal Error</td>
-<td><ul>
-<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, \sigma^2_w\)</span></li>
-<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>Shepherd Curve with Autocorrected Lognormal Error</td>
-<td><ul>
-<li>Input the stock-recruitment parameters: <span class="math inline">\(\alpha, \beta, k, \sigma^2_w\)</span></li>
-<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>Autocorrected Lognormal Distribution</td>
-<td><ul>
-<li>Input the log-scale mean and standard deviation: <span class="math inline">\(\mu_{\log(r)},\sigma_{\log(r)}\)</span></li>
-<li>On the next line, input the autoregressive parameters: <span class="math inline">\(\phi, \varepsilon_{0}\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>Empirical Cumulative Distribution Function of Recruitment</td>
-<td><ul>
-<li>Input the number of recruitment data points: <span class="math inline">\(T\)</span></li>
-<li>On the next line, input the recruitments <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>Two-Stage Empirical Cumulative Distribution Function of Recruitment</td>
-<td><ul>
-<li>Input the number of low and high recruits per spawning biomass data points: <span class="math inline">\(T_{Low} \cdot T_{High}\)</span></li>
-<li>On the next line, input cutoff level of spawning biomass: <span class="math inline">\(B^*_S\)</span></li>
-<li>On the next line, input the low state recruitments: <span class="math inline">\(R_1,R_2,...,R_{T_{Low}}\)</span></li>
-<li>On the next line, input the high state recruitments: <span class="math inline">\(R_1,R_2,...,R_{T_{High}}\)</span></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>Linear Recruits Per Spawning Biomass Predictor with Normal Error</td>
-<td><ul>
-<li>Input the predictors: <span class="math inline">\(N_P\)</span></li>
-<li>On the next line, input the intercept coefficient: <span class="math inline">\(\beta_0\)</span></li>
-<li>On the next line, input the slope coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_p}\)</span></li>
-<li>On the next line, input the error variance: <span class="math inline">\(\sigma^2\)</span></li>
-<li>On the next <span class="math inline">\(N_P\)</span> lines, input the expected value of the predictor through projection time horizon:
-<ul>
-<li><span class="math inline">\(X_1(1), \quad\ \dots, \quad\ X_1(Y)\)</span> <br> <span class="math inline">\(X_2(1), \quad\ \dots, \quad\ X_2(Y)\)</span> <br> <span class="math inline">\(\ \vdots \qquad\qquad\ \ \vdots \qquad\quad\ \ \vdots\)</span> <br> <span class="math inline">\(X_P(1), \quad\ \dots, \quad\ X_P(Y)\)</span></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>Linear Recruits Per Spawning Biomass Predictor with Lognormal Error</td>
-<td><ul>
-<li>Input the number of predictors: <span class="math inline">\(N_P\)</span></li>
-<li>On the next line, input the intercept: <span class="math inline">\(\beta_0\)</span></li>
-<li>On the next line, input the linear coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_P}\)</span></li>
-<li>On the next line, input the log-scale error variance: <span class="math inline">\(\sigma^2\)</span></li>
-<li>And on the next <span class="math inline">\(N_P\)</span> lines, input the expected predictor values over the forecast time horizon <span class="math inline">\(1, ..., Y\)</span>
-<ul>
-<li><span class="math inline">\(X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y)\)</span> <br> <span class="math inline">\(X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y)\)</span> <br> <span class="math inline">\(\quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots\)</span> <br> <span class="math inline">\(X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y)\)</span></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>Linear Recruitment Predictor with Normal Error</td>
-<td><ul>
-<li>Input the number of predictors: <span class="math inline">\(N_P\)</span></li>
-<li>On the next line, input the intercept: <span class="math inline">\(\beta_0\)</span></li>
-<li>On the next line, input the linear coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_P}\)</span></li>
-<li>On the next line, input the error variance: <span class="math inline">\(\sigma^2\)</span></li>
-<li>And on the next <span class="math inline">\(N_P\)</span> lines, input the expected predictor values over the forecast time horizon <span class="math inline">\(1, ..., Y\)</span>
-<ul>
-<li><span class="math inline">\(X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y)\)</span> <br> <span class="math inline">\(X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y)\)</span> <br> <span class="math inline">\(\quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots\)</span> <br> <span class="math inline">\(X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y)\)</span></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>19</td>
-<td>Loglinear Recruitment Predictor with Lognormal Error</td>
-<td><ul>
-<li>Input the number of predictors: <span class="math inline">\(N_P\)</span></li>
-<li>On the next line, input the intercept: <span class="math inline">\(\beta_0\)</span></li>
-<li>On the next line, input the linear coefficient for each predictor: <span class="math inline">\(\beta_1, \beta_2, ..., \beta_{N_P}\)</span></li>
-<li>On the next line, input the log-scale error variance: <span class="math inline">\(\sigma^2\)</span></li>
-<li>And on the next <span class="math inline">\(N_P\)</span> lines, input the expected predictor values over the forecast time horizon <span class="math inline">\(1, ..., Y\)</span>
-<ul>
-<li><span class="math inline">\(X_1(1) \quad X_1(2) \quad \dots \quad X_1(Y)\)</span> <br> <span class="math inline">\(X_2(1) \quad X_2(2) \quad \dots \quad X_2(Y)\)</span> <br> <span class="math inline">\(\quad \vdots \qquad\quad\ \vdots \qquad\quad \vdots \qquad\quad \vdots\)</span> <br> <span class="math inline">\(X_P(1) \quad X_P(2) \quad \dots \quad X_P(Y)\)</span></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>20</td>
-<td>Fixed Recruitment</td>
-<td><ul>
-<li>Input the number of recruitment data points: <span class="math inline">\(T\)</span></li>
-<li>On the next line, input the Recruitments: <span class="math inline">\(R_1,R_2,...,R_T\)</span></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>21</td>
-<td>Empirical Cumulative Distribution Function of Recruitment with Linear Decline to Zero</td>
-<td><ul>
-<li>Input the number of number of observed recruitment values: <span class="math inline">\(T\)</span></li>
-<li>On the next line, input the recruitment values: <span class="math inline">\(R_1, R_2, ..., R_T\)</span></li>
-<li>And on the next line, input spawning biomass threshold: <span class="math inline">\(B^*_S\)</span></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-</div>
+
+<p>This reference manual documents AGEPRO version 4.25, a stochastic age-structured projection model and software package designed to evaluate fishery harvest strategies under uncertainty. It describes how AGEPRO simulates population abundance, survival, spawning biomass, catch, landings, discards, and fishing mortality at age for one or more fleets, while explicitly incorporating uncertainty from recruitment, initial population size, and time-varying biological and fishery processes. The manual details a suite of twenty one recruitment models, including empirical, parametric, and covariate-driven formulations, and explains how model probabilities are used to implement recruitment model averaging when projecting future stock trajectories. It further outlines the two harvest control types (effort-based and quota-based), the treatment of biomass and fishing mortality thresholds for policy evaluation, and the three projection modes—standard, rebuilding, and <span class="math inline">\(P*\)</span> (overfishing-probability-based) analyses. Practical guidance is provided on constructing AGEPRO input files, interpreting standard and auxiliary outputs (including updated <strong>AuxiliaryOutputFlag</strong> behavior and optional R export), and using worked examples to implement typical projection problems. Overall, the manual serves as a comprehensive technical guide for configuring, running, and interpreting AGEPRO 4.25 projections to support quantitative fishery management decisions.</p>
 
 
 
@@ -552,18 +394,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -595,11 +426,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -609,8 +477,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -622,7 +499,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -666,6 +665,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -691,6 +691,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -750,20 +776,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./table3_keyword-struct.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Table 3: AGEPRO Keyword structure</span>
+      <a href="./fig02_agepro-io.html" class="pagination-link" aria-label="Figure 2: AGEPRO Input/Output">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Figure 2: AGEPRO Input/Output</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11-2_model-outputs.html" class="pagination-link">
-        <span class="nav-page-text">Model Outputs</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./acknowledgments.html" class="pagination-link" aria-label="Acknowledgments">
+        <span class="nav-page-text">Acknowledgments</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

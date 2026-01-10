@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AGEPRO Reference Manual - Stock Recruitment Relationship</title>
+<title>Stock Recruitment Relationship – AGEPRO Reference Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,17 +57,23 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-40b74412d4c081851184c67ccab843ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -75,29 +82,57 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-sidebar floating">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./06_stock-recruit-relationship.html">Stock Recruitment Relationship</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./06_stock-recruit-relationship.html">Stock Recruitment Relationship</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -107,7 +142,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AGEPRO Reference Manual</a> 
@@ -130,7 +165,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -156,7 +191,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_pop-harvest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Population Harvest</span></a>
+ <span class="menu-text">Population Harvest Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,7 +242,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="./11_AGEPRO-software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Age‐Structured Projection Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -232,7 +267,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./table4_recruit-models.html" class="sidebar-item-text sidebar-link">
+  <a href="./table4alt_recruit-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table 4: Input data structure for AGEPRO Recruitment Models</span></a>
   </div>
 </li>
@@ -248,8 +283,26 @@ div.csl-indent {
  <span class="menu-text">AGEPRO Projection Examples</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig01_agepro-flowchart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 1: Flowchart for AGEPRO</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fig02_agepro-io.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Figure 2: AGEPRO Input/Output</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
@@ -264,9 +317,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,7 +347,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -328,7 +381,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./06_stock-recruit-relationship.html">Stock Recruitment Relationship</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Stock Recruitment Relationship</h1>
 </div>
@@ -343,16 +396,18 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>In general, the relationship between spawning stock <span class="math inline">\(B_S\)</span> and recruitment <span class="math inline">\(R\)</span> is highly variable owing to intrinsic variability in factors governing early life history survival and to measurement error in the estimates of recruitment and the spawning biomass that generated it. The stock-recruitment relationship ultimately defines the sustainable yield 8 curve and its expected variability assuming that the stochastic processes of growth, maturation, and natural mortality are density-independent and stationary throughout the time horizon. Quinn and Deriso <span class="citation" data-cites="quinnii1999">(<a href="references.html#ref-quinnii1999" role="doc-biblioref">1999</a>)</span> provide a useful discussion of stock-recruitment models, renewal processes, and sustainable yield. Note that the assumed stock-recruitment relationship does not affect the initial population abundance at the beginning of the time horizon (see <strong>Initial Population Abundance</strong>).</p>
-<p>A total of twenty one stochastic recruitment models are available for population projection in the AGEPRO software. Thirteen of the recruitment models are functionally dependent on <span class="math inline">\(B_S\)</span> while eight do not depend on spawning biomass. Five of the recruitment models have time-dependent parameters, twelve are time-invariant, and four may include time as a predictor, or not. The user is responsible for the choice and parameterization of the recruitment models. A description of each of the recruitment models follows. <em>Important: note that the absolute units for recruitment</em> <span class="math inline">\(R\)</span> are numbers of age-1 fish, while for spawning biomass <span class="math inline">\(B_S\)</span>, the absolute units are kilograms of spawning biomass in each of the recruitment models below.</p>
+
+<p>In general, the relationship between spawning stock <span class="math inline">\(B_S\)</span> and recruitment <span class="math inline">\(R\)</span> is highly variable owing to intrinsic variability in factors governing early life history survival and to measurement error in the estimates of recruitment and the spawning biomass that generated it. The stock-recruitment relationship ultimately defines the sustainable yield curve and its expected variability, assuming that the stochastic processes of growth, maturation, and natural mortality are density-independent and stationary throughout the time horizon. Quinn and Deriso <span class="citation" data-cites="quinnii1999">(<a href="references.html#ref-quinnii1999" role="doc-biblioref">1999</a>)</span> provide a useful discussion of stock-recruitment models, renewal processes, and sustainable yield. Note that the assumed stock-recruitment relationship does not affect the initial population abundance at the beginning of the time horizon (see <a href="04_initial-pop-abundance.html"><strong>Initial Population Abundance</strong></a>).</p>
+<p>A total of twenty one stochastic recruitment models are available for population projection in the AGEPRO software. Thirteen of the recruitment models are functionally dependent on <span class="math inline">\(B_S\)</span> while eight do not depend on spawning biomass. Five of the recruitment models have time-dependent parameters, twelve are time-invariant, and four may include time as a predictor, or not. The user is responsible for the choice and parameterization of the recruitment models. A description of each of the recruitment models follows. <u><em>Important: note that the absolute units for recruitment <span class="math inline">\(R\)</span> are numbers of age-1 fish, while for spawning biomass <span class="math inline">\(B_S\)</span>, the absolute units are kilograms of spawning biomass in each of the recruitment models below.</em></u></p>
 <section id="model-1.-markov-matrix" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-1.-markov-matrix">Model 1. Markov Matrix</h2>
 <p>A Markov matrix approach to modeling recruitment may be useful when there is uncertainty about the functional form of the stock-recruitment relationship. A Markov matrix contains transition probabilities that define the probability of obtaining a given level of recruitment given that <span class="math inline">\(B_S\)</span> was within a defined interval range. In particular, the distribution of recruitment is assumed to follow a multinomial distribution conditioned on the spawning biomass interval or spawning state of the stock. The Markov matrix model depends on spawning biomass and is time-invariant.</p>
 <p>An empirical approach to estimate a Markov matrix uses stock-recruitment data to determine the parameters of a multinomial distribution for each spawning biomass state. In this case, matrix elements can be empirically determined by counting the number of times that a recruitment observation interval lies within a given spawning biomass state, defined by an interval of spawning biomass, and normalizing over all spawning states. To do this, assume that there are <span class="math inline">\(K\)</span> recruitment values and <span class="math inline">\(J\)</span> spawning biomass states. The spawning biomass states are defined by disjoint intervals on the spawning biomass axis</p>
 <p><span class="math display">\[
-I_1 = {\bigl[0,B_{s,1}\bigr)}\ and\ for\ j=1, ..., J-2\ \ I_j = {\bigl[B_{S,j-1},B_{S,J}\bigr)}\ and\ I_j = {\bigl[B_{S,J-1}, \infty\bigr)}    
+I_1 = {\bigl[0,B_{s,1}\bigr)}\ and\ for\ j=1, ..., J-2\ \ I_j = {\bigl[B_{S,j-1},B_{S,j}\bigr)}\ and\ I_j = {\bigl[B_{S,J-1}, \infty\bigr)}    
 \tag{14}\label{eq:14}
 \]</span></p>
 <p>where the spawning biomass values <span class="math inline">\(B_{S,j}\)</span> are the input endpoints of the disjoint intervals of categories of spawning biomass (e.g., high, medium, low). Note that the spawning biomass intervals are defined by the cut points <span class="math inline">\(B_{S,j}\)</span>. The conditional probability of realizing the <span class="math inline">\(k^{th}\)</span> recruitment value given that observed spawning biomass <span class="math inline">\(B_{S,Observed}\)</span> is in the <span class="math inline">\(j^{th}\)</span> interval is <span class="math inline">\(P{j,k}\)</span>. Here <span class="math inline">\(P_{j,k}\)</span> is the element in the <span class="math inline">\(j^{th}\)</span> row and <span class="math inline">\(k^{th}\)</span> column of the Markov matrix <span class="math inline">\(\underline{P}={\bigl[ P_{j,k}\bigr]}\)</span> of conditional recruitment probabilities with elements</p>
@@ -363,23 +418,23 @@ P_{j,k} = Pr{\bigl(R_k | B_{S,Observed} \in I_j\bigr)} \tag{15}\label{eq:15}
 <p><span class="math display">\[
 \Pr(r=O_k\ |\ B_S \in I_j)= \frac{x_{j,k}}{ \sum\limits_{k}x_{j,k} } \tag{16}\label{eq:16}
 \]</span> Here <span class="math inline">\(P_{j,k} \ge 0\)</span> and <span class="math inline">\(\sum\limits_{k=1}P_{j,k}=1\)</span></p>
-<p>Up to 25 recruitment values and up to 10 spawning biomass states can be used in the Markov matrix model. For each spawning biomass interval, the user needs to specify the conditional probabilities of realizing the expected recruitment level, e.g., the <span class="math inline">\(P_{j,k}\)</span>. Given the conditional probabilities <span class="math inline">\(P_{j,k}\)</span>, simulated values of <span class="math inline">\(\hat{R}\)</span> are generated by randomly sampling the conditional distribution <span class="math inline">\(\hat{R}(t) = Pr(R=O_k\ |\ B_S(t) \in I_j)\)</span> through time.</p>
+<p>The number of recruitment values and spawning values and spawning biomass interval, the user needs to specify the conditional probabilities of realizing the expected recruitment level, e.g., the <span class="math inline">\(P_{j, k}\)</span>. Given the conditional probabilities <span class="math inline">\(P_{j,k}\)</span>, simulated values of <span class="math inline">\(\hat{R}\)</span> are generated by randomly sampling the conditional distribution <span class="math inline">\(\hat{R}(t) = Pr(R=O_k\ |\ B_S(t) \in I_j)\)</span> through time.</p>
 </section>
 <section id="model-2.-empirical-recruits-per-spawning-biomass-distribution" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-2.-empirical-recruits-per-spawning-biomass-distribution">Model 2. Empirical Recruits Per Spawning Biomass Distribution</h2>
 <p>For some stocks, the distribution of recruits per spawner may be independent of the number of spawners over the range of observed data. The recruitment per spawning biomass <span class="math inline">\((R/B_s)\)</span> model randomly generates recruitment under the assumption that the distribution of the <span class="math inline">\(R/B_s\)</span> ratio is stationary and independent of stock size. <em>The empirical recruits per spawning biomass distribution model depends on spawning biomass and is time-invariant.</em></p>
 <p>To describe this nonparametric approach, let <span class="math inline">\(S_t\)</span> be the <span class="math inline">\(R/B_s\)</span> ratio for the t<sup>th</sup> stock recruitment data point assuming age-1 recruitment</p>
 <p><span class="math display">\[
-S-t = \frac{R(t)}{B_s(t-1)} \tag{17}\label{eq:17}
+S_t = \frac{R(t)}{B_s(t-1)} \tag{17}\label{eq:17}
 \]</span></p>
-<p>and let <span class="math inline">\(R_S\)</span> be the thS element in the ordered set of <span class="math inline">\(S_t\)</span>. The empirical probability density function for <span class="math inline">\(R_S\)</span>, denoted as <span class="math inline">\(g(R_S)\)</span>, assigns a probability of <span class="math inline">\(1/T\)</span> to each value of <span class="math inline">\(R/B_S\)</span> where <span class="math inline">\(T\)</span> is the number of stock-recruitment data points. Let <span class="math inline">\(G(R_S)\)</span> denote the cumulative distribution function (cdf) for <span class="math inline">\(R_S\)</span>. Set the values of <span class="math inline">\(G\)</span> at the minimum and maximum observed <span class="math inline">\(R_S\)</span> to be <span class="math inline">\(G(R_{min}) = 0\)</span> and <span class="math inline">\(G(R_{max}) = 0\)</span> so that the cdf of <span class="math inline">\(R_S\)</span> can be written as</p>
+<p>and let <span class="math inline">\(R_S\)</span> be the <span class="math inline">\(S^{th}\)</span> element in the ordered set of <span class="math inline">\(S_t\)</span>. The empirical probability density function for <span class="math inline">\(R_S\)</span>, denoted as <span class="math inline">\(g(R_S)\)</span>, assigns a probability of <span class="math inline">\(1/T\)</span> to each value of <span class="math inline">\(R/B_S\)</span> where <span class="math inline">\(T\)</span> is the number of stock-recruitment data points. Let <span class="math inline">\(G(R_S)\)</span> denote the cumulative distribution function (cdf) for <span class="math inline">\(R_S\)</span>. Set the values of <span class="math inline">\(G\)</span> at the minimum and maximum observed <span class="math inline">\(R_S\)</span> to be <span class="math inline">\(G(R_{min}) = 0\)</span> and <span class="math inline">\(G(R_{max}) = 0\)</span> so that the cdf of <span class="math inline">\(R_S\)</span> can be written as</p>
 <p><span class="math display">\[
 G(R_S) = \frac{s-1}{T-1} \tag{18}\label{eq:18}
 \]</span></p>
-<p>Random values of <span class="math inline">\(R_S\)</span> can be generated by applying the probability integral transform to the empirical cdf. To do this, let <span class="math inline">\(U\)</span> be a uniformly distributed random variable on the interval [0,1]. The value of <span class="math inline">\(R_S\)</span> corresponding to a randomly chosen value of <span class="math inline">\(U\)</span> is determined by applying the inverse function of the cdf <span class="math inline">\(G(R_S)\)</span>. In particular, if <span class="math inline">\(U\)</span> is an integer multiple of <span class="math inline">\(1/(T-1)\)</span> so that <span class="math inline">\(U=s/(T-1)\)</span> then <span class="math inline">\(R_S = G^{-1}(U)\)</span>. Otherwise <span class="math inline">\(R_S\)</span> can be obtained by linear interpolation when <span class="math inline">\(U\)</span> is not a multiple of <span class="math inline">\(1/(T-1)\)</span>.</p>
-<p>In particular, if <span class="math inline">\((s-1)/(T-1)&lt;U&lt;s/(T-1)\)</span>, then <span class="math inline">\(\hat{R_S}\)</span> is interpolated between <span class="math inline">\(R_S\)</span> and <span class="math inline">\(R_{S+1}\)</span> as</p>
+<p>Random values of <span class="math inline">\(R_S\)</span> can be generated by applying the probability integral transform to the empirical cdf. To do this, let <span class="math inline">\(U\)</span> be a uniformly distributed random variable on the interval [0,1]. The value of <span class="math inline">\(\widehat{R_S}\)</span> corresponding to a randomly chosen value of <span class="math inline">\(U\)</span> is determined by applying the inverse function of the cdf <span class="math inline">\(G(R_S)\)</span>. In particular, if <span class="math inline">\(U\)</span> is an integer multiple of <span class="math inline">\(1/(T-1)\)</span> so that <span class="math inline">\(U=s/(T-1)\)</span> then <span class="math inline">\(\widehat{R_S} = G^{-1}(U)\)</span>. Otherwise <span class="math inline">\(\widehat{R_S}\)</span> can be obtained by linear interpolation when <span class="math inline">\(U\)</span> is not a multiple of <span class="math inline">\(1/(T-1)\)</span>.</p>
+<p>In particular, if <span class="math inline">\((s-1)/(T-1)&lt;U&lt;s/(T-1)\)</span>, then <span class="math inline">\(\widehat{R_S}\)</span> is interpolated between <span class="math inline">\(R_S\)</span> and <span class="math inline">\(R_{S+1}\)</span> as</p>
 <p><span class="math display">\[
-U = \left(\frac{\dfrac{s}{T-1} - \dfrac{s-1}{T-1}}{R_{s+1}-R_S} \right) (\widehat{R_S} - R_S) + \frac{s-1}{T-1} \tag{19}\label{eq:19}
+U = \left(\frac{\dfrac{s}{T-1} - \dfrac{s-1}{T-1}}{R_{s+1}-R_S} \right) {\biggl( \widehat{R_S} - R_S \biggr)} + \frac{s-1}{T-1} \tag{19}\label{eq:19}
 \]</span></p>
 <p>Solving for <span class="math inline">\(\widehat{R_S}\)</span> as a function of <span class="math inline">\(U\)</span> yields</p>
 <p><span class="math display">\[
@@ -393,11 +448,11 @@ R(t) = N_1(t) = B_S(t-1) \cdot \widehat{R_S} \tag{21}\label{eq:21}
 </section>
 <section id="model-3.-empirical-recruitment-distribution" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-3.-empirical-recruitment-distribution">Model 3. Empirical Recruitment Distribution</h2>
-<p>Another simple model for generating recruitment is to draw randomly from the observed set of recruitments <span class="math inline">\(\underline{R}= \bigl\{ R(1), R(2), ..., R(T) \bigr\}\)</span> .This may be a useful approach when the recruitment has randomly fluctuated about its mean and appears to beindependent of spawning biomass over the observed range of data. In this case, the recruitment distribution may be modeled as a multinomial random variable where the probability of randomly choosing a particular recruitment is <span class="math inline">\(1 / T\)</span> given <span class="math inline">\(T\)</span> observed recruitments. The empirical recruitment distribution model does not depend on spawning biomass and is time-invariant.</p>
-<p>In this model, realized recruitment <span class="math inline">\(\hat{R}\)</span> is simulated from the empirical recruitment distribution as</p>
+<p>Another simple model for generating recruitment is to draw randomly from the observed set of recruitments <span class="math inline">\(\underline{R}= \bigl\{ R(1), R(2), ..., R(T) \bigr\}\)</span> . This may be a useful approach when the recruitment has randomly fluctuated about its mean and appears to be independent of spawning biomass over the observed range of data. In this case, the recruitment distribution may be modeled as a multinomial random variable where the probability of randomly choosing a particular recruitment is <span class="math inline">\(1 / T\)</span> given <span class="math inline">\(T\)</span> observed recruitments. The empirical recruitment distribution model does not depend on spawning biomass and is time-invariant.</p>
+<p>In this model, realized recruitment <span class="math inline">\(\widehat{R}\)</span> is simulated from the empirical recruitment distribution as</p>
 <p><span class="math display">\[
 Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}\label{eq:22}
-\]</span> The empirical recruitment distribution approach is nonparametric and assumes that future recruitment is totally independent of spawning stock biomass. When current levels of <span class="math inline">\(B_S\)</span> are near the midrange of historical values this assumption seems reasonable. However, if contemporary <span class="math inline">\(S_B\)</span> values are near the bottom of the range, then this approach could be overly optimistic, for it assumes that all historicallyobserved recruitment levels are possible, regardless of <span class="math inline">\(B_S\)</span>. The AGEPRO program can generate stochastic recruitments under model 3 based on thousands of input recruitment data points. Note that the empirical recruitment distribution model can be used to make deterministic projections by specifying a single observed recruitment.</p>
+\]</span> The empirical recruitment distribution approach is nonparametric and assumes that future recruitment is totally independent of spawning stock biomass. When current levels of <span class="math inline">\(B_S\)</span> are near the midrange of historical values this assumption seems reasonable. However, if contemporary <span class="math inline">\(B_S\)</span> values are near the bottom of the range, then this approach could be overly optimistic, for it assumes that all historically observed recruitment levels are possible, regardless of <span class="math inline">\(B_S\)</span>. The AGEPRO program can generate stochastic recruitments under model 3 based on thousands of input recruitment data points. Note that the empirical recruitment distribution model can be used to make deterministic projections by specifying a single observed recruitment.</p>
 </section>
 <section id="model-4.-two-stage-empricial-recruits-per-spwaning-biomass" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-4.-two-stage-empricial-recruits-per-spwaning-biomass">Model 4. Two-Stage Empricial Recruits Per Spwaning Biomass</h2>
@@ -416,7 +471,7 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 \tag{23}\label{eq:23}
 \]</span></p>
 <p>The stock-recruitment parameters <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, and <span class="math inline">\(\sigma_w^2\)</span> and the conversion coefficients for recruitment <span class="math inline">\(c_R\)</span> and spawning stock biomass <span class="math inline">\(c_B\)</span> are specified by the user. Here it is assumed that the parameter estimates for the Beverton-Holt curve have been estimated in relative units of recruitment <span class="math inline">\(r(t)\)</span> and spawning biomass <span class="math inline">\(b_s(t)\)</span>, which are converted to absolute values using the conversion coefficients. Note that the absolute value of recruitment is expressed as numbers of fish, while for spawning biomass, the absolute value is expressed as kilograms of <span class="math inline">\(B_S\)</span>. For example, if the stock-recruitment curve was estimated with stock-recruitment data that were measured in millions of fish and thousands of metric tons of <span class="math inline">\(B_S\)</span>, then <span class="math inline">\(c_R=10^6\)</span> and <span class="math inline">\(c_R=10^6\)</span>. It may be important to estimate the parameters of the stock-recruitment curve in relative units to reduce the potential effects of roundoff error on parameter estimates. It is important to note that the expected value of the lognormal error term is not unity but is <span class="math inline">\(exp\left(\dfrac{1}{2}\sigma_w^2\right)\)</span>. Therefore, in order to generate a recruitment model that has a lognormal error term that is equal to 1, one needs to multiply the parameter <span class="math inline">\(\alpha\)</span> by <span class="math inline">\(exp\left(-\dfrac{1}{2}\sigma_w^2\right)\)</span>. This bias correction applies when the lognormal error used to fit the Beverton-Holt curve has a log-scale error term <span class="math inline">\(w\)</span> with zero mean.</p>
-<p>The Beverton-Holt curve is often reparameterized in a modified form with parameters for steepness <span class="math inline">\(h\)</span> , unfished recruitment <span class="math inline">\(R_0\)</span>, and unfished spawning biomass <span class="math inline">\(B_0\)</span>. The modified Beverton-Holt curve produces <span class="math inline">\(h=R_0\)</span> recruits when <span class="math inline">\(B_S = 0.2B_0\)</span> and has the form</p>
+<p>The Beverton-Holt curve is often reparameterized in a modified form with parameters for steepness <span class="math inline">\(h\)</span> , unfished recruitment <span class="math inline">\(R_0\)</span>, and unfished spawning biomass <span class="math inline">\(B_0\)</span>. The modified Beverton-Holt curve produces <span class="math inline">\(h \cdot R_0\)</span> recruits when <span class="math inline">\(B_S = 0.2B_0\)</span> and has the form</p>
 <p><span class="math display">\[
 \hat{R} = \frac{4hR_0B_S}{B_0(1-h)+B_S(5h-1)} \tag{24}\label{eq:24}
 \]</span></p>
@@ -438,7 +493,7 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 \end{split}
 \tag{27}\label{eq:27}
 \]</span></p>
-<p>The stock-recruitment parameters <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, and <span class="math inline">\(\sigma_w^2\)</span> and the conversion coefficients for recruitment <span class="math inline">\(C_R\)</span> and spawning stock biomass <span class="math inline">\(c_B\)</span> are specified by the user. Here it is assumed that the parameter estimates for the Beverton-Holt curve have been estimated in relative units of recruitment <span class="math inline">\(r(t)\)</span> and spawning biomass <span class="math inline">\(b_s(t)\)</span> which are converted to absolute values using the conversion coefficients. It is important to note that the expected value of the lognormal error term is not unity but is <span class="math inline">\(exp\left(\dfrac{1}{2}\sigma^2_w\right)\)</span>. To generate a recruitment model that has a lognormal error term that is equal to 1, premultiply the parameter <span class="math inline">\(\alpha\)</span> by <span class="math inline">\(exp\left(-\dfrac{1}{2}\sigma^2_w\right)\)</span>; this mean correction applies when the lognormal error used to fit the Ricker curve has a log-scale error term <span class="math inline">\(w\)</span> with zero mean.</p>
+<p>The stock-recruitment parameters <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, and <span class="math inline">\(\sigma_w^2\)</span> and the conversion coefficients for recruitment <span class="math inline">\(c_R\)</span> and spawning stock biomass <span class="math inline">\(c_B\)</span> are specified by the user. Here it is assumed that the parameter estimates for the Beverton-Holt curve have been estimated in relative units of recruitment <span class="math inline">\(r(t)\)</span> and spawning biomass <span class="math inline">\(b_s(t)\)</span> which are converted to absolute values using the conversion coefficients. It is important to note that the expected value of the lognormal error term is not unity but is <span class="math inline">\(exp\left(\dfrac{1}{2}\sigma^2_w\right)\)</span>. To generate a recruitment model that has a lognormal error term that is equal to 1, premultiply the parameter <span class="math inline">\(\alpha\)</span> by <span class="math inline">\(exp\left(-\dfrac{1}{2}\sigma^2_w\right)\)</span>; this mean correction applies when the lognormal error used to fit the Ricker curve has a log-scale error term <span class="math inline">\(w\)</span> with zero mean.</p>
 </section>
 <section id="model-7.-shepherd-curve-with-lognormal-error" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-7.-shepherd-curve-with-lognormal-error">Model 7. Shepherd Curve with Lognormal Error</h2>
@@ -466,11 +521,23 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 \end{split}
 \tag{29}\label{eq:29}
 \]</span></p>
-<p>The lognormal distribution parameters <span class="math inline">\(\mu_{log(r)}\)</span> and <span class="math inline">\(\sigma^2_{log(r)}\)</span> as well as the conversion coefficient for recruitment <span class="math inline">\(C_R\)</span> are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units <span class="math inline">\(r(t)\)</span> and then converted to absolute values with the conversion coefficients.</p>
+<p>The lognormal distribution parameters <span class="math inline">\(\mu_{log(r)}\)</span> and <span class="math inline">\(\sigma^2_{log(r)}\)</span> as well as the conversion coefficient for recruitment <span class="math inline">\(c_R\)</span> are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units <span class="math inline">\(r(t)\)</span> and then converted to absolute values with the conversion coefficients.</p>
 </section>
 <section id="model-9.-deprecated-time-varying-empirical-recruitment-distribution" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-9.-deprecated-time-varying-empirical-recruitment-distribution">Model 9. [DEPRECATED] Time-Varying Empirical Recruitment Distribution</h2>
-<p><strong>This recruitment model has been deprecated. The model for a time-varying empirical recruitment distribution can be fully implemented using <a href="#model-3.-empirical-recruitment-distribution">model 3</a>.</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This recruitment model has been deprecated. The model for a time-varying empirical recruitment distribution can be fully implemented using <a href="#model-3.-empirical-recruitment-distribution"><strong>Empirical Recruitment Distribution Recruitment (Model 3)</strong></a>.</p>
+</div>
+</div>
 </section>
 <section id="model-10.-beverton-holt-curve-with-autocorrelated-lognormal-error" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-10.-beverton-holt-curve-with-autocorrelated-lognormal-error">Model 10. Beverton-Holt Curve with Autocorrelated Lognormal Error</h2>
@@ -479,7 +546,8 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 <p><span class="math display">\[
 \begin{split}
 \hat{r}(t) &amp;= \frac{\alpha \cdot b_s (t-1)}{\beta + b_s (t-1)} \cdot e^{\varepsilon_t} \\
-&amp; where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ w_t \sim  N(0,\sigma^2_w), \\
+\\
+&amp; where\ \ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ \ w_t \sim  N(0,\sigma^2_w), \\
 &amp; \hat{R}(t) = c_r \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
 \end{split}
 \tag{30}\label{eq:30}
@@ -493,6 +561,7 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 <p><span class="math display">\[
 \begin{split}
 \hat{r}(t) &amp;= \alpha \cdot b_S(t-1) \cdot e^{-\beta\cdot b_S(t-1)} \cdot e^{\varepsilon_t} \\
+&amp; \\
 &amp; where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ w_t \sim  N(0,\sigma^2_w), \\
 &amp; \hat{R}(t) = c_r \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
 \end{split}
@@ -508,7 +577,7 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 &amp; \hat{r}(t) = \dfrac{\alpha \cdot b_S(t-1)}{ 1 + \left( \dfrac{b_s(t-1)}{k} \right)^{\beta} } \cdot e^{\varepsilon_t} \\
 &amp; \\
 &amp; where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ \ with\ w_t \sim  N(0,\sigma^2_w), \\
-&amp; \hat{R}(t) = c_r \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
+&amp; \hat{R}(t) = c_R \cdot \hat{r}(t), and\ B_s(t) = c_B \cdot b_S(t)
 \end{split}
 \tag{32}\label{eq:32}
 \]</span> The stock-recruitment parameters <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(k\)</span>, <span class="math inline">\(\phi\)</span>, <span class="math inline">\(\varepsilon_0\)</span>, and <span class="math inline">\(\sigma^2_w\)</span> and the conversion coefficients for recruitment <span class="math inline">\(c_R\)</span> and spawning stock biomass <span class="math inline">\(c_B\)</span> are specified by the user. The parameter <span class="math inline">\(\varepsilon_0\)</span> is the log-scale residual for the stock-recruitment fit in the time prior to the projection. If this value is not known, the default is to set <span class="math inline">\(\varepsilon_0 = 0\)</span>.</p>
@@ -519,14 +588,14 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 <p>The autocorrelated lognormal distribution is</p>
 <p><span class="math display">\[
 \begin{split}
-&amp; n_r(t) = e^{s_t}\\
+&amp; n_r(t) = e^{\varepsilon_t}\\
 &amp; \\
 &amp; where\ \varepsilon_t = \phi\varepsilon_{t-1} + w_t \ with \ w_t \sim N \left(\mu_{log(r)} \cdot \sigma^2_{log(r)}\right) \\
 &amp; and\ R(t) = c_R \cdot n_r(t)
 \end{split}
 \tag{33}\label{eq:33}
 \]</span></p>
-<p>The lognormal distribution parameters <span class="math inline">\(\mu_{log(r)} \cdot \sigma^2_{log(r)}\)</span>,<span class="math inline">\(\phi\)</span>, <span class="math inline">\(\varepsilon_0\)</span> as well as the conversion coefficient for recruitment <span class="math inline">\(C_R\)</span> are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units <span class="math inline">\(r(t)\)</span> and then converted to absolute values with the conversion coefficient.</p>
+<p>The lognormal distribution parameters <span class="math inline">\(\mu_{log(r)}\)</span>, <span class="math inline">\(\sigma^2_{log(r)}\)</span>, <span class="math inline">\(\phi\)</span>, and <span class="math inline">\(\varepsilon_0\)</span> as well as the conversion coefficient for recruitment <span class="math inline">\(c_R\)</span> are specified by the user. It is assumed that the parameters of the lognormal distribution have been estimated in relative units <span class="math inline">\(r(t)\)</span> and then converted to absolute values with the conversion coefficient.</p>
 </section>
 <section id="model-14.-empirical-cumulative-distribution-function-of-recruitment" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-14.-empirical-cumulative-distribution-function-of-recruitment">Model 14. Empirical Cumulative Distribution Function of Recruitment</h2>
@@ -535,17 +604,17 @@ Pr\left(\widehat{R}=R(t)\right) = \frac{1}{T}, for\ t \in \{1,2,...,T\} \tag{22}
 <p><span class="math display">\[
 G(R_S) = \frac{s-1}{T-1} \tag{34}\label{eq:34}
 \]</span></p>
-<p>Random values of <span class="math inline">\(R_S\)</span> can be generated by applying the probability integral transform to the empirical cdf. To do this, let <span class="math inline">\(U\)</span> be a uniformly distributed random variable on the interval [0,1]. The value of <span class="math inline">\(R_S\)</span> corresponding to a randomly chosen value of <span class="math inline">\(U\)</span> is determined by applying the inverse function of the cdf <span class="math inline">\(G(R_S)\)</span>. In particular, if <span class="math inline">\(U\)</span> is an integer multiple of <span class="math inline">\(1/(T-1)\)</span> so that <span class="math inline">\(U = s/(T-1)\)</span> then <span class="math inline">\(\widehat{R_s} = G^{-1}(U)\)</span>. Otherwise <span class="math inline">\(\widehat{R_s}\)</span> can be obtained by linear interpolation when <span class="math inline">\(U\)</span> is not a multiple of <span class="math inline">\(1/(T-1)\)</span>.</p>
-<p>In particular, if <span class="math inline">\((s-1) / (T-1) &lt; U &lt; s/ (T-1)\)</span>, then <span class="math inline">\(\widehat{R_s}\)</span> is interpolated between <span class="math inline">\(R_S\)</span> and <span class="math inline">\(R_{S+1}\)</span> as</p>
+<p>Random values of <span class="math inline">\(R_S\)</span> can be generated by applying the probability integral transform to the empirical cdf. To do this, let <span class="math inline">\(U\)</span> be a uniformly distributed random variable on the interval [0,1]. The value of <span class="math inline">\(\widehat{R_S}\)</span> corresponding to a randomly chosen value of <span class="math inline">\(U\)</span> is determined by applying the inverse function of the cdf <span class="math inline">\(G(R_S)\)</span>. In particular, if <span class="math inline">\(U\)</span> is an integer multiple <span class="math inline">\(1/(T-1)\)</span> so that <span class="math inline">\(U = s/(T-1)\)</span> then <span class="math inline">\(\widehat{R_s} = G^{-1}(U)\)</span>. Otherwise <span class="math inline">\(\widehat{R_S}\)</span> can be obtained by linear interpolation when <span class="math inline">\(U\)</span> is not a multiple of <span class="math inline">\(1/(T-1)\)</span>.</p>
+<p>In particular, if <span class="math inline">\((s-1) / (T-1) &lt; U &lt; s/ (T-1)\)</span>, then <span class="math inline">\(\widehat{R_S}\)</span> is interpolated between <span class="math inline">\(R_S\)</span> and <span class="math inline">\(R_{S+1}\)</span> as</p>
 <p><span class="math display">\[
 U = \left(\frac{\dfrac{s}{T-1}-\dfrac{s-1}{T-1}}{R_{S+1} - R_S} \right)\left(\widehat{R_S}-R_S\right) + \frac{s-1}{T-1}
 \tag{35}\label{eq:35}
 \]</span></p>
-<p>Solving for <span class="math inline">\(\widehat{R_s}\)</span> as a function of <span class="math inline">\(U\)</span> yields</p>
+<p>Solving for <span class="math inline">\(\widehat{R_S}\)</span> as a function of <span class="math inline">\(U\)</span> yields</p>
 <p><span class="math display">\[
 \widehat{R_S} = (T-1)(R_{S+1}-R_S)\left(U-\frac{s-1}{T-1}\right)+R_S \tag{36}\label{eq:36}
 \]</span></p>
-<p>where the interpolation index <span class="math inline">\(s\)</span> is determined as the greatest integer in <span class="math inline">\(1+U(T-1)\)</span>. Given the value of <span class="math inline">\(R_S\)</span>, recruitment is set to be</p>
+<p>where the interpolation index <span class="math inline">\(s\)</span> is determined as the greatest integer in <span class="math inline">\(1+U(T-1)\)</span>. Given the value of <span class="math inline">\(\widehat{R_S}\)</span>, recruitment is set to be</p>
 <p><span class="math display">\[
 \widehat{R}(t) = \widehat{R_S} \tag{37}\label{eq:37}
 \]</span> The AGEPRO program can generate stochastic recruitments under model 14 based on thousands of input recruitment data points.</p>
@@ -553,7 +622,7 @@ U = \left(\frac{\dfrac{s}{T-1}-\dfrac{s-1}{T-1}}{R_{S+1} - R_S} \right)\left(\wi
 <section id="model-15.-two-stage-empirical-cumulative-distribution-function-of-recruitment" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-15.-two-stage-empirical-cumulative-distribution-function-of-recruitment">Model 15. Two Stage Empirical Cumulative Distribution Function of Recruitment</h2>
 <p>The two-stage empirical cumulative distribution function of recruitment model is an extension of <a href="#model-14.-empirical-cumulative-distribution-function-of-recruitment">Model 14</a> where the spawning stock of the population is categorized into low and high states. <em>The two-stage empirical cumulative distribution function of recruitment model depends on spawning biomass and is time-invariant.</em></p>
-<p>In this model, there is an empirical recruitment distribution <span class="math inline">\(R_{Low}\)</span> for the low spawning biomass state and an empirical recruitment distribution <span class="math inline">\(R_{High}\)</span> for the high spawning biomass state. Let <span class="math inline">\(G_{Low}\)</span> be the cdf and let <span class="math inline">\(T_{Low}\)</span> be the number of <span class="math inline">\(R\)</span> values for the low <span class="math inline">\(B_S\)</span> state. Similarly, let <span class="math inline">\(G_{High}\)</span> be the cdf and let <span class="math inline">\(T_{High}\)</span> be the number of <span class="math inline">\(R\)</span> values for the high <span class="math inline">\(B_S\)</span> state. Further, let <span class="math inline">\(B_S^*\)</span> denote the cutoff level of <span class="math inline">\(B_S\)</span> such that, if <span class="math inline">\(B_S &gt; B_S^*\)</span>, then <span class="math inline">\(B_S\)</span> falls in the high state. Conversely if <span class="math inline">\(B_S &lt; B_S^*\)</span>, then <span class="math inline">\(B_S\)</span> falls in the low state. Recruitment is stochastically generated from <span class="math inline">\(G_{Low}\)</span> or <span class="math inline">\(G_{High}\)</span> using equations (<span class="math inline">\(\ref{eq:36}\)</span>) and (<span class="math inline">\(\ref{eq:37}\)</span>) dependent on the <span class="math inline">\(B_S\)</span> state. The AGEPRO program can generate stochastic recruitments under model 15 based on thousands of input stock-recruitment data points per <span class="math inline">\(B_S\)</span> state.</p>
+<p>In this model, there is an empirical recruitment distribution <span class="math inline">\(\underline{R}_{Low}\)</span> for the low spawning biomass state and an empirical recruitment distribution <span class="math inline">\(\underline{R}_{High}\)</span> for the high spawning biomass state. Let <span class="math inline">\(G_{Low}\)</span> be the cdf and let <span class="math inline">\(T_{Low}\)</span> be the number of <span class="math inline">\(R\)</span> values for the low <span class="math inline">\(B_S\)</span> state. Similarly, let <span class="math inline">\(G_{High}\)</span> be the cdf and let <span class="math inline">\(T_{High}\)</span> be the number of <span class="math inline">\(R\)</span> values for the high <span class="math inline">\(B_S\)</span> state. Further, let <span class="math inline">\(B_S^*\)</span> denote the cutoff level of <span class="math inline">\(B_S\)</span> such that, if <span class="math inline">\(B_S &gt; B_S^*\)</span>, then <span class="math inline">\(B_S\)</span> falls in the high state. Conversely if <span class="math inline">\(B_S &lt; B_S^*\)</span>, then <span class="math inline">\(B_S\)</span> falls in the low state. Recruitment is stochastically generated from <span class="math inline">\(G_{Low}\)</span> or <span class="math inline">\(G_{High}\)</span> using equations (<span class="math inline">\(\ref{eq:36}\)</span>) and (<span class="math inline">\(\ref{eq:37}\)</span>) dependent on the <span class="math inline">\(B_S\)</span> state. The AGEPRO program can generate stochastic recruitments under model 15 based on thousands of input stock-recruitment data points per <span class="math inline">\(B_S\)</span> state.</p>
 </section>
 <section id="model-16.-linear-recruits-per-spawning-biomass-predictor-with-normal-error" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-16.-linear-recruits-per-spawning-biomass-predictor-with-normal-error">Model 16. Linear Recruits Per Spawning Biomass Predictor with Normal Error</h2>
@@ -561,7 +630,7 @@ U = \left(\frac{\dfrac{s}{T-1}-\dfrac{s-1}{T-1}}{R_{S+1} - R_S} \right)\left(\wi
 <p><span class="math display">\[
 \dfrac{R}{B_S} = \beta_0 + \sum^{N_P}_{p=1}\beta_p\ \cdot X_p(t) + \varepsilon \tag{38}\label{eq:38}
 \]</span></p>
-<p>where <span class="math inline">\(N_p\)</span> is the number of predictors, <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_p\)</span> is the linear coefficient of the <span class="math inline">\(p^{th}\)</span> predictor and <span class="math inline">\(\varepsilon\)</span> is a normal distribution with zero mean and constant variance <span class="math inline">\(\sigma^2\)</span>. It is possible negative values of <span class="math inline">\(\dfrac{R}{B_S}\)</span> to be generated using this formulation; such values are excluded from the set of simulated values of <span class="math inline">\(\dfrac{R}{B_S}\)</span> from equation (<span class="math inline">\(\ref{eq:35}\)</span>) by testing if <span class="math inline">\(\dfrac{R}{B_S} &lt; 0\)</span> repeating the random sampling until an feasible positive value of <span class="math inline">\(\dfrac{R}{B_S}\)</span> is obtained. This model randomly generates <span class="math inline">\(\dfrac{R}{B_S}\)</span> values under the assumption that the linear predictor of the <span class="math inline">\(\dfrac{R}{B_S}\)</span> ratio is stationary and independent of stock size. Random values of <span class="math inline">\(\dfrac{R}{B_S}\)</span> are multiplied by realized spawning biomass to generate recruitment in each time period. <em>The linear recruits per spawning biomass predictor with normal error depends on spawning biomass and is time-invariant unless time is used as a predictor.</em></p>
+<p>where <span class="math inline">\(N_p\)</span> is the number of predictors, <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_p\)</span> is the linear coefficient of the <span class="math inline">\(p^{th}\)</span> predictor and <span class="math inline">\(\varepsilon\)</span> is a normal distribution with zero mean and constant variance <span class="math inline">\(\sigma^2\)</span>. It is possible negative values of <span class="math inline">\(\dfrac{R}{B_S}\)</span> to be generated using this formulation; such values are excluded from the set of simulated values of <span class="math inline">\(\dfrac{R}{B_S}\)</span> from equation (<span class="math inline">\(\ref{eq:35}\)</span>) by testing if <span class="math inline">\(\dfrac{R}{B_S} \le 0\)</span> repeating the random sampling until an feasible positive value of <span class="math inline">\(\dfrac{R}{B_S}\)</span> is obtained. This model randomly generates <span class="math inline">\(\dfrac{R}{B_S}\)</span> values under the assumption that the linear predictor of the <span class="math inline">\(\dfrac{R}{B_S}\)</span> ratio is stationary and independent of stock size. Random values of <span class="math inline">\(\dfrac{R}{B_S}\)</span> are multiplied by realized spawning biomass to generate recruitment in each time period. <em>The linear recruits per spawning biomass predictor with normal error depends on spawning biomass and is time-invariant unless time is used as a predictor.</em></p>
 </section>
 <section id="model-17.-loglinear-recruits-per-spawning-biomass-predictor-with-lognormal-error" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-17.-loglinear-recruits-per-spawning-biomass-predictor-with-lognormal-error">Model 17. Loglinear Recruits Per Spawning Biomass Predictor with Lognormal Error</h2>
@@ -573,11 +642,11 @@ U = \left(\frac{\dfrac{s}{T-1}-\dfrac{s-1}{T-1}}{R_{S+1} - R_S} \right)\left(\wi
 </section>
 <section id="model-18.-linear-recruitment-predictor-with-normal-error" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-18.-linear-recruitment-predictor-with-normal-error">Model 18. Linear Recruitment Predictor with Normal Error</h2>
-<p>The linear recruitment predictor with normal error is a parametric model to simulate representative random values of recruitment. The predictors in the linear model <span class="math inline">\(X_p(t)\)</span> can be any continuous variable and could represent survey indices of cohort abundance or environmental covariates correlated with recruitment strength. Input values of each predictor are required for each time period. If a value of a predictor is missing or not known for one or more periods, the missing values can be imputed using appropriate measures of central tendency, e.g., mean or median values. Similarly, if this model has zero probability in a given time period (e.g., is not a member of the set of probable models), then dummy values can be input for each predictor. For each time period and simulation, a random value of R is generated using the linear model</p>
+<p>The linear recruitment predictor with normal error is a parametric model to simulate representative random values of recruitment. The predictors in the linear model <span class="math inline">\(X_p(t)\)</span> can be any continuous variable and could represent survey indices of cohort abundance or environmental covariates correlated with recruitment strength. Input values of each predictor are required for each time period. If a value of a predictor is missing or not known for one or more periods, the missing values can be imputed using appropriate measures of central tendency, e.g., mean or median values. Similarly, if this model has zero probability in a given time period (e.g., is not a member of the set of probable models), then dummy values can be input for each predictor. For each time period and simulation, a random value of <span class="math inline">\(R\)</span> is generated using the linear model</p>
 <p><span class="math display">\[
 \begin{split}
 &amp; n_r(t) = \beta_0+\sum\limits_{p=1}^{N_p}\beta_p\ \cdot X_p(t) + \varepsilon\\
-&amp; with \ R(t) = c_r \cdot n_r(t)\\
+&amp; with \ R(t) = c_R \cdot n_r(t)\\
 \end{split}
 \tag{40}\label{eq:40}
 \]</span></p>
@@ -589,16 +658,16 @@ U = \left(\frac{\dfrac{s}{T-1}-\dfrac{s-1}{T-1}}{R_{S+1} - R_S} \right)\left(\wi
 <p><span class="math display">\[
 \begin{split}
 &amp; \log{(n_r(t))} = \beta_0+\sum\limits_{p=1}^{N_p}\beta_p\ \cdot X_p(t) + \varepsilon\\
-&amp; with \ R(t) = c_r \cdot n_r(t)\\
+&amp; with \ R(t) = c_R \cdot n_r(t)\\
 \end{split}
 \tag{41}\label{eq:41}
 \]</span> here <span class="math inline">\(N_p\)</span> is the number of predictors, <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_p\)</span> is the linear coefficient of the <span class="math inline">\(p^{th}\)</span> predictor and <span class="math inline">\(\varepsilon\)</span> is a normal distribution with constant variance <span class="math inline">\(\sigma^2\)</span> and and mean equal to <span class="math inline">\(-0.5\sigma^2\)</span>, and the conversion coefficients for recruitment is <span class="math inline">\(c_R\)</span>. In this case, the mean of <span class="math inline">\(\varepsilon\)</span> implies that the expected value if the lognormal error term is unity. This model generates positive random values of <span class="math inline">\(R\)</span> under the assumption that the linear predictor of <span class="math inline">\(R\)</span> is stationary and independent of stock size. <em>The loglinear recruitment predictor with lognormal error does not depend on spawning biomass and is time-invariant unless time is used as a predictor.</em></p>
 </section>
 <section id="model-20.-fixed-recruitment" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="model-20.-fixed-recruitment">Model 20. Fixed Recruitment</h2>
-<p>The fixed recruitment predictor applies a specified value of recruitment for each year of the time horizon. The vector of input recruitment values in relative units is <span class="math inline">\(\underline{n}_r = \Big[ n_r(1), n_r(2, ..., n_r(Y)\Big]\)</span> for projections years <span class="math inline">\(1\)</span> through <span class="math inline">\(Y\)</span>. The fixed recruitment model predicts recruitment as</p>
+<p>The fixed recruitment predictor applies a specified value of recruitment for each year of the time horizon. The vector of input recruitment values in relative units is <span class="math inline">\(\underline{n}_r = \Big[ n_r(1), n_r(2), ..., n_r(Y)\Big]\)</span> for projections years <span class="math inline">\(1\)</span> through <span class="math inline">\(Y\)</span>. The fixed recruitment model predicts recruitment as</p>
 <p><span class="math display">\[
-R(t) = c_r \cdot n_r(t) \tag{42}\label{eq:42}
+R(t) = c_R \cdot n_r(t) \tag{42}\label{eq:42}
 \]</span></p>
 <p>where the conversion coefficient for input recruitment to absolute numbers is <span class="math inline">\(c_R\)</span>. <em>The fixed recruitment model does not depend on spawning biomass and is time-invariant.</em></p>
 </section>
@@ -616,12 +685,12 @@ R = c_R \cdot \frac{B_S}{B^*_S} \left[\ (T-1)(R_{S+1} - R_S)\left( U-\dfrac{s-1}
 <p>where the conversion coefficient for input recruitment to absolute numbers is <span class="math inline">\(c_R\)</span>. <em>The empirical cumulative distribution function of recruitment with linear decline to zero model depends on spawning biomass and is time-invariant.</em></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bevertonHolt1957" class="csl-entry" role="listitem">
 Beverton, Raymond J. H., and Sidney J. Holt. 1957. <em>On the Dynamics of Exploited Fish Populations</em>. Chapman; Hall, London. Facsmile Reprint. Springer Netherlands. 1993. <a href="https://doi.org/10.1007/978-94-011-2106-4">https://doi.org/10.1007/978-94-011-2106-4</a>.
 </div>
 <div id="ref-quinnii1999" class="csl-entry" role="listitem">
-Quinn II, Terrance J, and Richard B Deriso. 1999. <em>Quantitative Fish Dynamics</em>. Oxford University PressNew York, NY. <a href="https://doi.org/10.1093/oso/9780195076318.001.0001">https://doi.org/10.1093/oso/9780195076318.001.0001</a>.
+Quinn II, Terrance J, and Richard B Deriso. 1999. <em>Quantitative Fish Dynamics</em>. Oxford University Press, New York, NY. <a href="https://doi.org/10.1093/oso/9780195076318.001.0001">https://doi.org/10.1093/oso/9780195076318.001.0001</a>.
 </div>
 <div id="ref-ricker1954d" class="csl-entry" role="listitem">
 Ricker, W. E. 1954. <span>“Stock and Recruitment.”</span> <em>Journal of the Fisheries Research Board of Canada</em> 11 (5): 559–623. <a href="https://doi.org/10.1139/f54-039">https://doi.org/10.1139/f54-039</a>.
@@ -668,18 +737,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -711,11 +769,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -725,8 +820,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -738,7 +842,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -782,6 +1008,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -807,6 +1034,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -868,17 +1121,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./05_retroadjust.html" class="pagination-link">
+      <a href="./05_retroadjust.html" class="pagination-link" aria-label="Retrospective Adjustment">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Retrospective Adjustment</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07_recruit-probabilities.html" class="pagination-link">
+      <a href="./07_recruit-probabilities.html" class="pagination-link" aria-label="Recruitment Model Probabilities">
         <span class="nav-page-text">Recruitment Model Probabilities</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

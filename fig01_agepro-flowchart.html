@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Table 1: Glossary of AGEPRO variables – AGEPRO Reference Manual</title>
+<title>Figure 1: Flowchart for AGEPRO – AGEPRO Reference Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_catch-landings-discards.html" rel="next">
-<link href="./01_age-struct-pop-model.html" rel="prev">
+<link href="./fig02_agepro-io.html" rel="next">
+<link href="./11-3_agepro-examples.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,36 +68,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -110,7 +84,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./table1_AGEPRO-variables.html">Table 1: Glossary of AGEPRO variables</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./fig01_agepro-flowchart.html">Figure 1: Flowchart for AGEPRO</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,7 +132,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./table1_AGEPRO-variables.html" class="sidebar-item-text sidebar-link active">
+  <a href="./table1_AGEPRO-variables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Table 1: Glossary of AGEPRO variables</span></a>
   </div>
 </li>
@@ -265,7 +239,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fig01_agepro-flowchart.html" class="sidebar-item-text sidebar-link">
+  <a href="./fig01_agepro-flowchart.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Figure 1: Flowchart for AGEPRO</span></a>
   </div>
 </li>
@@ -335,9 +309,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./table1_AGEPRO-variables.html">Table 1: Glossary of AGEPRO variables</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_AGEPRO-software.html">Age‐Structured Projection Software</a></li><li class="breadcrumb-item"><a href="./fig01_agepro-flowchart.html">Figure 1: Flowchart for AGEPRO</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Table 1: Glossary of AGEPRO variables</h1>
+<h1 class="title">Figure 1: Flowchart for AGEPRO</h1>
 </div>
 
 
@@ -354,151 +328,49 @@ window.Quarto = {
 </header>
 
 
-<div id="tbl-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Glossary of variables in the AGEPRO module.
-</figcaption>
-<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Variable</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(A\)</span></td>
-<td>Age of plus-group (fish age-<span class="math inline">\(A\)</span> and older) and last index value for <span class="math inline">\(\underline{N}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(B_S(t)\)</span></td>
-<td>Spawning biomass in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\overline{B}(t)\)</span></td>
-<td>Mean stock biomass in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(B_T\)</span></td>
-<td>Total stock biomass on January <span class="math inline">\(1^{st}\)</span> of year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(B\)</span></td>
-<td>Number of input initial population vectors <span class="math inline">\(\underline{N}(t)\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(C_a(t)\)</span></td>
-<td>Total catch number of age-<span class="math inline">\(a\)</span> fish that are caught in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(C_{a,v}(t)\)</span></td>
-<td>Number of age-<span class="math inline">\(a\)</span> fish caught by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(D(t)\)</span></td>
-<td>Total weight of fish discarded fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(F(t)\)</span></td>
-<td>Instantaneous fully-selected fishing mortality rate in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(F_a(t)\)</span></td>
-<td>Total fishing mortality rate for age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(F_{a,v}(t)\)</span></td>
-<td>Fishing mortality rate on age-<span class="math inline">\(a\)</span> fish by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(F_B\)</span></td>
-<td>Instantaneous fishing mortality weighted by mean biomass in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(H(t)\)</span></td>
-<td><p>Harvest index for year <span class="math inline">\(t\)</span>.</p>
-<ul>
-<li><p>If <span class="math inline">\(H(t)=1\)</span>, then harvest is based on a specified landings quota <span class="math inline">\(Q(t)\)</span> in metric tons</p></li>
-<li><p>Else if <span class="math inline">\(H(t) = 0\)</span>, then harvest is based on a fishing mortality rate <span class="math inline">\(F(t)\)</span></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(L_v(t)\)</span></td>
-<td>Total weight of fish landed by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(M_a(t)\)</span></td>
-<td>Instantaneous natural mortality rate of age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(N_a(t)\)</span></td>
-<td>Number of age-<span class="math inline">\(a\)</span> fish alive on January 1st of year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(N_M\)</span></td>
-<td>Number of recruitment models used in the projection</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(d_{a,v}(t)\)</span></td>
-<td>Proportion of age-<span class="math inline">\(a\)</span> fish caught by fleet <span class="math inline">\(v\)</span> and discarded in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(S_{a,v}(t)\)</span></td>
-<td>Fishery selectivity for age-<span class="math inline">\(a\)</span> fish by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(P_{R,i}(t)\)</span></td>
-<td>Probability that the <span class="math inline">\(i^{th}\)</span> recruitment model is applied in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p_{a}(t)\)</span></td>
-<td>Fraction of of age-<span class="math inline">\(a\)</span> fish that are sexually mature in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\varphi(t)\)</span></td>
-<td>Fraction of total mortality occurring prior to spawning in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(Q_v(t)\)</span></td>
-<td>Landings quota (mt) for fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(R(t)\)</span></td>
-<td>Recruitment (number of age-1 fish on January <span class="math inline">\(1^{st}\)</span>) in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(W_{P,a}(t)\)</span></td>
-<td>Average <em>population weight</em> of an age-<span class="math inline">\(a\)</span> fish on January <span class="math inline">\(1^{st}\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(W_{L,a,v}(t)\)</span></td>
-<td>Average <em>landed (catch) weight</em> of age of an age-<span class="math inline">\(a\)</span> fish by fleet <span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(W_{S,a}(t)\)</span></td>
-<td>Average <em>spawning weight</em> of an age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(W_{MY,a}(t)\)</span></td>
-<td>Average mid-year, or <em>mean population weight</em> of an age-<span class="math inline">\(a\)</span> fish in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(W_{D,a,v}(t)\)</span></td>
-<td>Average <em>discarded weight</em> of an age-<span class="math inline">\(a\)</span> fish by fleet-<span class="math inline">\(v\)</span> in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(Y\)</span></td>
-<td>Number of Years in projection time horizon where <span class="math inline">\(t= 1,2,...,Y\)</span></td>
-</tr>
-</tbody>
-</table>
+<div id="fig-agepro-flowchart" class="unnumbered quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-agepro-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A(BEGIN) --&gt; B{DONE WITH IC LOOP?}
+    
+    B -- YES --&gt; J[OUTPUT RESULTS]
+    J --&gt; K(END)
+    
+    B -- NO --&gt; C{DONE WITH SIM LOOP?}
+    C -- YES --&gt; B
+    
+    C -- NO --&gt; D[SET INITIAL POPULATION VECTOR]
+    D --&gt; E{DONE WITH TIME LOOP?}
+    
+    E -- YES --&gt; C
+    E -- NO --&gt; F[SET VARIABLES THAT VARY BY TIME PERIOD &lt;br&gt; COMPUTE CATCH AT AGE &lt;br&gt; CALCULATE TOTAL F]
+    
+    F --&gt; G{IS QUOTA FEASIBLE?}
+    
+    G -- NO --&gt; I[RECORD THAT SIMULATION IS INFEASIBLE]
+    I --&gt; C
+    
+    G -- YES --&gt; H[COMPUTE LANDINGS &lt;br&gt; &lt;br&gt; COMPUTE Bs &lt;br&gt; &lt;br&gt; GENERATE RANDOM RECRUITMENT &lt;br&gt; &lt;br&gt; COMPUTE FUTURE POPULATION VECTOR FOR NEXT TIME PERIOD &lt;br&gt; &lt;br&gt;  COPY CURRENT Bs TO PREVIOUS Bs &lt;br&gt; &lt;br&gt; COPY FUTURE POPULATION VECTOR TO CURRENT &lt;br&gt; &lt;br&gt; CALCULATE OUTPUTS]
+    
+    %% Return loop from H to E
+    H --&gt; E
+    
+</pre>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-agepro-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Flowchart for AGEPRO
+</figcaption>
 </figure>
 </div>
 
@@ -924,13 +796,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01_age-struct-pop-model.html" class="pagination-link" aria-label="Age Structured Population Model">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Age Structured Population Model</span>
+      <a href="./11-3_agepro-examples.html" class="pagination-link" aria-label="AGEPRO Projection Examples">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">AGEPRO Projection Examples</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_catch-landings-discards.html" class="pagination-link" aria-label="Catch, Landings, and Discards">
-        <span class="nav-page-text">Catch, Landings, and Discards</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./fig02_agepro-io.html" class="pagination-link" aria-label="Figure 2: AGEPRO Input/Output">
+        <span class="nav-page-text">Figure 2: AGEPRO Input/Output</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
